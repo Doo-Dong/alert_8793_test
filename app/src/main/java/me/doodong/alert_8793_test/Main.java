@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -18,6 +19,7 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,6 +32,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class Main extends AppCompatActivity {
     private RecyclerAdapter_Main adapter;
     ExtendedFloatingActionButton btn_choice;
+
+    private RecyclerView listview;
+    private MyAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +108,9 @@ public class Main extends AppCompatActivity {
             }
         });
 
-
+        init1();
+        init2();
+        init3();
     }
 
 
@@ -203,4 +210,105 @@ public class Main extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
         startActivity(intent);
     }
+
+    private void init1() {
+        listview = findViewById(R.id.list_view_1);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        listview.setLayoutManager(layoutManager);
+
+        ArrayList<ListData> itemList = new ArrayList<>();
+        ListData listData = new ListData("오전",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/temp", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
+                "10m");
+        itemList.add(listData);
+        listData = new ListData("점심",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
+                "5m");
+        itemList.add(listData);
+        listData = new ListData("오후",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
+                "2m");
+        itemList.add(listData);
+        listData = new ListData("저녁",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
+                "");
+        itemList.add(listData);
+
+        myAdapter = new MyAdapter(this, itemList, myOnClickItem);
+        listview.setAdapter(myAdapter);
+    }
+
+    private void init2() {
+        listview = findViewById(R.id.list_view_2);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        listview.setLayoutManager(layoutManager);
+
+        ArrayList<ListData> itemList = new ArrayList<>();
+        ListData listData = new ListData("오전",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
+                "1m");
+        itemList.add(listData);
+        listData = new ListData("점심",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
+                "3m");
+        itemList.add(listData);
+        listData = new ListData("오후",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
+                "5m");
+        itemList.add(listData);
+        listData = new ListData("저녁",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
+                "");
+        itemList.add(listData);
+
+        myAdapter = new MyAdapter(this, itemList, myOnClickItem);
+        listview.setAdapter(myAdapter);
+    }
+
+    private void init3() {
+        listview = findViewById(R.id.list_view_3);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        listview.setLayoutManager(layoutManager);
+
+        ArrayList<ListData> itemList = new ArrayList<>();
+        ListData listData = new ListData("오전",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
+                "1m");
+        itemList.add(listData);
+        listData = new ListData("점심",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
+                "25m");
+        itemList.add(listData);
+        listData = new ListData("오후",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
+                "10m");
+        itemList.add(listData);
+        listData = new ListData("저녁",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/temp", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
+                "");
+        itemList.add(listData);
+
+        myAdapter = new MyAdapter(this, itemList, myOnClickItem);
+        listview.setAdapter(myAdapter);
+    }
+
+    private View.OnClickListener myOnClickItem = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String str = (String) v.getTag();
+            //Toast.makeText(my_page.this, str, Toast.LENGTH_SHORT).show();
+        }
+    };
 }

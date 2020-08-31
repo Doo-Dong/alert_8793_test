@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:naveridlogin_android_sdk_4.2.6:unspecified@jar">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/naveridlogin_android_sdk_4.2.6/build/.transforms/3cfa53f743c0f02aa54868f0a0ba200a/jetified-naveridlogin_android_sdk_4.2.6/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/naveridlogin_android_sdk_4.2.6/build/.transforms/3cfa53f743c0f02aa54868f0a0ba200a/jetified-naveridlogin_android_sdk_4.2.6/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/naveridlogin_android_sdk_4.2.6/build/.transforms/3cfa53f743c0f02aa54868f0a0ba200a/jetified-naveridlogin_android_sdk_4.2.6/res" />
+      <root url="file://$PROJECT_DIR$/naveridlogin_android_sdk_4.2.6/build/.transforms/46447760284f3c052a9043dbfc0e2073/jetified-naveridlogin_android_sdk_4.2.6/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/naveridlogin_android_sdk_4.2.6/build/.transforms/46447760284f3c052a9043dbfc0e2073/jetified-naveridlogin_android_sdk_4.2.6/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/naveridlogin_android_sdk_4.2.6/build/.transforms/46447760284f3c052a9043dbfc0e2073/jetified-naveridlogin_android_sdk_4.2.6/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
