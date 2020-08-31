@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- selector가 눌렸을때 @drawable/together_click 를 보여준다.-->
+    <item android:state_selected="true" android:drawable="@drawable/together_click"/>
+
+    <!-- selector가 눌리지 않았을때 @drawable/together 를 보여준다.-->
+    <item android:state_selected="false" android:drawable="@drawable/together"/>
+
+</selector>

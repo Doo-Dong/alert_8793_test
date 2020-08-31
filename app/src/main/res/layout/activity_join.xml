@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1280"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="125"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="78"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="43"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="320"/>
+
+            <ImageView
+                android:background="@drawable/logo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="76"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="253"/>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="54"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="153"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+
+    </LinearLayout>
+
+    <!--내용 시작-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="55"
+        android:orientation="horizontal"
+        android:weightSum="720">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="247"
+            android:text="알리다 회원가입"
+            android:textStyle="bold"
+            android:autoSizeTextType="uniform"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="433"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="119"
+        android:weightSum="720">
+
+    </LinearLayout>
+
+    <!-- 아이디 시작-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="46"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="640"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/layout_round"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="19"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="12"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/id_icon"
+                    android:layout_weight="21"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="13"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <EditText
+                android:id="@+id/editText_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="580"
+                android:hint="아이디"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:weightSum="720"
+        >
+    </LinearLayout>
+
+    <!-- 비밀번호 시작-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="46"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="640"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/layout_round"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="19"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="12"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/pw_icon"
+                    android:layout_weight="21"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="13"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <EditText
+                android:id="@+id/editText_pw"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="640"
+                android:hint="비밀번호"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:weightSum="720"
+        >
+    </LinearLayout>
+
+    <!-- 비밀번호 확인 시작-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="46"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="640"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/layout_round"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="19"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="12"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/pw_icon"
+                    android:layout_weight="21"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="13"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <EditText
+                android:id="@+id/editText_pwck"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="640"
+                android:hint="비밀번호확인"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:weightSum="720"
+        >
+    </LinearLayout>
+
+    <!-- 이메일 시작-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="46"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="640"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/layout_round"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="19"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="12"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/email_icon"
+                    android:layout_weight="21"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="13"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <EditText
+                android:id="@+id/editText_email"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="640"
+                android:hint="이메일"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:weightSum="720"
+        >
+    </LinearLayout>
+
+    <!-- 성별 시작-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="46"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="640"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/layout_round"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="19"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="12"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="21"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="13"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <EditText
+                android:id="@+id/editText_gender"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="640"
+                android:hint="성별"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:weightSum="720"
+        >
+    </LinearLayout>
+
+    <!-- 연령대 시작-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="46"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="640"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/layout_round"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="19"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="12"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="21"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="13"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+            <EditText
+                android:id="@+id/editText_age"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="640"
+                android:hint="연령대"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="44"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:layout_gravity="center">
+    </LinearLayout>
+
+    <!-- 여행타입 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="29"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="74"
+            android:text="여행타입"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="10sp"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="606"></LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 여행타입 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:layout_gravity="center"
+        >
+    </LinearLayout>
+
+
+    <!-- 아이콘 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="105"
+        android:weightSum="720"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="640"
+            android:orientation="horizontal"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_free"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="126"
+                android:background="@drawable/selelctor_freetrip"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_backpacking"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="126"
+                android:background="@drawable/selelctor_backpacking"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_pkg"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="126"
+                android:background="@drawable/selelctor_pkg"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_alone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="126"
+                android:background="@drawable/selelctor_alone"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_together"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="126"
+                android:background="@drawable/selelctor_together"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"></LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="92"
+        >
+    </LinearLayout>
+
+    <!-- 회원가입 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="79"
+        android:orientation="horizontal"
+        android:weightSum="720"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="53"></LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_join"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="614"
+            android:background="@drawable/btn"
+            android:text="회원가입"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:onClick="onClick_realJoin"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="53"></LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
