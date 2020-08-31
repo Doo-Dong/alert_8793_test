@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1280"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawerLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1280"
+            android:background="#FFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="130"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="360"
+                android:background="@drawable/temp">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="140"
+                android:background="#292929"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="왓 프라탓 도이수텝 사원"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="#FFF" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_marginVertical="3dp"
+                        android:text="치앙마이의 상징이된 황금사원"
+                        android:textSize="11dp"
+                        android:textColor="#FFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right">
+                    <LinearLayout
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="15dp"
+                        android:background="#FFF"/>
+
+                    <Button
+                        android:id="@+id/include_schedule"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/include_schedule"
+                        android:clickable="true"
+                        android:foreground="?selectableItemBackground" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="15dp"
+                android:text="관광지 둘러보기"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="265">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/around_view"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:paddingLeft="15dp"
+                android:text="관광지 위치"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="370">
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:id="@+id/map"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1280"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="110"
+                android:weightSum="720"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="31" />
+
+                <Button
+                    android:id="@+id/drawerLayout_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="50"
+                    android:background="@drawable/dehaze_blk"
+                    android:clickable="true" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="260" />
+
+                <ImageView
+                    android:id="@+id/button6"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/logo" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="260" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:background="@android:color/transparent"
+                    android:clickable="false" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="31" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--드로어-->
+        <LinearLayout
+            android:id="@+id/drawer"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#FFF"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="1270">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="100" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drawerLayout_Btn_close"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginRight="34dp"
+                    android:background="@drawable/drawer_close"
+                    android:onClick="btnCloseDrawer"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drawerLayout_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:background="@drawable/logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="130" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="75dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drawerLayout_list_btn_1"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:paddingRight="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/main_on"
+                    android:onClick="btn_go_Main"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="75dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drawerLayout_list_btn_2"
+                    android:layout_width="77dp"
+                    android:layout_height="29dp"
+                    android:paddingRight="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/air_info"
+                    android:onClick="btn_airInfo"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="75dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drawerLayout_list_btn_3"
+                    android:layout_width="74dp"
+                    android:layout_height="29dp"
+                    android:paddingRight="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/mypg"
+                    android:onClick="btn_myPage"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</LinearLayout>
