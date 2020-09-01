@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">알리다</string>
+    <string-array name = "main_dialog">
+        <item>"태국"</item>
+        <item>"일본"</item>
+    </string-array>
+
 </resources>
