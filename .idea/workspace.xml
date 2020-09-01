@@ -8,15 +8,30 @@
       </config>
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c9affd6-bc09-4838-8bad-8c43be155874" name="Default Changelist" comment="" />
-    <list id="02248ff3-a55b-461e-b18f-83671e0cf684" name="Revert &quot;test&quot;" comment="Revert &quot;test&quot;&#10;&#10;This reverts commit de2ca055" />
+    <list default="true" id="2f3e1b4e-c759-43a1-baca-e0a2de2ba816" name="Default Changelist" comment="main_test3 commit">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__artifacts_naveridlogin_android_sdk_4_2_6_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__artifacts_naveridlogin_android_sdk_4_2_6_unspecified_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="0418249d847e1801" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ce061606cb0b1f1604" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -25,12 +40,7 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
+        <projects_view />
       </state>
     </system>
   </component>
@@ -49,9 +59,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PUREUM\Desktop\alert_8793_test_git\alert_8793_test\app\src\main\assets" />
+      <recent name="C:\Users\PUREUM\Desktop\alert_8793_test_git\alert_8793_test\app\libs" />
+      <recent name="C:\Users\PUREUM\Desktop\alert_8793_test_git\alert_8793_test\app" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -152,26 +169,77 @@
       <option name="project" value="LOCAL" />
       <updated>1598862110565</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="pr_main commit">
+      <created>1598942536114</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598942536114</updated>
+    </task>
+    <task id="LOCAL-00006" summary="pr_theme">
+      <created>1598946718955</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598946718955</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Doo-Dong/alert_8793_test into master&#10;&#10;# Conflicts:&#10;#&#9;.gitignore" />
     <MESSAGE value="test3" />
     <MESSAGE value="Main1 : Switch the &quot;Friends Theme&quot; widget to a list view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main1 : Switch the &quot;Friends Theme&quot; widget to a list view" />
+    <MESSAGE value="pr_main commit" />
+    <MESSAGE value="pr_theme" />
+    <option name="LAST_COMMIT_MESSAGE" value="pr_theme" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598946516716">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598946516716" />
     <state x="349" y="167" key="AndroidCreateResourceDirectoryDialog" timestamp="1598860371700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="167" key="AndroidCreateResourceDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1598860371700" />
-    <state x="203" y="0" key="CommitChangelistDialog2" timestamp="1598862109609">
+    <state x="203" y="0" key="CommitChangelistDialog2" timestamp="1598946781597">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="203" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598856489957" />
+    <state x="203" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598946781597" />
     <state x="203" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598862109609" />
+    <state x="147" y="65" key="DiffContextDialog" timestamp="1598946807501">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598946807501" />
+    <state width="745" height="143" key="GridCell.Tab.0.bottom" timestamp="1598939889861">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="745" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598939889861" />
+    <state width="745" height="143" key="GridCell.Tab.0.center" timestamp="1598939889861">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="745" height="143" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598939889861" />
+    <state width="745" height="143" key="GridCell.Tab.0.left" timestamp="1598939889861">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="745" height="143" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598939889861" />
+    <state width="745" height="143" key="GridCell.Tab.0.right" timestamp="1598939889861">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="745" height="143" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598939889861" />
     <state x="245" y="64" key="MergeDialog" timestamp="1598862199137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -188,19 +256,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="560" y="170" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.824@0.0.1536.824" timestamp="1598862181502" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1598856873462">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1598942565810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598856572707" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598942565810" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598856873462" />
     <state x="458" y="444" key="com.intellij.ide.util.TipDialog" timestamp="1598857961340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="458" y="444" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598857961340" />
-    <state x="478" y="203" key="git4idea.merge.GitPullDialog" timestamp="1598862115093">
+    <state x="478" y="203" key="git4idea.merge.GitPullDialog" timestamp="1598946788096">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598856497731" />
+    <state x="478" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1598946788096" />
     <state x="478" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1598862115093" />
   </component>
 </project>
