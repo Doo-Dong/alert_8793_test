@@ -3,6 +3,7 @@
 *.properties
 /.gradle
 /.idea
+/.idea/*
 /app/build.gradle
 /gradle.properties
 /gradle
