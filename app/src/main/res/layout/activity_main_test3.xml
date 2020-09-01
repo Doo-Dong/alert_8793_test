@@ -22,13 +22,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="149"
+                android:layout_weight="110"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="82"
+                    android:layout_weight="26.8"
                     android:orientation="horizontal"
                     android:weightSum="720"></LinearLayout>
 
@@ -83,508 +83,507 @@
 
             </LinearLayout>
 
-            <!--내용 시작-->
-            <!--  <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="0dp"
-                  android:layout_weight="24.4"
-                  android:orientation="horizontal"
-                  android:weightSum="720"></LinearLayout>-->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="378"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="23"></LinearLayout>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="674"
-                    android:background="@drawable/main_top"
-                    />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="23"></LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="16"
-                android:weightSum="720">
-
-            </LinearLayout>
-
-            <!--테마선택-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="53"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="24"></LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="673"
-                    android:orientation="horizontal"
-                    android:background="@drawable/card_round"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="22"></LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="92"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="8"></LinearLayout>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="37"
-                            android:gravity="center"
-                            android:text="테마선택"
-                            android:textColor="#bfbdbb"
-                            android:textStyle="bold"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizePresetSizes="@array/auto_text_sizes"
-                            />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="8"></LinearLayout>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="29"
-                        android:gravity="center"
-                        />
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                        android:orientation="vertical"
-                        android:weightSum="53">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="8"></LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="29"
-                            android:hint="|"
-                            android:gravity="center"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizePresetSizes="@array/auto_text_sizes"
-                            />
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="166"
-                        android:gravity="center"
-                        />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="48"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="8"></LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="48"
-                            android:gravity="center"
-                            android:text="태국"
-                            android:textColor="#0BB68C"
-                            android:textStyle="bold"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizePresetSizes="@array/auto_text_sizes"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="7"></LinearLayout>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="248"
-                        android:gravity="center"
-                        />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="46"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="30"></LinearLayout>
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="75.2"
-                            android:gravity="center"
-                            android:background="@drawable/keyboard_arrow_right_"
-                            />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="40"></LinearLayout>
-                    </LinearLayout>
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="19"
-                        android:gravity="center"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="23"></LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="20"
-                android:orientation="horizontal"
-                android:weightSum="720"
-                android:gravity="center"
-                >
-            </LinearLayout>
-
-            <!-- horizontal-->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="290"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="24"></LinearLayout>
-
-                    <HorizontalScrollView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:fillViewport="true"
-                        android:layout_weight="697"
-                        android:fadingEdge="none"
-                        android:scrollbars="none"
-                        >
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            >
-
-                            <ImageView
-                                android:id="@+id/btn_main2_go"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="530"
-                                android:background="@drawable/main_img1"
-                                android:onClick="onClick_main2"
-                                />
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="34"/>
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="530"
-                                android:background="@drawable/main_img2"
-                                android:onClick="onClick_main2"
-                                />
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="34"/>
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="530"
-                                android:background="@drawable/main_img3"
-                                android:onClick="onClick_main2"
-                                />
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="34"/>
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="530"
-                                android:background="@drawable/main_img4"
-                                android:onClick="onClick_main2"
-                                />
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="34"/>
-                        </LinearLayout>
-
-                    </HorizontalScrollView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="36">
-            </LinearLayout>
-
-            <!--Scrollview 추천 테마~ 하단 끝-->
+            <!--내용시작-->
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:fillViewport="true"
-                android:layout_weight="338"
-                android:fadingEdge="none"
-                android:scrollbars="none">
-
+                android:layout_weight="1170"
+                android:fillViewport="true">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="true"
                     android:orientation="vertical"
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="34"
-                        android:weightSum="720"
-                        >
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="23"
-                            ></LinearLayout>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="129"
-                            android:text="추천 여행테마"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizePresetSizes="@array/auto_text_sizes"
-                            android:textStyle="bold"
-                            android:gravity="center"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="568"
-                            ></LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="23"
-                        android:weightSum="720"
-                        >
-                    </LinearLayout>
-
-                    <!--여행 테마 recyclerview-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="210"
-                        android:orientation="horizontal"
-                        android:weightSum="720"
-                        android:gravity="center"
-                        >
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="23"></LinearLayout>
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="697"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="24"
-                        android:weightSum="720"
-                        >
-                    </LinearLayout>
-
-                    <!-- 친구테마-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="34"
-                        android:orientation="horizontal"
-                        android:weightSum="720"
-                        android:gravity="center"
-                        >
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="23"></LinearLayout>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="83"
-                            android:text="친구테마"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizePresetSizes="@array/auto_text_sizes"
-                            android:gravity="center"
-                            android:textStyle="bold"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="614"></LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="40"
-                        android:weightSum="720"
-                        >
-                    </LinearLayout>
-
-                    <!-- 친구테마 horizontal-->
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="920"
+                        android:layout_height="1170dip"
+                        android:focusable="false"
                         android:orientation="vertical"
-                        android:weightSum="720"
                         >
-
-                        <!--<LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="24"></LinearLayout>-->
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:orientation="vertical"
-                            android:padding="10dp"
-                            android:layout_weight="700">
+                            android:layout_weight="378"
+                            android:orientation="horizontal"
+                            android:weightSum="720">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="1일차"
-                                android:textSize="20dp"/>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="23"></LinearLayout>
 
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/list_view_1"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"
-                                android:scrollbars="none" />
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="674"
+                                android:background="@drawable/main_top"
+                                />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="2일차"
-                                android:textSize="20dp"/>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="23"></LinearLayout>
 
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/list_view_2"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"
-                                android:scrollbars="none" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="3일차"
-                                android:textSize="20dp"/>
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/list_view_3"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"
-                                android:scrollbars="none" />
                         </LinearLayout>
 
-                        <!--<LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="24"></LinearLayout>-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="16"
+                            android:weightSum="720">
+
+                        </LinearLayout>
+
+                        <!--테마선택-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="53"
+                            android:weightSum="720">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="24"></LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="673"
+                                android:orientation="horizontal"
+                                android:background="@drawable/card_round"
+                                android:onClick="main_Theme"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="22"></LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="92"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="8"></LinearLayout>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="37"
+                                        android:gravity="center"
+                                        android:text="테마선택"
+                                        android:textColor="#bfbdbb"
+                                        android:textStyle="bold"
+                                        android:autoSizeTextType="uniform"
+                                        android:autoSizePresetSizes="@array/auto_text_sizes"
+                                        />
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="8"></LinearLayout>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="29"
+                                    android:gravity="center"
+                                    />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical"
+                                    android:weightSum="53">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="8"></LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="29"
+                                        android:hint="|"
+                                        android:gravity="center"
+                                        android:autoSizeTextType="uniform"
+                                        android:autoSizePresetSizes="@array/auto_text_sizes"
+                                        />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="166"
+                                    android:gravity="center"
+                                    />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="48"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="8"></LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/tv_MainTheme"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="48"
+                                        android:gravity="center"
+                                        android:text="태국"
+                                        android:textColor="#0BB68C"
+                                        android:textStyle="bold"
+                                        android:autoSizeTextType="uniform"
+                                        android:autoSizePresetSizes="@array/auto_text_sizes"
+                                        />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="7"></LinearLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="248"
+                                    android:gravity="center"
+                                    />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="46"
+                                    android:orientation="vertical">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="30"></LinearLayout>
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="75.2"
+                                        android:gravity="center"
+                                        android:background="@drawable/keyboard_arrow_right_"
+                                        />
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="40"></LinearLayout>
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="19"
+                                    android:gravity="center"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="23"></LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:orientation="horizontal"
+                            android:weightSum="720"
+                            android:gravity="center"
+                            >
+                        </LinearLayout>
+
+                        <!-- horizontal-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="290"
+                            android:orientation="horizontal"
+                            android:weightSum="720">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="24"></LinearLayout>
+
+                            <HorizontalScrollView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:fillViewport="true"
+                                android:layout_weight="697"
+                                android:fadingEdge="none"
+                                android:scrollbars="none"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    >
+
+                                    <ImageView
+                                        android:id="@+id/btn_main2_go"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="530"
+                                        android:background="@drawable/main_img1"
+                                        android:onClick="onClick_main2"
+                                        />
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="34"/>
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="530"
+                                        android:background="@drawable/main_img2"
+                                        android:onClick="onClick_main2"
+                                        />
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="34"/>
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="530"
+                                        android:background="@drawable/main_img3"
+                                        android:onClick="onClick_main2"
+                                        />
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="34"/>
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="530"
+                                        android:background="@drawable/main_img4"
+                                        android:onClick="onClick_main2"
+                                        />
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="34"/>
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="36">
+                        </LinearLayout>
+
+                        <!--Scrollview 추천 테마~ 하단 끝-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="34"
+                            android:weightSum="720"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="23"
+                                ></LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="129"
+                                android:text="추천 여행테마"
+                                android:autoSizeTextType="uniform"
+                                android:autoSizePresetSizes="@array/auto_text_sizes"
+                                android:textStyle="bold"
+                                android:gravity="center"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="568"
+                                ></LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="23"
+                            android:weightSum="720"
+                            >
+                        </LinearLayout>
+
+                        <!--여행 테마 recyclerview-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="210"
+                            android:orientation="horizontal"
+                            android:weightSum="720"
+                            android:gravity="center"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="23"></LinearLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="697"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="24"
+                            android:weightSum="720"
+                            >
+                        </LinearLayout>
+
+                        <!-- 친구테마-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="34"
+                            android:orientation="horizontal"
+                            android:weightSum="720"
+                            android:gravity="center"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="23"></LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="83"
+                                android:text="친구테마"
+                                android:autoSizeTextType="uniform"
+                                android:autoSizePresetSizes="@array/auto_text_sizes"
+                                android:gravity="center"
+                                android:textStyle="bold"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="614"></LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="40"
+                            android:weightSum="720"
+                            >
+                        </LinearLayout>
+
+                        <!-- 친구테마 horizontal-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="920"
+                            android:orientation="vertical"
+                            android:weightSum="720"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:layout_weight="700">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="1일차"
+                                    android:textSize="20dp"/>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/list_view_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="50"
+                                    android:scrollbars="none" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="2일차"
+                                    android:textSize="20dp"/>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/list_view_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="50"
+                                    android:scrollbars="none" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="3일차"
+                                    android:textSize="20dp"/>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/list_view_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="50"
+                                    android:scrollbars="none" />
+
+                            </LinearLayout>
+
+                            <!--<LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="24"></LinearLayout>-->
+
+                        </LinearLayout>
 
                     </LinearLayout>
                 </LinearLayout>
-
             </ScrollView>
 
         </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -612,6 +611,7 @@
                 android:textStyle="bold" />
 
         </RelativeLayout>
+
         <!--드로어-->
         <LinearLayout
             android:id="@+id/drawer"
@@ -762,6 +762,7 @@
                 android:layout_weight="40" />
 
         </LinearLayout>
+
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </LinearLayout>

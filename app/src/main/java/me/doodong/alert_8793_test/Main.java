@@ -1,6 +1,7 @@
 package me.doodong.alert_8793_test;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
@@ -16,6 +17,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -32,6 +35,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class Main extends AppCompatActivity {
     private RecyclerAdapter_Main adapter;
     ExtendedFloatingActionButton btn_choice;
+    TextView tv_MainTheme;
 
     private RecyclerView listview;
     private MyAdapter myAdapter;
@@ -43,6 +47,7 @@ public class Main extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         btn_choice = findViewById(R.id.btn_choice);
+        tv_MainTheme= findViewById(R.id.tv_MainTheme);
 
         Intent intent = getIntent();
 
@@ -113,44 +118,24 @@ public class Main extends AppCompatActivity {
         init3();
     }
 
+    public void main_Theme(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
+        builder.setTitle("테마 선택");
 
-//    private class HorizentalScrollViewMainView extends LinearLayout {
-//        public HorizontalScrollView mHorizentalScrollView;
-//        public LinearLayout mBtnLayout;
-//
-//        public HorizentalScrollViewMainView(Context context) {
-//            super(context);
-//            mBtnLayout = findViewById(R.id.horizontal);
-//            mBtnLayout = new LinearLayout(context);
-//
-//            /** 가로로 자식들을 배치 함 */
-//            mBtnLayout.setOrientation(LinearLayout.HORIZONTAL);
-//
-//            Integer[] mImageIds = {
-//                    R.drawable.main_img1,
-//                    R.drawable.main_img1,
-//                    R.drawable.main_img1,
-//                    R.drawable.main_img1
-//            };
-//
-//            /** 이미지 추가 */
-//            for (int cnt = 0; cnt < mImageIds.length; cnt++) {
-//
-//                ImageView i = new ImageView(context);
-//                i.setImageResource(mImageIds[cnt]);
-//                i.setLayoutParams(new LayoutParams(530, 300));
-//                i.setScaleType(ImageView.ScaleType.FIT_XY);
-//
-//                mBtnLayout.addView(i);
-//            }
-//
-//            mHorizentalScrollView = new HorizontalScrollView(context);
-//            mHorizentalScrollView.addView(mBtnLayout);
-//
-//            addView(mHorizentalScrollView);
-//        }
-//    }
+        builder.setItems(R.array.main_dialog, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int pos)
+            {
+                String[] items = getResources().getStringArray(R.array.main_dialog);
+                tv_MainTheme.setText(items[pos]);
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.rv);
