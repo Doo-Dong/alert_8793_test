@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,7 +16,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class my_page extends AppCompatActivity {
-    private RecyclerView listview;
+    private RecyclerView listview1;
+    private RecyclerView listview2;
+    private RecyclerView listview3;
     private MyAdapter adapter;
 
     @Override
@@ -113,9 +116,9 @@ public class my_page extends AppCompatActivity {
     }
 
     private void init1() {
-        listview = findViewById(R.id.list_view_1);
+        listview1 = findViewById(R.id.list_view_1);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        listview.setLayoutManager(layoutManager);
+        listview1.setLayoutManager(layoutManager);
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
@@ -140,13 +143,61 @@ public class my_page extends AppCompatActivity {
         itemList.add(listData);
 
         adapter = new MyAdapter(this, itemList, onClickItem);
-        listview.setAdapter(adapter);
+        listview1.setAdapter(adapter);
+
+        final int speedScroll = 2000;
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            int count = 0;
+            int phase = 1;
+            boolean flag = true;
+            @Override
+            public void run() {
+                if(count < adapter.getItemCount()){
+                    if(count==adapter.getItemCount()-1){
+                        flag = false;
+                    }else if(count == 0){
+                        flag = true;
+                    }
+                    if(flag) count++;
+                    else {
+                        count=0;
+                        phase++;
+                    }
+
+                    if(phase==1){
+                        listview1.smoothScrollToPosition(count);
+                        listview2.smoothScrollToPosition(0);
+                        listview3.smoothScrollToPosition(0);
+                    }
+                    else if(phase==2){
+                        listview1.smoothScrollToPosition(0);
+                        listview2.smoothScrollToPosition(count);
+                        listview3.smoothScrollToPosition(0);
+                    }
+                    else if(phase==3){
+                        listview1.smoothScrollToPosition(0);
+                        listview2.smoothScrollToPosition(0);
+                        listview3.smoothScrollToPosition(count);
+                    }
+                    else if(phase==4){
+                        listview1.smoothScrollToPosition(0);
+                        listview2.smoothScrollToPosition(0);
+                        listview3.smoothScrollToPosition(0);
+                    }
+
+                    handler.postDelayed(this,speedScroll);
+                }
+            }
+        };
+
+        handler.postDelayed(runnable,speedScroll);
     }
 
     private void init2() {
-        listview = findViewById(R.id.list_view_2);
+        listview2 = findViewById(R.id.list_view_2);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        listview.setLayoutManager(layoutManager);
+        listview2.setLayoutManager(layoutManager);
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
@@ -171,13 +222,13 @@ public class my_page extends AppCompatActivity {
         itemList.add(listData);
 
         adapter = new MyAdapter(this, itemList, onClickItem);
-        listview.setAdapter(adapter);
+        listview2.setAdapter(adapter);
     }
 
     private void init3() {
-        listview = findViewById(R.id.list_view_3);
+        listview3 = findViewById(R.id.list_view_3);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        listview.setLayoutManager(layoutManager);
+        listview3.setLayoutManager(layoutManager);
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
@@ -202,7 +253,7 @@ public class my_page extends AppCompatActivity {
         itemList.add(listData);
 
         adapter = new MyAdapter(this, itemList, onClickItem);
-        listview.setAdapter(adapter);
+        listview3.setAdapter(adapter);
     }
 
     private View.OnClickListener onClickItem = new View.OnClickListener() {

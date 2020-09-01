@@ -43,8 +43,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         ListData item = itemList.get(position);
 
         holder.textview.setText(item.text);
-        if (position == 0) {
-            holder.textview.setTextColor(Color.rgb(71, 214, 176));
+        if (position == 1) {
+            holder.textview.setTextColor(Color.rgb(182, 182, 182));
+            holder.distance.setTextColor(Color.rgb(71, 214, 176));
+        } else {
+            holder.textview.setTextColor(Color.rgb(182, 182, 182));
+            holder.distance.setTextColor(Color.rgb(182, 182, 182));
         }
         holder.imageview.setBackground(item.image);
         holder.direction.setBackground(item.direct);
