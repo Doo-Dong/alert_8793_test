@@ -2,6 +2,7 @@ package me.doodong.alert_8793_test;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,6 +27,9 @@ import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import jxl.Sheet;
+import jxl.Workbook;
 
 public class Theme extends AppCompatActivity {
 
@@ -51,28 +56,6 @@ public class Theme extends AppCompatActivity {
 
         init();
         getData();
-
-        /*btn_place.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(CHECK_NUM == 0) {
-
-                    //btn_place.setCardBackgroundColor(Color.parseColor("#03DAC5"));
-                    image_place.setColorFilter(Color.parseColor("#03DAC5"), PorterDuff.Mode.SRC_OUT);
-                    //btn_list.setCardBackgroundColor(Color.parseColor("#ffffff"));
-                    image_list1.setColorFilter(Color.parseColor("#03DAC5"), PorterDuff.Mode.SRC_IN);
-                    image_list2.setColorFilter(Color.parseColor("#03DAC5"), PorterDuff.Mode.SRC_IN);
-                    CHECK_NUM = 1; // 다음에 누르면 색이 변하도록 값을 변경.
-                }else{//CHECK_NUM 0이 아니면 setSelected를 false로 줘서 .
-                    image_place.setColorFilter(Color.parseColor("#03DAC5"), PorterDuff.Mode.SRC_IN);
-                    //btn_list.setCardBackgroundColor(Color.parseColor("#ffffff"));
-                    image_list1.setColorFilter(Color.parseColor("#03DAC5"), PorterDuff.Mode.SRC_OUT);
-                    image_list2.setColorFilter(Color.parseColor("#03DAC5"), PorterDuff.Mode.SRC_OUT);
-                    CHECK_NUM = 0; //다음에 누르면 색이 변하도록 값을 변경
-                }
-            }
-        });*/
-
 
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
@@ -181,7 +164,9 @@ public class Theme extends AppCompatActivity {
     }
 
     public void  onClick_click(View view) {
-        Toast.makeText(Theme.this, "선택완료 클릭", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Theme.this, "선택완료 클릭", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), my_page.class);
+        startActivity(intent);
     }
 
     public void  onClick_place(View view) {
