@@ -3,6 +3,8 @@
 .properties
 /gradle.properties
 /gradle
+/.idea
+/.idea/*
 /gradle/wrapper/
 /local.properties
 /.idea/caches

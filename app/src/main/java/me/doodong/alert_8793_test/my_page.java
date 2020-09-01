@@ -167,6 +167,8 @@ public class my_page extends AppCompatActivity {
         init1();
         init2();
         init3();
+
+        Intent intent = getIntent();
     }
 
     private void init1() {

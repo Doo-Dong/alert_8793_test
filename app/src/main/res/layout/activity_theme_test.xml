@@ -28,7 +28,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="50"
+                    android:layout_weight="36.4"
                     android:orientation="horizontal"
                     android:weightSum="720"></LinearLayout>
 
@@ -252,8 +252,7 @@
                     android:text="1일차"
                     android:textStyle="bold"
                     android:textColor="#0BB68C"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                    android:textSize="10sp"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -346,8 +345,7 @@
                     android:text="오전"
                     android:textStyle="bold"
                     android:textColor="#0BB68C"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                    android:textSize="10sp"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -360,8 +358,7 @@
                     android:layout_weight="42"
                     android:text="오후"
                     android:textStyle="bold"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                    android:textSize="10sp"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -374,8 +371,7 @@
                     android:layout_weight="42"
                     android:text="점심"
                     android:textStyle="bold"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                    android:textSize="10sp"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -388,8 +384,7 @@
                     android:layout_weight="42"
                     android:text="저녁"
                     android:textStyle="bold"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                    android:textSize="10sp"/>
 
             </LinearLayout>
 
@@ -429,8 +424,7 @@
                     android:layout_weight="63"
                     android:text="관광지"
                     android:textStyle="bold"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                    android:textSize="10sp"/>
 
             </LinearLayout>
 
@@ -510,8 +504,7 @@
                     android:layout_weight="63"
                     android:text="음식점"
                     android:textStyle="bold"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                    android:textSize="10sp"/>
 
             </LinearLayout>
 
