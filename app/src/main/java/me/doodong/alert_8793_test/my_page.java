@@ -45,6 +45,62 @@ public class my_page extends AppCompatActivity {
         Button mypg_bottom_btn_2 = findViewById(R.id.mypg_bottom_btn_2);
         Button mypg_bottom_btn_3 = findViewById(R.id.mypg_bottom_btn_3);
 
+        // 일정 시작 -> 일정들 애니메이션 & 하이라이트
+        mypg_bottom_btn_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final int speedScroll = 2000;
+                final Handler handler = new Handler();
+                final Runnable runnable = new Runnable() {
+                    int count = 0;
+                    int phase = 1;
+                    boolean flag = true;
+                    @Override
+                    public void run() {
+                        if(count < adapter.getItemCount()){
+                            if(count==adapter.getItemCount()-1){
+                                flag = false;
+                            }else if(count == 0){
+                                flag = true;
+                            }
+                            if(flag) count++;
+                            else {
+                                count=0;
+                                phase++;
+                            }
+
+                            if(phase==1){
+                                Toast.makeText(my_page.this, "1일차", Toast.LENGTH_SHORT).show();
+                                listview1.smoothScrollToPosition(count);
+
+                                listview2.smoothScrollToPosition(0);
+                                listview3.smoothScrollToPosition(0);
+                            }
+                            else if(phase==2){
+                                Toast.makeText(my_page.this, "2일차", Toast.LENGTH_SHORT).show();
+                                listview1.smoothScrollToPosition(0);
+                                listview2.smoothScrollToPosition(count);
+                                listview3.smoothScrollToPosition(0);
+                            }
+                            else if(phase==3){
+                                Toast.makeText(my_page.this, "3일차", Toast.LENGTH_SHORT).show();
+                                listview1.smoothScrollToPosition(0);
+                                listview2.smoothScrollToPosition(0);
+                                listview3.smoothScrollToPosition(count);
+                            }
+                            else if(phase==4){
+                                listview1.smoothScrollToPosition(0);
+                                listview2.smoothScrollToPosition(0);
+                                listview3.smoothScrollToPosition(0);
+                            }
+                            handler.postDelayed(this,speedScroll);
+                        }
+                    }
+                };
+                handler.postDelayed(runnable,speedScroll);
+            }
+        });
+
         // 일정 공유 -> 단순 토스트 메시지
         mypg_bottom_btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,54 +198,6 @@ public class my_page extends AppCompatActivity {
 
         adapter = new MyAdapter(this, itemList, onClickItem);
         listview1.setAdapter(adapter);
-
-        final int speedScroll = 2000;
-        final Handler handler = new Handler();
-        final Runnable runnable = new Runnable() {
-            int count = 0;
-            int phase = 1;
-            boolean flag = true;
-            @Override
-            public void run() {
-                if(count < adapter.getItemCount()){
-                    if(count==adapter.getItemCount()-1){
-                        flag = false;
-                    }else if(count == 0){
-                        flag = true;
-                    }
-                    if(flag) count++;
-                    else {
-                        count=0;
-                        phase++;
-                    }
-
-                    if(phase==1){
-                        listview1.smoothScrollToPosition(count);
-                        listview2.smoothScrollToPosition(0);
-                        listview3.smoothScrollToPosition(0);
-                    }
-                    else if(phase==2){
-                        listview1.smoothScrollToPosition(0);
-                        listview2.smoothScrollToPosition(count);
-                        listview3.smoothScrollToPosition(0);
-                    }
-                    else if(phase==3){
-                        listview1.smoothScrollToPosition(0);
-                        listview2.smoothScrollToPosition(0);
-                        listview3.smoothScrollToPosition(count);
-                    }
-                    else if(phase==4){
-                        listview1.smoothScrollToPosition(0);
-                        listview2.smoothScrollToPosition(0);
-                        listview3.smoothScrollToPosition(0);
-                    }
-
-                    handler.postDelayed(this,speedScroll);
-                }
-            }
-        };
-
-        handler.postDelayed(runnable,speedScroll);
     }
 
     private void init2() {
