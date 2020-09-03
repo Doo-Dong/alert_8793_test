@@ -98,7 +98,7 @@
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1170dip"
+                        android:layout_height="750dip"
                         android:focusable="false"
                         android:orientation="vertical"
                         >
@@ -374,6 +374,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="34"/>
                                     <ImageView
+                                        android:id="@+id/img_main4"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="530"
@@ -507,72 +508,88 @@
 
                         <!-- 친구테마 horizontal-->
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="920"
-                            android:orientation="vertical"
-                            android:weightSum="720"
-                            >
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:orientation="vertical"
-                                android:padding="10dp"
-                                android:layout_weight="700">
+                                android:layout_weight="126"
+                                android:orientation="horizontal"
+                                android:weightSum="720"
+                                >
+                                <!-- horizontal-->
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="1일차"
-                                    android:textSize="20dp"/>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="24"></LinearLayout>
 
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/list_view_1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="50"
-                                    android:scrollbars="none" />
+                                <HorizontalScrollView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="672">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="2일차"
-                                    android:textSize="20dp"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
 
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/list_view_2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="50"
-                                    android:scrollbars="none" />
+                                        <ImageView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="213"
+                                            android:background="@drawable/friend_theme1"
+                                            />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="3일차"
-                                    android:textSize="20dp"/>
+                                        <ImageView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="35"
+                                            />
 
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/list_view_3"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="50"
-                                    android:scrollbars="none" />
+                                        <ImageView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="213"
+                                            android:background="@drawable/friend_theme2"
+                                            />
+
+
+                                        <ImageView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="35"
+                                            />
+
+                                        <ImageView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="213"
+                                            android:background="@drawable/friend_theme2"
+                                            />
+
+                                        <ImageView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="35"
+                                            />
+
+                                    </LinearLayout>
+
+                                </HorizontalScrollView>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="24"></LinearLayout>
 
                             </LinearLayout>
-
-                            <!--<LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="24"></LinearLayout>-->
-
-                        </LinearLayout>
-
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="126"
+                            android:orientation="horizontal"
+                            android:weightSum="720"
+                            ></LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>

@@ -9,6 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:background="@android:color/transparent"
         android:layout_height="0dp"
         android:layout_weight="420"
         ></LinearLayout>
@@ -94,8 +95,7 @@
                                 android:layout_weight="34"
                                 android:text="1일차"
                                 android:textStyle="bold"
-                                android:autoSizeTextType="uniform"
-                                android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                                android:textSize="12sp"/>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -192,8 +192,7 @@
                                 android:layout_weight="34"
                                 android:text="오전"
                                 android:textStyle="bold"
-                                android:autoSizeTextType="uniform"
-                                android:autoSizePresetSizes="@array/auto_text_sizes"/>
+                                android:textSize="12sp"/>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -308,6 +307,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@android:color/transparent"
         android:layout_weight="483"></LinearLayout>
 
 </LinearLayout>
