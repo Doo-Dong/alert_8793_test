@@ -172,6 +172,7 @@ public class Theme extends AppCompatActivity {
     public void  onClick_place(View view) {
         Intent intent = new Intent(getApplicationContext(), Theme_Map.class);
         startActivity(intent);
+        finish();
     }
 
 }

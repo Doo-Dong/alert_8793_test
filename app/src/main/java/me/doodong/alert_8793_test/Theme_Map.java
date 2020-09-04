@@ -56,6 +56,7 @@ public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Theme.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -115,6 +116,7 @@ public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
         //지도타입 - 일반
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.setPadding(0, 150,0, 0);
         oneMarker();
         // manyMarker();
     }
