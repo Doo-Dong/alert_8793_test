@@ -1,12 +1,10 @@
 package me.doodong.alert_8793_test;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +19,7 @@ public class Click extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_click_test);
+        setContentView(R.layout.activity_click);
 
         //UI 객체생성
         //txtText = (TextView)findViewById(R.id.txtText);

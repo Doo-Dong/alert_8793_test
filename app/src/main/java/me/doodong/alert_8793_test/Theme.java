@@ -1,35 +1,36 @@
 package me.doodong.alert_8793_test;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
-
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-
-import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
+
 import jxl.Sheet;
 import jxl.Workbook;
+import jxl.read.biff.BiffException;
 
 public class Theme extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class Theme extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_theme_test);
+        setContentView(R.layout.activity_theme);
         btn_choice = findViewById(R.id.btn_choice);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -54,6 +55,35 @@ public class Theme extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        try {
+            InputStream is = getBaseContext().getResources().getAssets().open("inform_chiangmai.xls");
+            Workbook wb = Workbook.getWorkbook(is);
+
+            if(wb != null) {
+                Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+                if(sheet != null) {
+                    int colTotal = sheet.getColumns();    // 전체 컬럼
+                    int rowIndexStart = 2;                  // row 인덱스 시작
+                    int rowTotal = sheet.getColumn(colTotal-1).length;
+
+                    StringBuilder sb;
+                    for(int row=rowIndexStart;row<rowTotal;row++) {
+                        sb = new StringBuilder();
+                        for(int col=0;col<colTotal;col++) {
+                            String contents = sheet.getCell(col, row).getContents();
+                            sb.append("col"+col+" : "+contents+" , ");
+                        }
+                        Log.i("test", sb.toString());
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (BiffException e) {
+            e.printStackTrace();
+        }
+
+        spinner();
         init();
         getData();
 
@@ -119,6 +149,26 @@ public class Theme extends AppCompatActivity {
 
     }
 
+    public void spinner(){
+        AppCompatSpinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter dayAdapter = ArrayAdapter.createFromResource(this, R.array.theme_spinner, android.R.layout.simple_spinner_dropdown_item);
+        dayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dayAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.parseColor("#0bb58b"));
+                ((TextView) adapterView.getChildAt(0)).setTextSize(12);
+                ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
 
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.rv);
