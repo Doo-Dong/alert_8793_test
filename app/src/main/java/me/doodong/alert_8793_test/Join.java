@@ -5,15 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.Toolbar;
 
 
 public class Join extends AppCompatActivity {
     EditText editText_id, editText_pw, editText_pwck, editText_email, editText_gender, editText_age;
-    Button btn_free, btn_backpacking, btn_pkg, btn_alone, btn_together, btn_join;
+    AppCompatImageButton btn_free, btn_backpacking, btn_pkg, btn_alone, btn_together;
+    Button btn_join;
     int CHECK_NUM = 0;
 
     @Override
@@ -45,10 +46,10 @@ public class Join extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(CHECK_NUM == 0) {
-                    btn_free.setSelected(true);
+                    btn_free.setImageResource(R.drawable.freetrip_click);
                     CHECK_NUM = 1; // 다음에 누르면 색이 변하도록 값을 변경.
                 }else{//CHECK_NUM 0이 아니면 setSelected를 false로 줘서 .
-                    btn_free.setSelected(false);
+                    btn_free.setImageResource(R.drawable.freetrip);
                     CHECK_NUM = 0; //다음에 누르면 색이 변하도록 값을 변경
                 }
             }
@@ -58,10 +59,10 @@ public class Join extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(CHECK_NUM == 0) {
-                    btn_backpacking.setSelected(true);
+                    btn_backpacking.setImageResource(R.drawable.backpacking_click);
                     CHECK_NUM = 1; // 다음에 누르면 색이 변하도록 값을 변경.
                 }else{//CHECK_NUM 0이 아니면 setSelected를 false로 줘서 .
-                    btn_backpacking.setSelected(false);
+                    btn_backpacking.setImageResource(R.drawable.backpacking);
                     CHECK_NUM = 0; //다음에 누르면 색이 변하도록 값을 변경
                 }
             }
@@ -71,10 +72,10 @@ public class Join extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(CHECK_NUM == 0) {
-                    btn_pkg.setSelected(true);
+                    btn_pkg.setImageResource(R.drawable.pkg_click);
                     CHECK_NUM = 1; // 다음에 누르면 색이 변하도록 값을 변경.
                 }else{//CHECK_NUM 0이 아니면 setSelected를 false로 줘서 .
-                    btn_pkg.setSelected(false);
+                    btn_pkg.setImageResource(R.drawable.pkg_icon);
                     CHECK_NUM = 0; //다음에 누르면 색이 변하도록 값을 변경
                 }
             }
@@ -84,10 +85,10 @@ public class Join extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(CHECK_NUM == 0) {
-                    btn_alone.setSelected(true);
+                    btn_alone.setImageResource(R.drawable.alone_click);
                     CHECK_NUM = 1; // 다음에 누르면 색이 변하도록 값을 변경.
                 }else{//CHECK_NUM 0이 아니면 setSelected를 false로 줘서 .
-                    btn_alone.setSelected(false);
+                    btn_alone.setImageResource(R.drawable.alone);
                     CHECK_NUM = 0; //다음에 누르면 색이 변하도록 값을 변경
                 }
             }
@@ -96,11 +97,12 @@ public class Join extends AppCompatActivity {
         btn_together.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(CHECK_NUM == 0) {
-                    btn_together.setSelected(true);
+                    btn_together.setImageResource(R.drawable.together_click);
                     CHECK_NUM = 1; // 다음에 누르면 색이 변하도록 값을 변경.
                 }else{//CHECK_NUM 0이 아니면 setSelected를 false로 줘서 .
-                    btn_together.setSelected(false);
+                    btn_together.setImageResource(R.drawable.together);
                     CHECK_NUM = 0; //다음에 누르면 색이 변하도록 값을 변경
                 }
             }
@@ -109,7 +111,7 @@ public class Join extends AppCompatActivity {
     }
 
     public void onBackPressed(View view) {
-        onBackPressed();
+        finish();
     }
 
      public void  onClick_realJoin(View view) {

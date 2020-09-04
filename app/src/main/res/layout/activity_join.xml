@@ -22,7 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="43"
+            android:layout_weight="55"
             android:orientation="horizontal"
             android:weightSum="720">
 
@@ -35,18 +35,13 @@
                 android:background="@drawable/logo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="76"/>
+                android:layout_weight="80"/>
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="253"/>
+                android:layout_weight="320"/>
 
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="54"/>
 
         </LinearLayout>
 
@@ -56,7 +51,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="153"
+        android:layout_weight="119"
         android:orientation="horizontal"
         android:weightSum="720">
 
@@ -671,7 +666,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="105"
+        android:layout_weight="115"
         android:weightSum="720"
         android:orientation="horizontal"
         >
@@ -687,37 +682,52 @@
             android:layout_weight="640"
             android:orientation="horizontal"
             >
-            <androidx.appcompat.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_free"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="126"
-                android:background="@drawable/selelctor_freetrip"
+                android:src="@drawable/freetrip"
+                android:padding="0sp"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"
                 />
-            <androidx.appcompat.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_backpacking"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="126"
-                android:background="@drawable/selelctor_backpacking"/>
-            <androidx.appcompat.widget.AppCompatButton
+                android:src="@drawable/backpacking"
+                android:padding="0sp"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"/>
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_pkg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="126"
-                android:background="@drawable/selelctor_pkg"/>
-            <androidx.appcompat.widget.AppCompatButton
+                android:src="@drawable/pkg_icon"
+                android:padding="0sp"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"/>
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_alone"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="126"
-                android:background="@drawable/selelctor_alone"/>
-            <androidx.appcompat.widget.AppCompatButton
+                android:src="@drawable/alone"
+                android:padding="0sp"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"/>
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_together"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="126"
-                android:background="@drawable/selelctor_together"/>
+                android:src="@drawable/together"
+                android:padding="0sp"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"

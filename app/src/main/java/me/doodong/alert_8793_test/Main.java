@@ -1,29 +1,13 @@
 package me.doodong.alert_8793_test;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,19 +16,32 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class Main extends AppCompatActivity {
     private RecyclerAdapter_Main adapter;
     ExtendedFloatingActionButton btn_choice;
     TextView tv_MainTheme;
 
+    ImageView btn_main2_go, img_main2, img_main3, img_main4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_test3);
+        setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         btn_choice = findViewById(R.id.btn_choice);
         tv_MainTheme= findViewById(R.id.tv_MainTheme);
+
+        btn_main2_go = findViewById(R.id.btn_main2_go);
+        img_main2 = findViewById(R.id.img_main2);
+        img_main3 = findViewById(R.id.img_main3);
+        img_main4 = findViewById(R.id.img_main4);
+
 
         Intent intent = getIntent();
 
@@ -109,9 +106,12 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
     public void main_Theme(View view){
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle("테마 선택");
@@ -122,7 +122,19 @@ public class Main extends AppCompatActivity {
             {
                 String[] items = getResources().getStringArray(R.array.main_dialog);
                 tv_MainTheme.setText(items[pos]);
+                if(items[pos].equals("일본") ){
+                    btn_main2_go.setBackgroundResource(R.drawable.main_img4);
+                    img_main4.setBackgroundResource(R.drawable.main_img1);
+                    img_main2.setBackgroundResource(R.drawable.main_img3);
+                    img_main3.setBackgroundResource(R.drawable.main_img2);
 
+                }else {
+                    btn_main2_go.setBackgroundResource(R.drawable.main_img1);
+                    img_main2.setBackgroundResource(R.drawable.main_img2);
+                    img_main3.setBackgroundResource(R.drawable.main_img3);
+                    img_main4.setBackgroundResource(R.drawable.main_img4);
+
+                }
             }
         });
 
@@ -154,12 +166,15 @@ public class Main extends AppCompatActivity {
 
         List<Integer> listResId = Arrays.asList(
                 R.drawable.recommendation1,
-                R.drawable.recommendation2
+                R.drawable.recommendation2,
+                R.drawable.recommendation3,
+                R.drawable.recommendation4
         );
         List<String> listTitle = Arrays.asList(
-                "반카왕마켓","입이 즐거운 먹거리"
+                "반카왕마켓","입이 즐거운 먹거리", "반카왕마켓","입이 즐거운 먹거리"
         );
         List<String> listSubtitle = Arrays.asList(
+                "예술가마을, 아기자기 수공예품 일요마켓", "센트럴 페스티벌 마켓, 입맛 없을 땐 요시노야",
                 "예술가마을, 아기자기 수공예품 일요마켓", "센트럴 페스티벌 마켓, 입맛 없을 땐 요시노야"
         );
 
