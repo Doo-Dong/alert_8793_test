@@ -5,15 +5,19 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
@@ -43,16 +47,31 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         ListData item = itemList.get(position);
 
         holder.textview.setText(item.text);
-        if (position == 1) {
-            holder.textview.setTextColor(Color.rgb(182, 182, 182));
-            holder.distance.setTextColor(Color.rgb(71, 214, 176));
-        } else {
-            holder.textview.setTextColor(Color.rgb(182, 182, 182));
-            holder.distance.setTextColor(Color.rgb(182, 182, 182));
-        }
+
+        holder.textview.setTextColor(Color.rgb(182, 182, 182));
+        holder.distance.setTextColor(Color.rgb(182, 182, 182));
+
         holder.imageview.setBackground(item.image);
         holder.direction.setBackground(item.direct);
         holder.distance.setText(item.dist);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull List<Object> payloads) {
+        if (payloads.isEmpty()) {
+            super.onBindViewHolder(holder, position, payloads);
+        } else {
+            for (Object payload : payloads) {
+                if (payload instanceof String) {
+                    String type = (String) payload;
+                    if (TextUtils.equals(type, "click")) {
+/*                        ListData item = itemList.get(position);
+                        Toast.makeText(context, position + ":" + item.text, Toast.LENGTH_SHORT).show();*/
+                        holder.textview.setTextColor(Color.rgb(71, 214, 176));
+                    }
+                }
+            }
+        }
     }
 
     @Override

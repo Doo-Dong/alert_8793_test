@@ -19,7 +19,9 @@ public class my_page extends AppCompatActivity {
     private RecyclerView listview1;
     private RecyclerView listview2;
     private RecyclerView listview3;
-    private MyAdapter adapter;
+    private MyAdapter adapter1;
+    private MyAdapter adapter2;
+    private MyAdapter adapter3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,38 +54,42 @@ public class my_page extends AppCompatActivity {
                 final int speedScroll = 2000;
                 final Handler handler = new Handler();
                 final Runnable runnable = new Runnable() {
+                    MyAdapter adapter = adapter1;
                     int count = 0;
                     int phase = 1;
                     boolean flag = true;
                     @Override
                     public void run() {
-                        if(count < adapter.getItemCount()){
-                            if(count==adapter.getItemCount()-1){
+                        if(count <= adapter.getItemCount()){
+                            if(count == adapter.getItemCount()){
                                 flag = false;
                             }else if(count == 0){
                                 flag = true;
                             }
-                            if(flag) count++;
+
+                            if(flag) {
+                                adapter.notifyItemChanged(count, "click");
+                                count++;
+                            }
                             else {
+                                adapter.notifyItemChanged(count, "click");
                                 count=0;
                                 phase++;
                             }
 
                             if(phase==1){
-                                Toast.makeText(my_page.this, "1일차", Toast.LENGTH_SHORT).show();
                                 listview1.smoothScrollToPosition(count);
-
                                 listview2.smoothScrollToPosition(0);
                                 listview3.smoothScrollToPosition(0);
                             }
                             else if(phase==2){
-                                Toast.makeText(my_page.this, "2일차", Toast.LENGTH_SHORT).show();
+                                adapter = adapter2;
                                 listview1.smoothScrollToPosition(0);
                                 listview2.smoothScrollToPosition(count);
                                 listview3.smoothScrollToPosition(0);
                             }
                             else if(phase==3){
-                                Toast.makeText(my_page.this, "3일차", Toast.LENGTH_SHORT).show();
+                                adapter = adapter3;
                                 listview1.smoothScrollToPosition(0);
                                 listview2.smoothScrollToPosition(0);
                                 listview3.smoothScrollToPosition(count);
@@ -92,6 +98,9 @@ public class my_page extends AppCompatActivity {
                                 listview1.smoothScrollToPosition(0);
                                 listview2.smoothScrollToPosition(0);
                                 listview3.smoothScrollToPosition(0);
+                                adapter1.notifyItemChanged(count, "init");
+                                adapter2.notifyItemChanged(count, "init");
+                                adapter3.notifyItemChanged(count, "init");
                             }
                             handler.postDelayed(this,speedScroll);
                         }
@@ -167,8 +176,6 @@ public class my_page extends AppCompatActivity {
         init1();
         init2();
         init3();
-
-        Intent intent = getIntent();
     }
 
     private void init1() {
@@ -198,8 +205,8 @@ public class my_page extends AppCompatActivity {
                 "");
         itemList.add(listData);
 
-        adapter = new MyAdapter(this, itemList, onClickItem);
-        listview1.setAdapter(adapter);
+        adapter1 = new MyAdapter(this, itemList, onClickItem);
+        listview1.setAdapter(adapter1);
     }
 
     private void init2() {
@@ -229,8 +236,8 @@ public class my_page extends AppCompatActivity {
                 "");
         itemList.add(listData);
 
-        adapter = new MyAdapter(this, itemList, onClickItem);
-        listview2.setAdapter(adapter);
+        adapter2 = new MyAdapter(this, itemList, onClickItem);
+        listview2.setAdapter(adapter2);
     }
 
     private void init3() {
@@ -260,8 +267,8 @@ public class my_page extends AppCompatActivity {
                 "");
         itemList.add(listData);
 
-        adapter = new MyAdapter(this, itemList, onClickItem);
-        listview3.setAdapter(adapter);
+        adapter3 = new MyAdapter(this, itemList, onClickItem);
+        listview3.setAdapter(adapter3);
     }
 
     private View.OnClickListener onClickItem = new View.OnClickListener() {
