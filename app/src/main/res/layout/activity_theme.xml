@@ -569,151 +569,134 @@
         <!--드로어-->
         <LinearLayout
             android:id="@+id/drawer"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:paddingLeft="30dp"
             android:background="#FFF"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:weightSum="1280">
+            android:weightSum="1270">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:layout_weight="100" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:weightSum="720">
+                android:gravity="right">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_Btn_close"
                     android:layout_width="17dp"
                     android:layout_height="17dp"
-                    android:background="@drawable/drawer_close" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="47"/>
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/drawer_close"
+                    android:onClick="btnCloseDrawer"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_logo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="25dp"
                     android:background="@drawable/logo" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="372"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:layout_weight="130" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="720">
+                android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="9dp"
                     android:layout_height="9dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/drawer_point"/>
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_list_btn_1"
                     android:layout_width="45dp"
                     android:layout_height="29dp"
+                    android:paddingRight="40dp"
                     android:layout_marginLeft="5dp"
-                    android:background="@drawable/main"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="372"/>
+                    android:background="@drawable/main_on"
+                    android:onClick="btn_go_Main"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40" />
+                android:layout_height="1dp"
+                android:layout_weight="30" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="720">
+                android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="9dp"
                     android:layout_height="9dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/drawer_point"/>
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_list_btn_2"
                     android:layout_width="77dp"
                     android:layout_height="29dp"
+                    android:paddingRight="40dp"
                     android:layout_marginLeft="5dp"
-                    android:background="@drawable/air_info"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="372"/>
+                    android:background="@drawable/air_info"
+                    android:onClick="btn_airInfo"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40" />
+                android:layout_height="1dp"
+                android:layout_weight="30" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="720">
+                android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="9dp"
                     android:layout_height="9dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/drawer_point"/>
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_list_btn_3"
                     android:layout_width="74dp"
                     android:layout_height="29dp"
+                    android:paddingRight="40dp"
                     android:layout_marginLeft="5dp"
-                    android:background="@drawable/mypg"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="372"/>
+                    android:background="@drawable/mypg"
+                    android:onClick="btn_myPage"
+                    />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40" />
 
         </LinearLayout>
 
