@@ -56,6 +56,7 @@ public class AfterLoginActivity extends FragmentActivity {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
             }
         });
@@ -67,6 +68,7 @@ public class AfterLoginActivity extends FragmentActivity {
                 Intent intent = new Intent(getApplicationContext(), air_info.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
             }
         });
@@ -78,6 +80,7 @@ public class AfterLoginActivity extends FragmentActivity {
                 Intent intent = new Intent(getApplicationContext(), my_page.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
             }
         });

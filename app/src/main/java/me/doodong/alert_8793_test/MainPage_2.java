@@ -70,6 +70,7 @@ public class MainPage_2 extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), air_info.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -80,6 +81,7 @@ public class MainPage_2 extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), my_page.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -134,6 +136,7 @@ public class MainPage_2 extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = new Intent(getApplicationContext(), MainPage_3.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     };
 }

@@ -117,6 +117,7 @@ public class Join extends AppCompatActivity {
      public void  onClick_realJoin(View view) {
         Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
         startActivity(intent);
+         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }
 

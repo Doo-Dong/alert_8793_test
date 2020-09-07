@@ -38,18 +38,18 @@ android:orientation="vertical">
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="300"/>
+            android:layout_weight="250"/>
 
         <ImageView
-            android:background="#FFFFFF"
+            android:background="@drawable/logo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="120"/>
+            android:layout_weight="220"/>
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="300"/>
+            android:layout_weight="250"/>
 
     </LinearLayout>
 

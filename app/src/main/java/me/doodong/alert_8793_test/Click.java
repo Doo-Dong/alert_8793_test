@@ -40,6 +40,7 @@ public class Click extends AppCompatActivity {
 
         //액티비티(팝업) 닫기
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
     }
 
