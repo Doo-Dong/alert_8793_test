@@ -98,9 +98,10 @@ public class my_page extends AppCompatActivity {
                                 listview1.smoothScrollToPosition(0);
                                 listview2.smoothScrollToPosition(0);
                                 listview3.smoothScrollToPosition(0);
-                                adapter1.notifyItemChanged(count, "init");
-                                adapter2.notifyItemChanged(count, "init");
-                                adapter3.notifyItemChanged(count, "init");
+                                adapter1.notifyItemRangeChanged(0,3, "init");
+                                adapter2.notifyItemRangeChanged(0,3, "init");
+                                adapter3.notifyItemRangeChanged(0,3, "init");
+                                count = adapter.getItemCount() + 1;
                             }
                             handler.postDelayed(this,speedScroll);
                         }

@@ -69,6 +69,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                         Toast.makeText(context, position + ":" + item.text, Toast.LENGTH_SHORT).show();*/
                         holder.textview.setTextColor(Color.rgb(71, 214, 176));
                     }
+                    if (TextUtils.equals(type, "init")) {
+/*                        ListData item = itemList.get(position);
+                        Toast.makeText(context, position + ":" + item.text, Toast.LENGTH_SHORT).show();*/
+                        holder.textview.setTextColor(Color.rgb(182, 182, 182));
+                    }
                 }
             }
         }
