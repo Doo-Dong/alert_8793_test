@@ -1,6 +1,7 @@
 package me.doodong.alert_8793_test;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+
+import java.util.ArrayList;
 
 public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
 
@@ -125,6 +130,8 @@ public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
     public void oneMarker() {
         // 서울 여의도에 대한 위치 설정
         LatLng seoul = new LatLng(18.816383, 98.891942);
+        ArrayList<LatLng> arrayPoints = new ArrayList<>();
+        arrayPoints.add(seoul);
 
         // 구글 맵에 표시할 마커에 대한 옵션 설정  (알파는 좌표의 투명도이다.)
         MarkerOptions makerOptions = new MarkerOptions();
@@ -137,6 +144,31 @@ public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
 
         // 마커를 생성한다. showInfoWindow를 쓰면 처음부터 마커에 상세정보가 뜨게한다. (안쓰면 마커눌러야뜸)
         mMap.addMarker(makerOptions); //.showInfoWindow();
+
+        // for loop를 통한 n개의 마커 생성
+        for (int idx = 0; idx < 10; idx++) {
+            // 1. 마커 옵션 설정 (만드는 과정)
+            makerOptions = new MarkerOptions();
+            makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                    .position(new LatLng(18.816383 + idx, 98.891942))
+                    .title("마커" + idx) // 타이틀.
+                    .snippet("치앙마이의 상징이된 황금사원")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                    .alpha(0.8f);
+
+            arrayPoints.add(new LatLng(18.816383 + idx, 98.891942));
+
+            PolylineOptions polylineOptions = new PolylineOptions();
+            polylineOptions
+                    .color(Color.RED)
+                    .width(5)
+                    .addAll(arrayPoints);
+
+            // 2. 마커 생성 (마커를 나타냄)
+            mMap.addMarker(makerOptions);
+            // 3. 경로 생성
+            mMap.addPolyline(polylineOptions);
+        }
 
 
         //정보창 클릭 리스너

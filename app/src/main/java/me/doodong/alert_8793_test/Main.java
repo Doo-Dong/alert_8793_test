@@ -84,6 +84,7 @@ public class Main extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -94,6 +95,7 @@ public class Main extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), air_info.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -104,6 +106,7 @@ public class Main extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), my_page.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -156,6 +159,7 @@ public class Main extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     };
 
@@ -196,10 +200,12 @@ public class Main extends AppCompatActivity {
     public void  onClick_my_theme(View view) {
         Intent intent = new Intent(getApplicationContext(), Theme.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
     public void  onClick_main2(View view) {
         Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }

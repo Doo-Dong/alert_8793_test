@@ -121,6 +121,7 @@ public class Theme extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -131,6 +132,7 @@ public class Theme extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), air_info.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -141,6 +143,7 @@ public class Theme extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), my_page.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -215,11 +218,13 @@ public class Theme extends AppCompatActivity {
         //Toast.makeText(Theme.this, "선택완료 클릭", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), my_page.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
     public void  onClick_place(View view) {
         Intent intent = new Intent(getApplicationContext(), Theme_Map.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
     }
 

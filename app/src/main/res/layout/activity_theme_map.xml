@@ -253,7 +253,7 @@
     <!--드로어 부분-->
     <LinearLayout
         android:id="@+id/drawer"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#FFF"
@@ -275,7 +275,7 @@
                 android:id="@+id/drawerLayout_Btn_close"
                 android:layout_width="17dp"
                 android:layout_height="17dp"
-                android:layout_marginRight="34dp"
+                android:layout_marginRight="17dp"
                 android:background="@drawable/drawer_close"
                 android:onClick="btnCloseDrawer"/>
         </LinearLayout>
@@ -294,7 +294,7 @@
                 android:id="@+id/drawerLayout_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/logo" />
         </LinearLayout>
 
@@ -312,7 +312,7 @@
                 android:layout_width="9dp"
                 android:layout_height="9dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/drawer_point"
                 />
             <androidx.appcompat.widget.AppCompatButton
@@ -321,7 +321,7 @@
                 android:layout_height="29dp"
                 android:paddingRight="40dp"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/main"
+                android:background="@drawable/main_on"
                 android:onClick="btn_go_Main"
                 />
         </LinearLayout>
@@ -340,7 +340,7 @@
                 android:layout_width="9dp"
                 android:layout_height="9dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/drawer_point"
                 />
             <androidx.appcompat.widget.AppCompatButton
@@ -368,7 +368,7 @@
                 android:layout_width="9dp"
                 android:layout_height="9dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/drawer_point"
                 />
             <androidx.appcompat.widget.AppCompatButton

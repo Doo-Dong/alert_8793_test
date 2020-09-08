@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class my_page extends AppCompatActivity {
+public class FriendsResult extends AppCompatActivity {
     private RecyclerView listview1;
     private RecyclerView listview2;
     private RecyclerView listview3;
@@ -287,18 +287,4 @@ public class my_page extends AppCompatActivity {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     };
-}
-
-class ListData {
-    String text;
-    Drawable image;
-    Drawable direct;
-    String dist;
-
-    ListData(String text, Drawable image, Drawable direct, String dist) {
-        this.text = text;
-        this.image = image;
-        this.direct = direct;
-        this.dist = dist;
-    }
 }

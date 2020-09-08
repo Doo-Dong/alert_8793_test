@@ -52,6 +52,7 @@ public class air_info extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -72,6 +73,7 @@ public class air_info extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), my_page.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
     }

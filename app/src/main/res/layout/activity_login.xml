@@ -38,18 +38,18 @@ android:orientation="vertical">
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="300"/>
+            android:layout_weight="250"/>
 
         <ImageView
-            android:background="#FFFFFF"
+            android:background="@drawable/logo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="120"/>
+            android:layout_weight="220"/>
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="300"/>
+            android:layout_weight="250"/>
 
     </LinearLayout>
 
@@ -73,6 +73,7 @@ android:orientation="vertical">
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="516"
+        android:textSize="10sp"
         android:hint="아이디"></EditText>
 
     <LinearLayout
@@ -100,6 +101,7 @@ android:orientation="vertical">
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="516"
+        android:textSize="10sp"
         android:hint="비밀번호"></EditText>
 
     <LinearLayout
