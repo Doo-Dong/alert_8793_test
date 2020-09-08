@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -38,9 +39,11 @@ public class my_page extends AppCompatActivity {
         // 드로어 버튼 객체 참조
         Button btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
         Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
-        Button btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
-        Button btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
-        Button btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
+        TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
+        TextView btnList_thai = findViewById(R.id.drawerLayout_list_btn_thai);
+        TextView btnList_jap = findViewById(R.id.drawerLayout_list_btn_jap);
+        TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
+        TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
         // 바텀 버튼 객체 참조
         Button mypg_bottom_btn_1 = findViewById(R.id.mypg_bottom_btn_1);
@@ -153,10 +156,35 @@ public class my_page extends AppCompatActivity {
         btnList_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
+                drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
+
+        // 태국
+        btnList_thai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
+
+        // 일본
+        btnList_jap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
 
@@ -168,6 +196,7 @@ public class my_page extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
 
@@ -285,6 +314,7 @@ public class my_page extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainPage_3.class);
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
         }
     };
 }

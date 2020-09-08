@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -56,8 +57,10 @@ public class Main extends AppCompatActivity {
 
         // 드로어 버튼 객체 참조
         ImageButton btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
-        LinearLayout btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
+        Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
         TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
+        TextView btnList_thai = findViewById(R.id.drawerLayout_list_btn_thai);
+        TextView btnList_jap = findViewById(R.id.drawerLayout_list_btn_jap);
         TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
         TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
@@ -81,10 +84,29 @@ public class Main extends AppCompatActivity {
         btnList_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Main.class);
+                Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
+
+        // 태국
+        btnList_thai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                drawerLayout.closeDrawer(drawerView);
+            }
+        });
+
+        // 일본
+        btnList_jap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                drawerLayout.closeDrawer(drawerView);
             }
         });
 
@@ -96,6 +118,7 @@ public class Main extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
 
@@ -107,6 +130,7 @@ public class Main extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
 
@@ -160,6 +184,7 @@ public class Main extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
         }
     };
 
@@ -201,11 +226,13 @@ public class Main extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Theme.class);
         startActivity(intent);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        finish();
     }
 
     public void  onClick_main2(View view) {
         Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
         startActivity(intent);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        finish();
     }
 }
