@@ -32,7 +32,7 @@
                 android:layout_weight="320"/>
 
             <ImageView
-                android:background="@drawable/logo"
+                android:background="@drawable/logo_menu"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="80"/>

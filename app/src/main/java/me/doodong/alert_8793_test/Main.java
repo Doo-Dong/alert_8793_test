@@ -4,9 +4,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -56,10 +56,10 @@ public class Main extends AppCompatActivity {
 
         // 드로어 버튼 객체 참조
         ImageButton btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
-        Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
-        Button btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
-        Button btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
-        Button btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
+        LinearLayout btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
+        TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
+        TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
+        TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
         // 드로어 여는 버튼 리스너
         btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +112,6 @@ public class Main extends AppCompatActivity {
 
 
     }
-
     public void main_Theme(View view){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

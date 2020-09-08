@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -83,7 +82,6 @@ public class Theme extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        spinner();
         init();
         getData();
 
@@ -95,10 +93,10 @@ public class Theme extends AppCompatActivity {
 
         // 드로어 버튼 객체 참조
         ImageButton btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
-        Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
-        Button btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
-        Button btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
-        Button btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
+        LinearLayout btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
+        TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
+        TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
+        TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
         // 드로어 여는 버튼 리스너
         btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +150,7 @@ public class Theme extends AppCompatActivity {
 
     }
 
-    public void spinner(){
+    public void spinner(View view){
         AppCompatSpinner spinner = findViewById(R.id.spinner);
         ArrayAdapter dayAdapter = ArrayAdapter.createFromResource(this, R.array.theme_spinner, android.R.layout.simple_spinner_dropdown_item);
         dayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -161,7 +159,7 @@ public class Theme extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.parseColor("#0bb58b"));
+                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.parseColor("#74e4c4"));
                 ((TextView) adapterView.getChildAt(0)).setTextSize(12);
                 ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);
             }
