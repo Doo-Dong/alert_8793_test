@@ -6,4 +6,6 @@
     <color name="alertPrimary">#00FFA5</color>
 
     <color name="transparent">#1A000000</color>
+    <color name="transparent_spinner">#ffffff</color>
+
 </resources>

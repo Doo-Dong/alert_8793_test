@@ -60,18 +60,13 @@
                         android:background="@drawable/logo"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="76"/>
+                        android:layout_weight="80"/>
 
                     <View
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="253"/>
+                        android:layout_weight="320"/>
 
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="54"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -613,7 +608,7 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="50dp"
-                android:background="#0BB68C"
+                android:background="#74e4c4"
                 android:drawableRight="@drawable/btn_arrow_right"
                 android:gravity="center"
                 android:onClick="onClick_my_theme"
@@ -629,7 +624,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:paddingLeft="30dp"
             android:background="#FFF"
             android:orientation="vertical"
             android:weightSum="1280">
@@ -637,143 +631,277 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="100" />
+                android:layout_weight="100"
+                android:weightSum="493"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="50"
                 android:orientation="horizontal"
                 android:gravity="right"
-                android:weightSum="720">
+                android:weightSum="493">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="402.2"/>
+
+                <LinearLayout
                     android:id="@+id/drawerLayout_Btn_close"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:background="@drawable/drawer_close" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                   >
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="15"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="20"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"/>
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:background="@drawable/drawer_close" />
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="15"/>
+                </LinearLayout>
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="47"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_height="0dp"
+                android:layout_weight="33.4"
+                android:weightSum="493"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:orientation="horizontal"
+                android:weightSum="493">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="62"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_logo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/logo" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="125"
+                    android:background="@drawable/logo_menu" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="372"/>
+                    android:layout_weight="306"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="130" />
+                android:layout_weight="82"
+                android:weightSum="493"></LinearLayout>
 
+<!--main-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="40"
                 android:orientation="horizontal"
-                android:weightSum="720">
+                android:weightSum="493">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="62"/>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="9dp"
-                    android:layout_height="9dp"
-                    android:layout_marginLeft="20dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
                     android:layout_gravity="center"
-                    android:background="@drawable/drawer_point"/>
-                <androidx.appcompat.widget.AppCompatButton
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="29">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"/>
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9"
+                        android:layout_gravity="center"
+                        android:background="@drawable/drawer_point"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"/>
+
+                <TextView
                     android:id="@+id/drawerLayout_list_btn_1"
-                    android:layout_width="45dp"
-                    android:layout_height="29dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/main_on"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="95"
+                    android:text="Main"
+                    android:textColor="#74e4c4"
+                    android:textSize="14sp"/>
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="372"/>
+                    android:layout_weight="321"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="40" />
+                android:layout_weight="40"
+                android:weightSum="493"></LinearLayout>
 
+<!--air_info-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="40"
                 android:orientation="horizontal"
-                android:weightSum="720">
+                android:weightSum="493">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="62"/>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="9dp"
-                    android:layout_height="9dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/drawer_point"/>
-                <androidx.appcompat.widget.AppCompatButton
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
+                    android:orientation="vertical"
+                    android:weightSum="29">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"/>
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9"
+                        android:layout_gravity="center"
+                        android:background="@drawable/drawer_point"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"/>
+
+                <TextView
                     android:id="@+id/drawerLayout_list_btn_2"
-                    android:layout_width="77dp"
-                    android:layout_height="29dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/air_info"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="95"
+                    android:hint="공항 정보"
+                    android:textSize="14sp"/>
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="372"/>
+                    android:layout_weight="321"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="40" />
+                android:layout_weight="39"
+                android:weightSum="493"></LinearLayout>
 
+<!--mypage-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="40"
                 android:orientation="horizontal"
-                android:weightSum="720">
+                android:weightSum="493">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="62"/>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="9dp"
-                    android:layout_height="9dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/drawer_point"/>
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/drawerLayout_list_btn_3"
-                    android:layout_width="74dp"
-                    android:layout_height="29dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/mypg"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
+                    android:orientation="vertical"
+                    android:weightSum="29">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"/>
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9"
+                        android:layout_gravity="center"
+                        android:background="@drawable/drawer_point"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"/>
+                </LinearLayout>
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="372"/>
-            </LinearLayout>
+                    android:layout_weight="10"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40" />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="95"
+                    android:hint="My Page"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="321"/>
+            </LinearLayout>
 
         </LinearLayout>
-
-
     </androidx.drawerlayout.widget.DrawerLayout>
 </LinearLayout>
