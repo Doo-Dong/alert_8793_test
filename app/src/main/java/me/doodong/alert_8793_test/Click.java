@@ -1,18 +1,24 @@
 package me.doodong.alert_8793_test;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatSpinner;
 
 
 public class Click extends AppCompatActivity {
     //TextView txtText;
     LinearLayout layout;
+    ArrayAdapter<CharSequence> click1, click2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,55 @@ public class Click extends AppCompatActivity {
        /* String data = intent.getStringExtra("data");
         txtText.setText(data);*/
 
+        spinner_click1();
+        spinner_click2();
+
+
+    }
+
+    public void spinner_click1(){
+        AppCompatSpinner spinner = findViewById(R.id.click_spinner1);
+        click1 = ArrayAdapter.createFromResource(this, R.array.click_spinner1, android.R.layout.simple_spinner_dropdown_item);
+        click1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(click1);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ((TextView) adapterView.getChildAt(0)).setSelected(true);
+                ((TextView) adapterView.getChildAt(0)).setTextSize(10);
+                ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);
+                ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public void spinner_click2(){
+        AppCompatSpinner spinner = findViewById(R.id.click_spinner2);
+        click2 = ArrayAdapter.createFromResource(this, R.array.click_spinner2, android.R.layout.simple_spinner_dropdown_item);
+        click2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(click2);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ((TextView) adapterView.getChildAt(0)).setSelected(true);
+                ((TextView) adapterView.getChildAt(0)).setTextSize(10);
+                ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);
+                ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     //확인 버튼 클릭

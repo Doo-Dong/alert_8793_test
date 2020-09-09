@@ -252,7 +252,6 @@
                     android:orientation="horizontal"
                     android:background="@drawable/spinner"
                     android:weightSum="7"
-                    android:onClick="spinner"
                     >
 
                     <androidx.appcompat.widget.AppCompatSpinner
@@ -566,7 +565,7 @@
                 android:layout_marginLeft="60dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 android:background="#74e4c4"
                 android:drawableRight="@drawable/btn_arrow_right"
                 android:gravity="center"

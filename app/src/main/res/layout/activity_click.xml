@@ -14,7 +14,7 @@
         android:layout_weight="420"
         ></LinearLayout>
 
-<!--내용시작-->
+    <!--내용시작-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="76"></LinearLayout>
 
-<!-- 1일차-->
+            <!-- 1일차-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -71,42 +71,16 @@
                         android:weightSum="525"
                         android:orientation="horizontal"
                         android:background="@drawable/card_round"
-                       >
+                        >
 
-                        <LinearLayout
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/click_spinner1"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="217"></LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="55"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="16"></LinearLayout>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="34"
-                                android:text="1일차"
-                                android:textStyle="bold"
-                                android:textSize="10sp"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="15"></LinearLayout>
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="194.9"></LinearLayout>
+                            android:layout_weight="458.9"
+                            android:background="@null"
+                            android:textAlignment="center"
+                            />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -143,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="62"></LinearLayout>
-<!--오전-->
+            <!--오전-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -170,40 +144,14 @@
                         android:background="@drawable/card_round"
                         >
 
-                        <LinearLayout
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/click_spinner2"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="224"></LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="42"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="16"></LinearLayout>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="34"
-                                android:text="오전"
-                                android:textStyle="bold"
-                                android:textSize="10sp"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="15"></LinearLayout>
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="200.9"></LinearLayout>
+                            android:layout_weight="458.9"
+                            android:background="@null"
+                            android:textAlignment="center"
+                            />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -299,7 +247,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="57"
-           ></LinearLayout>
+            ></LinearLayout>
 
     </LinearLayout>
 

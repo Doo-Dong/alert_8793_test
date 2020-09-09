@@ -37,4 +37,8 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="EditTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/cursorColor</item>
+        <item name="colorControlNormal">@color/nomalColor</item>
+    </style>
 </resources>

@@ -53,7 +53,7 @@ public class Theme extends AppCompatActivity {
         image_list2 = findViewById(R.id.image_list2);
 
         Intent intent = getIntent();
-
+        spinner();
         try {
             InputStream is = getBaseContext().getResources().getAssets().open("inform_chiangmai.xls");
             Workbook wb = Workbook.getWorkbook(is);
@@ -150,7 +150,7 @@ public class Theme extends AppCompatActivity {
 
     }
 
-    public void spinner(View view){
+    public void spinner(){
         AppCompatSpinner spinner = findViewById(R.id.spinner);
         ArrayAdapter dayAdapter = ArrayAdapter.createFromResource(this, R.array.theme_spinner, android.R.layout.simple_spinner_dropdown_item);
         dayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -159,6 +159,7 @@ public class Theme extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ((TextView) adapterView.getChildAt(0)).setSelected(true);
                 ((TextView) adapterView.getChildAt(0)).setTextColor(Color.parseColor("#74e4c4"));
                 ((TextView) adapterView.getChildAt(0)).setTextSize(12);
                 ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);

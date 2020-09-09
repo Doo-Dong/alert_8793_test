@@ -141,7 +141,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:background="@drawable/id_icon"
+                    android:background="@drawable/id_icon_size"
                     android:layout_weight="21"
                     />
                 <LinearLayout
