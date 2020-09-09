@@ -29,6 +29,8 @@ public class Main extends AppCompatActivity {
 
     ImageView btn_main2_go, img_main2, img_main3, img_main4;
 
+    String country;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +45,22 @@ public class Main extends AppCompatActivity {
         img_main3 = findViewById(R.id.img_main3);
         img_main4 = findViewById(R.id.img_main4);
 
-
         Intent intent = getIntent();
+        country = intent.getStringExtra("country");
+
+        if(country.equals("일본")){
+            btn_main2_go.setBackgroundResource(R.drawable.main_img4);
+            img_main4.setBackgroundResource(R.drawable.main_img1);
+            img_main2.setBackgroundResource(R.drawable.main_img3);
+            img_main3.setBackgroundResource(R.drawable.main_img2);
+            tv_MainTheme.setText("일본");
+        }else {
+            btn_main2_go.setBackgroundResource(R.drawable.main_img1);
+            img_main2.setBackgroundResource(R.drawable.main_img2);
+            img_main3.setBackgroundResource(R.drawable.main_img3);
+            img_main4.setBackgroundResource(R.drawable.main_img4);
+            tv_MainTheme.setText("태국");
+        }
 
         init();
         getData();
@@ -147,19 +163,20 @@ public class Main extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int pos)
             {
                 String[] items = getResources().getStringArray(R.array.main_dialog);
+
                 tv_MainTheme.setText(items[pos]);
-                if(items[pos].equals("일본") ){
+                if(items[pos].equals("일본")){
                     btn_main2_go.setBackgroundResource(R.drawable.main_img4);
                     img_main4.setBackgroundResource(R.drawable.main_img1);
                     img_main2.setBackgroundResource(R.drawable.main_img3);
                     img_main3.setBackgroundResource(R.drawable.main_img2);
-
+                    tv_MainTheme.setText("일본");
                 }else {
                     btn_main2_go.setBackgroundResource(R.drawable.main_img1);
                     img_main2.setBackgroundResource(R.drawable.main_img2);
                     img_main3.setBackgroundResource(R.drawable.main_img3);
                     img_main4.setBackgroundResource(R.drawable.main_img4);
-
+                    tv_MainTheme.setText("태국");
                 }
             }
         });

@@ -134,6 +134,7 @@ public class Theme extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","태국");
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -146,6 +147,7 @@ public class Theme extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","일본");
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
