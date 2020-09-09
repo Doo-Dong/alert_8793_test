@@ -339,14 +339,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="34"/>
+
                                     <ImageView
                                         android:id="@+id/img_main2"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="530"
                                         android:background="@drawable/main_img2"
-                                        android:onClick="onClick_main2"
-                                        />
+                                        android:onClick="onClick_main2" />
+
                                     <ImageView
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
@@ -502,7 +503,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="126"
+                            android:layout_weight="146"
                             android:orientation="horizontal"
                             android:weightSum="720"
                             >
@@ -576,7 +577,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="197"></LinearLayout>
+                            android:layout_weight="177"></LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
@@ -600,7 +601,7 @@
                 android:layout_marginLeft="60dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 android:background="#74e4c4"
                 android:drawableRight="@drawable/btn_arrow_right"
                 android:gravity="center"

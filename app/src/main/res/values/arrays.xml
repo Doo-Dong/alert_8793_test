@@ -14,6 +14,34 @@
         <item>"1일차"</item>
         <item>"2일차"</item>
         <item>"3일차"</item>
+    </string-array>
 
+
+    <string-array name = "gender_spinner">
+        <item>"남"</item>
+        <item>"여"</item>
+    </string-array>
+
+
+    <string-array name = "age_spinner">
+        <item>"10대"</item>
+        <item>"20대"</item>
+        <item>"30대"</item>
+        <item>"40대"</item>
+        <item>"50대"</item>
+        <item>"60대"</item>
+    </string-array>
+
+    <string-array name = "click_spinner1">
+        <item>"1일차"</item>
+        <item>"2일차"</item>
+        <item>"3일차"</item>
+    </string-array>
+
+    <string-array name = "click_spinner2">
+        <item>"오전"</item>
+        <item>"오후"</item>
+        <item>"점심"</item>
+        <item>"저녁"</item>
     </string-array>
 </resources>
