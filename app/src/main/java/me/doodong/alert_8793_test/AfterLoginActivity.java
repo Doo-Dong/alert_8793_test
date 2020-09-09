@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
@@ -29,9 +30,11 @@ public class AfterLoginActivity extends FragmentActivity {
         // 드로어 버튼 객체 참조
         Button btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
         Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
-        Button btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
-        Button btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
-        Button btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
+        TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
+        TextView btnList_thai = findViewById(R.id.drawerLayout_list_btn_thai);
+        TextView btnList_jap = findViewById(R.id.drawerLayout_list_btn_jap);
+        TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
+        TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
         // 드로어 여는 버튼 리스너
         btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +56,36 @@ public class AfterLoginActivity extends FragmentActivity {
         btnList_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+                */
+                drawerLayout.closeDrawer(drawerView);
+            }
+        });
+
+        // 태국
+        btnList_thai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","태국");
+                drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
+
+        // 일본
+        btnList_jap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","일본");
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

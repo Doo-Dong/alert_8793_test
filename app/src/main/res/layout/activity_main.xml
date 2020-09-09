@@ -23,58 +23,51 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="110"
-                android:orientation="vertical">
+                android:weightSum="720"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="26.8"
-                    android:orientation="horizontal"
-                    android:weightSum="720"></LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="31" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="43"
-                    android:orientation="horizontal"
-                    android:weightSum="720">
+                <ImageButton
+                    android:id="@+id/drawerLayout_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="50"
+                    android:background="@drawable/dehaze_blk"
+                    android:layout_gravity="center"
+                    android:clickable="true" />
 
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="31.2"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="260" />
 
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:background="@drawable/dehaze_black"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="40.2"
-                        android:id="@+id/drawerLayout_Btn"/>
+                <ImageView
+                    android:id="@+id/button6"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/logo" />
 
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="248.6"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="260" />
 
-                    <ImageView
-                        android:background="@drawable/logo"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="80"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:background="@android:color/transparent"
+                    android:clickable="false" />
 
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="320"/>
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="26.8"
-                    android:orientation="horizontal"
-                    android:weightSum="720"></LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="31" />
 
             </LinearLayout>
 
@@ -622,285 +615,194 @@
         <!--드로어-->
         <LinearLayout
             android:id="@+id/drawer"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:background="#FFF"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:weightSum="1280">
+            android:weightSum="1270">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="100"
-                android:weightSum="493"/>
+                android:layout_height="1dp"
+                android:layout_weight="100" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="50"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:weightSum="493">
+                android:layout_height="wrap_content"
+                android:gravity="right">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="402.2"/>
-
-                <LinearLayout
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_Btn_close"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="50"
-                    android:orientation="vertical"
-                   >
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="15"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="20"
-                        android:orientation="horizontal">
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="10"/>
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="10"
-                            android:background="@drawable/drawer_close" />
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="10"/>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="15"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="47"/>
-
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/drawer_close"
+                    android:onClick="btnCloseDrawer"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="33.4"
-                android:weightSum="493"></LinearLayout>
+                android:layout_height="1dp"
+                android:layout_weight="20" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="90"
-                android:orientation="horizontal"
-                android:weightSum="493">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="62"/>
+                android:layout_height="wrap_content"
+                android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/drawerLayout_logo"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="125"
-                    android:background="@drawable/logo_menu" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="306"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/logo" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="82"
-                android:weightSum="493"></LinearLayout>
+                android:layout_height="1dp"
+                android:layout_weight="130" />
 
-<!--main-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                android:orientation="horizontal"
-                android:weightSum="493">
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="62"/>
+                android:layout_height="wrap_content"
+                android:gravity="left">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="9"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
                     android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:weightSum="29">
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"/>
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="9"
-                        android:layout_gravity="center"
-                        android:background="@drawable/drawer_point"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"/>
-
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
                 <TextView
                     android:id="@+id/drawerLayout_list_btn_1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="95"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
                     android:text="Main"
-                    android:textColor="#74e4c4"
-                    android:textSize="14sp"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="321"/>
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                android:weightSum="493"></LinearLayout>
+                android:layout_height="1dp"
+                android:layout_weight="30" />
 
-<!--air_info-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                android:orientation="horizontal"
-                android:weightSum="493">
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="62"/>
+                android:layout_height="wrap_content"
+                android:gravity="left">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="9"
-                    android:orientation="vertical"
-                    android:weightSum="29">
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"/>
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="9"
-                        android:layout_gravity="center"
-                        android:background="@drawable/drawer_point"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"/>
-                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_thai"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="태국"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_jap"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="일본"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
                 <TextView
                     android:id="@+id/drawerLayout_list_btn_2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="95"
-                    android:hint="공항 정보"
-                    android:textSize="14sp"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="321"/>
+                    android:layout_width="60dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="공항 정보"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="39"
-                android:weightSum="493"></LinearLayout>
+                android:layout_height="1dp"
+                android:layout_weight="30" />
 
-<!--mypage-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="40"
-                android:orientation="horizontal"
-                android:weightSum="493">
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="62"/>
+                android:layout_height="wrap_content"
+                android:gravity="left">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="9"
-                    android:orientation="vertical"
-                    android:weightSum="29">
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"/>
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="9"
-                        android:layout_gravity="center"
-                        android:background="@drawable/drawer_point"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="10"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"/>
-
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
                 <TextView
                     android:id="@+id/drawerLayout_list_btn_3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="95"
-                    android:hint="My Page"
-                    android:textSize="14sp"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="321"/>
+                    android:layout_width="60dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="My Page"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
             </LinearLayout>
 
         </LinearLayout>

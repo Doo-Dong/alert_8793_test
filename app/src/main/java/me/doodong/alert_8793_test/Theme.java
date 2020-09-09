@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,7 +37,7 @@ public class Theme extends AppCompatActivity {
 
     private RecyclerAdapter_Theme adapter;
     ExtendedFloatingActionButton btn_choice;
-    LinearLayout btn_place, btn_list;
+    CardView btn_place;
     ImageView image_place, image_list1, image_list2;
 
     @Override
@@ -47,7 +49,6 @@ public class Theme extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         btn_place = findViewById(R.id.btn_place);
-        btn_list = findViewById(R.id.btn_list);
         image_place = findViewById(R.id.image_place);
         image_list1 = findViewById(R.id.image_list1);
         image_list2 = findViewById(R.id.image_list2);
@@ -93,8 +94,10 @@ public class Theme extends AppCompatActivity {
 
         // 드로어 버튼 객체 참조
         ImageButton btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
-        LinearLayout btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
+        Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
         TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
+        TextView btnList_thai = findViewById(R.id.drawerLayout_list_btn_thai);
+        TextView btnList_jap = findViewById(R.id.drawerLayout_list_btn_jap);
         TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
         TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
@@ -118,10 +121,37 @@ public class Theme extends AppCompatActivity {
         btnList_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Main.class);
+                Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
+
+        // 태국
+        btnList_thai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","태국");
+                drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
+
+        // 일본
+        btnList_jap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","일본");
+                drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
 
@@ -133,6 +163,7 @@ public class Theme extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
 
@@ -144,6 +175,7 @@ public class Theme extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
 
@@ -220,6 +252,7 @@ public class Theme extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), my_page.class);
         startActivity(intent);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        finish();
     }
 
     public void  onClick_place(View view) {

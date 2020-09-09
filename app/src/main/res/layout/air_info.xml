@@ -151,20 +151,21 @@
                 android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="9dp"
-                    android:layout_height="9dp"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:background="@drawable/drawer_point"
                     />
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
                     android:id="@+id/drawerLayout_list_btn_1"
                     android:layout_width="45dp"
                     android:layout_height="29dp"
-                    android:paddingRight="40dp"
                     android:layout_marginLeft="5dp"
-                    android:background="@drawable/main"
-                    android:onClick="btn_go_Main"
+                    android:text="Main"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
                     />
             </LinearLayout>
 
@@ -179,20 +180,79 @@
                 android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="9dp"
-                    android:layout_height="9dp"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:background="@drawable/drawer_point"
                     />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_thai"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="태국"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
                 <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_jap"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="일본"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
                     android:id="@+id/drawerLayout_list_btn_2"
-                    android:layout_width="77dp"
+                    android:layout_width="60dp"
                     android:layout_height="29dp"
-                    android:paddingRight="40dp"
                     android:layout_marginLeft="5dp"
-                    android:background="@drawable/air_info_on"
-                    android:onClick="btn_airInfo"
+                    android:text="공항 정보"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
                     />
             </LinearLayout>
 
@@ -207,20 +267,21 @@
                 android:gravity="left">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="9dp"
-                    android:layout_height="9dp"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:background="@drawable/drawer_point"
                     />
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
                     android:id="@+id/drawerLayout_list_btn_3"
-                    android:layout_width="74dp"
+                    android:layout_width="60dp"
                     android:layout_height="29dp"
-                    android:paddingRight="40dp"
                     android:layout_marginLeft="5dp"
-                    android:background="@drawable/mypg"
-                    android:onClick="btn_myPage"
+                    android:text="My Page"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
                     />
             </LinearLayout>
 
