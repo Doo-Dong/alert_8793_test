@@ -148,21 +148,20 @@
                     android:layout_height="match_parent"
                     android:layout_weight="130"
                     android:orientation="horizontal"
-                    android:background="@drawable/spinner"
                     android:weightSum="7"
                     >
 
                     <androidx.appcompat.widget.AppCompatSpinner
                         android:id="@+id/spinner"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="5"
                         android:background="@color/transparent_spinner"
                         />
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:background="@drawable/keyboard_arrow_right_color"
                         />
@@ -232,7 +231,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="34"
                 android:orientation="horizontal"
-                android:weightSum="720">
+                android:weightSum="720"
+                >
 
                 <LinearLayout
                     android:layout_width="0dp"

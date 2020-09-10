@@ -51,7 +51,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="119"
+        android:layout_weight="99"
         android:orientation="horizontal"
         android:weightSum="720">
 
@@ -63,7 +63,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="75"
+        android:layout_weight="80"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -88,9 +88,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="580"
                 android:hint="아이디"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 android:drawableLeft="@drawable/id_icon_size"
-                android:drawablePadding="10dp"
+                android:drawablePadding="15dp"
                 android:inputType="textNoSuggestions"
                 />
         </LinearLayout>
@@ -113,7 +113,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="75"
+        android:layout_weight="80"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -141,7 +141,7 @@
                 android:hint="비밀번호"
                 android:drawableLeft="@drawable/pw_icon_size"
                 android:drawablePadding="10dp"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 android:inputType="textPassword"
                 />
 
@@ -165,7 +165,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="75"
+        android:layout_weight="80"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -194,7 +194,7 @@
                 android:drawablePadding="10dp"
                 android:hint="비밀번호확인"
                 android:inputType="textPassword"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 />
 
         </LinearLayout>
@@ -217,7 +217,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="75"
+        android:layout_weight="80"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -245,7 +245,7 @@
                 android:hint="이메일"
                 android:drawableLeft="@drawable/email_icon_size"
                 android:drawablePadding="10dp"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 android:inputType="textWebEmailAddress"
                 />
 
@@ -269,7 +269,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="75"
+        android:layout_weight="80"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -295,7 +295,7 @@
                 android:layout_weight="70"
                 android:hint="성별"
                 android:textStyle="bold"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 android:gravity="center"
                 />
             <androidx.appcompat.widget.AppCompatSpinner
@@ -319,7 +319,7 @@
                 android:layout_weight="90"
                 android:hint="연령대"
                 android:textStyle="bold"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 android:gravity="center"
                 />
             <androidx.appcompat.widget.AppCompatSpinner
@@ -360,7 +360,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="29"
+        android:layout_weight="40"
         android:orientation="horizontal"
         android:weightSum="720"
         android:layout_gravity="center"
@@ -374,16 +374,16 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="74"
+            android:layout_weight="120"
             android:text="여행타입"
             android:textStyle="bold"
             android:gravity="center"
-            android:textSize="10sp"
+            android:textSize="15sp"
             />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="606"></LinearLayout>
+            android:layout_weight="560"></LinearLayout>
 
     </LinearLayout>
 
@@ -403,7 +403,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="125"
+        android:layout_weight="135"
         android:weightSum="720"
         android:orientation="horizontal"
         >
@@ -471,7 +471,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="125"
+        android:layout_weight="135"
         android:weightSum="720"
         android:orientation="horizontal"
         >

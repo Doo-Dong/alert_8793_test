@@ -1,6 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@android:color/transparent" />
-    <corners android:radius="2dp" />
-</shape>
+<selector xmlns:Android="http://schemas.android.com/apk/res/android">
+
+    <item>
+
+        <layer-list>
+
+            <item>
+                <color
+                    Android:color="@android:color/white"/>
+            </item>
+
+            <item>
+                <bitmap
+                    Android:gravity="center_vertical|right"
+                    Android:src="@drawable/keyboard_arrow_right_color"/>
+            </item>
+
+        </layer-list>
+
+    </item>
+
+</selector>
