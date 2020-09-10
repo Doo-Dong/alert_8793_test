@@ -8,22 +8,39 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.security.cert.CertPathValidatorException;
 import java.util.ArrayList;
+
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
 
 public class MainPage_2 extends AppCompatActivity {
     private RecyclerView listview;
     private MyAdapter_2 adapter;
+    Workbook wb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.BaseTheme);
         setContentView(R.layout.main_page_2);
+
+        try {
+            InputStream is = getBaseContext().getResources().getAssets().open("inform_chiangmai.xls");
+            wb = Workbook.getWorkbook(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (BiffException e) {
+            e.printStackTrace();
+        }
 
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
@@ -128,14 +145,41 @@ public class MainPage_2 extends AppCompatActivity {
         listview.setLayoutManager(layoutManager);
 
         ArrayList<ListData_2> itemList = new ArrayList<>();
-        ListData_2 listData = new ListData_2("치앙마이의 상징이된 황금사원",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/temp", "id", this.getPackageName())),
-                "왓 프라탓 도이캄");
-        itemList.add(listData);
-        listData = new ListData_2("SNS속 인증샷의 메카, 바로 그곳!",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
-                "NO.39 CAFE");
-        itemList.add(listData);
+
+        if(wb != null) {
+            Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+            if(sheet != null) {
+                int colTotal = sheet.getColumns();    // 전체 컬럼
+                int rowIndexStart = 2;                  // row 인덱스 시작
+                int rowTotal = sheet.getColumn(colTotal-1).length;
+
+                String TYPE = "";
+                String kor_title = "";
+                String kor_dist = "";
+
+                StringBuilder sb;
+                for(int row=rowIndexStart;row<rowTotal;row++) {
+                    sb = new StringBuilder();
+                    for(int col=0;col<colTotal;col++) {
+                        String contents = sheet.getCell(col, row).getContents();
+
+                        if(col == 0)
+                            TYPE = contents;
+                        else if(col == 1)
+                            kor_title = contents;
+                        else if(col == 3)
+                            kor_dist = contents;
+                        else if(col == colTotal - 1 && TYPE.equals("SPOT")) {
+                            ListData_2 listData = new ListData_2(kor_dist,
+                                    getResources().getDrawable(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName())),
+                                    kor_title);
+                            itemList.add(listData);
+                        }
+                    }
+                    Log.i("xls_log", sb.toString());
+                }
+            }
+        }
 
         adapter = new MyAdapter_2(this, itemList, onClickItem);
         listview.setAdapter(adapter);
@@ -147,18 +191,41 @@ public class MainPage_2 extends AppCompatActivity {
         listview.setLayoutManager(layoutManager);
 
         ArrayList<ListData_2> itemList = new ArrayList<>();
-        ListData_2 listData = new ListData_2("입이 즐거운 먹거리",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
-                "TV에도 나온 그 맛집");
-        itemList.add(listData);
-        listData = new ListData_2("드넓게 펼쳐진 뷰 맛집!",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
-                "푸핀 테라스");
-        itemList.add(listData);
-        listData = new ListData_2("황홀한 분위기, 멋진 조명의 레스토랑",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_4", "id", this.getPackageName())),
-                "생생정보통 단골 출연 맛집");
-        itemList.add(listData);
+
+        if(wb != null) {
+            Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+            if(sheet != null) {
+                int colTotal = sheet.getColumns();    // 전체 컬럼
+                int rowIndexStart = 2;                  // row 인덱스 시작
+                int rowTotal = sheet.getColumn(colTotal-1).length;
+
+                String TYPE = "";
+                String kor_title = "";
+                String kor_dist = "";
+
+                StringBuilder sb;
+                for(int row=rowIndexStart;row<rowTotal;row++) {
+                    sb = new StringBuilder();
+                    for(int col=0;col<colTotal;col++) {
+                        String contents = sheet.getCell(col, row).getContents();
+
+                        if(col == 0)
+                            TYPE = contents;
+                        else if(col == 1)
+                            kor_title = contents;
+                        else if(col == 3)
+                            kor_dist = contents;
+                        else if(col == colTotal - 1 && TYPE.equals("FOOD")) {
+                            ListData_2 listData = new ListData_2(kor_dist,
+                                    getResources().getDrawable(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName())),
+                                    kor_title);
+                            itemList.add(listData);
+                        }
+                    }
+                    Log.i("xls_log", sb.toString());
+                }
+            }
+        }
 
         adapter = new MyAdapter_2(this, itemList, onClickItem);
         listview.setAdapter(adapter);

@@ -193,7 +193,6 @@
                                 app:cardElevation="0dp"
                                 android:id="@+id/btn_place"
                                 android:backgroundTint="@color/colorAccent"
-                                android:onClick="onClick_place"
                                 >
                                 <ImageView
                                     android:id="@+id/image_place"
