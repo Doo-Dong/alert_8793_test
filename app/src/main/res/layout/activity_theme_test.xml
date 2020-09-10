@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1280"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1280"
+            android:background="#FFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="147.8"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:id="@+id/layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <androidx.appcompat.widget.Toolbar
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            >
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/dehaze_black"
+                                android:layout_gravity="start"
+                                android:id="@+id/drawerLayout_Btn"
+                                />
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                app:cardCornerRadius="20dp"
+                                android:layout_gravity="center"
+                                >
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    >
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        app:cardCornerRadius="15dp"
+                                        android:layout_weight="0.8"
+                                        app:cardElevation="0dp"
+                                        android:id="@+id/btn_place"
+                                        android:onClick="onClick_place"
+                                        >
+                                        <ImageView
+                                            android:id="@+id/image_place"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:src="@drawable/place_icon"
+                                            android:layout_gravity="center"
+                                            />
+                                    </androidx.cardview.widget.CardView>
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        app:cardCornerRadius="15dp"
+                                        android:layout_weight="0.8"
+                                        app:cardElevation="0dp"
+                                        android:id="@+id/btn_list"
+                                        android:backgroundTint="@color/colorAccent"
+                                        >
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            >
+                                            <ImageView
+                                                android:id="@+id/image_list1"
+                                                android:layout_width="30dp"
+                                                android:layout_height="8dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/round"
+                                                android:layout_marginBottom="5dp"
+                                                />
+
+                                            <ImageView
+                                                android:id="@+id/image_list2"
+                                                android:layout_width="30dp"
+                                                android:layout_height="8dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/round"
+                                                />
+                                        </LinearLayout>
+                                    </androidx.cardview.widget.CardView>
+                                    <!--<ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+
+                                        android:layout_weight="1"/>-->
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.appcompat.widget.Toolbar>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 내용시작-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="41.1"
+                android:orientation="horizontal"
+                android:weightSum="720">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="130"
+                    android:orientation="horizontal"
+                    android:weightSum="7"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:background="@color/transparent_spinner"
+                        />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@drawable/keyboard_arrow_right_color"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="29.5"></LinearLayout>
+
+            <!--Theme top image-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="101"
+                android:orientation="horizontal"
+                android:weightSum="720">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"></LinearLayout>
+                <ImageView
+                    android:id="@+id/img_morning"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    android:background="#dcdcdc"
+                    />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <ImageView
+                    android:id="@+id/img_afternoon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    android:background="#dcdcdc"
+                   />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    android:background="#dcdcdc"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    android:background="#dcdcdc"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"></LinearLayout>
+
+            <!--Theme top text-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="34"
+                android:orientation="horizontal"
+                android:weightSum="720"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="75"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="42"
+                    android:text="오전"
+                    android:textStyle="bold"
+                    android:textColor="#74e4c4"
+                    android:textSize="10sp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="135"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="42"
+                    android:text="오후"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="134"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="42"
+                    android:text="점심"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="135"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="42"
+                    android:text="저녁"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="38"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="23"
+                android:background="@drawable/theme_shadow"></LinearLayout>
+
+
+            <!--  관광지-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="34"
+                android:orientation="horizontal"
+                android:weightSum="720">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="23"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="63"
+                    android:text="관광지"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="142"
+                android:orientation="horizontal"
+                android:weightSum="720">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"></LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_theme_spot"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="695">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="48"
+                ></LinearLayout>
+
+            <!--  음식점-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="34"
+                android:orientation="horizontal"
+                android:weightSum="720">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="23"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="63"
+                    android:text="음식점"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="552"
+                android:orientation="horizontal"
+                android:weightSum="720">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="671">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        ></androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="24"></LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="38"></LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btn_choice"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="30dp"
+                android:background="#74e4c4"
+                android:drawableRight="@drawable/btn_arrow_right"
+                android:gravity="center"
+                android:onClick="onClick_click"
+                android:text="선택완료"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <!--드로어-->
+        <LinearLayout
+            android:id="@+id/drawer"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#FFF"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="1270">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="100" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drawerLayout_Btn_close"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/drawer_close"
+                    android:onClick="btnCloseDrawer"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drawerLayout_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="130" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_1"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="Main"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_thai"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="태국"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_jap"
+                    android:layout_width="45dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="일본"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_2"
+                    android:layout_width="60dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="공항 정보"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/drawer_point"
+                    />
+                <TextView
+                    android:id="@+id/drawerLayout_list_btn_3"
+                    android:layout_width="60dp"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="My Page"
+                    android:textSize="14sp"
+                    android:textColor="#a9a9a9"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>
+
+
