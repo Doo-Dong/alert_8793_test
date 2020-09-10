@@ -43,6 +43,9 @@ public class MyAdapter_2 extends RecyclerView.Adapter<MyAdapter_2.ViewHolder> {
         ListData_2 item = itemList.get(position);
 
         holder.textview.setText(item.main);
+
+        holder.textview.setTag(position);
+        
         holder.imageview.setBackground(item.image);
         holder.distance.setText(item.sub);
         holder.textview.setOnClickListener(onClickItem);
@@ -54,7 +57,6 @@ public class MyAdapter_2 extends RecyclerView.Adapter<MyAdapter_2.ViewHolder> {
     public int getItemCount() {
         return itemList.size();
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 

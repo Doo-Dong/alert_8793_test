@@ -11,7 +11,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +25,8 @@ import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
 public class MainPage_2 extends AppCompatActivity {
-    private RecyclerView listview;
+    private RecyclerView listview1;
+    private RecyclerView listview2;
     private MyAdapter_2 adapter;
     Workbook wb;
 
@@ -140,9 +143,9 @@ public class MainPage_2 extends AppCompatActivity {
     }
 
     private void init1() {
-        listview = findViewById(R.id.list_view_tour);
+        listview1 = findViewById(R.id.list_view_tour);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        listview.setLayoutManager(layoutManager);
+        listview1.setLayoutManager(layoutManager);
 
         ArrayList<ListData_2> itemList = new ArrayList<>();
 
@@ -182,13 +185,13 @@ public class MainPage_2 extends AppCompatActivity {
         }
 
         adapter = new MyAdapter_2(this, itemList, onClickItem);
-        listview.setAdapter(adapter);
+        listview1.setAdapter(adapter);
     }
 
     private void init2() {
-        listview = findViewById(R.id.list_view_store);
+        listview2 = findViewById(R.id.list_view_store);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        listview.setLayoutManager(layoutManager);
+        listview2.setLayoutManager(layoutManager);
 
         ArrayList<ListData_2> itemList = new ArrayList<>();
 
@@ -228,16 +231,19 @@ public class MainPage_2 extends AppCompatActivity {
         }
 
         adapter = new MyAdapter_2(this, itemList, onClickItem);
-        listview.setAdapter(adapter);
+        listview2.setAdapter(adapter);
     }
 
     private View.OnClickListener onClickItem = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(getApplicationContext(), MainPage_3.class);
+
+            //intent.putExtra("country","일본");
+/*
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            finish();
+            finish();*/
         }
     };
 }
