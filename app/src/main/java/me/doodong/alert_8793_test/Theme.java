@@ -63,7 +63,7 @@ public class Theme extends AppCompatActivity {
                 Sheet sheet = wb.getSheet(0);   // 시트 불러오기
                 if(sheet != null) {
                     int colTotal = sheet.getColumns();    // 전체 컬럼
-                    int rowIndexStart = 2;                  // row 인덱스 시작
+                    int rowIndexStart = 1;                  // row 인덱스 시작
                     int rowTotal = sheet.getColumn(colTotal-1).length;
 
                     StringBuilder sb;
@@ -73,7 +73,7 @@ public class Theme extends AppCompatActivity {
                             String contents = sheet.getCell(col, row).getContents();
                             sb.append("col"+col+" : "+contents+" , ");
                         }
-                        Log.i("test", sb.toString());
+                        Log.i("xls_log", sb.toString());
                     }
                 }
             }
