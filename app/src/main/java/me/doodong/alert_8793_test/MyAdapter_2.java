@@ -43,6 +43,8 @@ public class MyAdapter_2 extends RecyclerView.Adapter<MyAdapter_2.ViewHolder> {
         ListData_2 item = itemList.get(position);
 
         holder.textview.setTag(item.position);
+        holder.distance.setTag(item.position);
+        holder.imageview.setTag(item.position);
 
         holder.textview.setText(item.main);
         holder.imageview.setBackground(item.image);
