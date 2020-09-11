@@ -173,7 +173,7 @@ public class MainPage_2 extends AppCompatActivity {
                         else if(col == 3)
                             kor_dist = contents;
                         else if(col == colTotal - 1 && TYPE.equals("SPOT")) {
-                            ListData_2 listData = new ListData_2(kor_dist,
+                            ListData_2 listData = new ListData_2((row), kor_dist,
                                     getResources().getDrawable(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName())),
                                     kor_title);
                             itemList.add(listData);
@@ -219,7 +219,7 @@ public class MainPage_2 extends AppCompatActivity {
                         else if(col == 3)
                             kor_dist = contents;
                         else if(col == colTotal - 1 && TYPE.equals("FOOD")) {
-                            ListData_2 listData = new ListData_2(kor_dist,
+                            ListData_2 listData = new ListData_2((row), kor_dist,
                                     getResources().getDrawable(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName())),
                                     kor_title);
                             itemList.add(listData);
@@ -239,21 +239,24 @@ public class MainPage_2 extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = new Intent(getApplicationContext(), MainPage_3.class);
 
-            //intent.putExtra("country","일본");
-/*
+            intent.putExtra("position", Integer.toString((Integer) v.getTag()));
+//            Log.i("xls_log", Integer.toString((Integer) v.getTag()));
+
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            finish();*/
+            finish();
         }
     };
 }
 
 class ListData_2 {
+    int position;
     String main;
     Drawable image;
     String sub;
 
-    ListData_2(String text, Drawable image, String dist) {
+    ListData_2(int pos, String text, Drawable image, String dist) {
+        this.position = pos;
         this.main = text;
         this.image = image;
         this.sub = dist;

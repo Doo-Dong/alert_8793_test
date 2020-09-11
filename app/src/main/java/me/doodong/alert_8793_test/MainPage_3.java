@@ -2,11 +2,14 @@ package me.doodong.alert_8793_test;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,16 +22,47 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
 public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
 
     //구글맵참조변수
     GoogleMap mMap;
+
+    Workbook wb;
+    String position;
+
+    LinearLayout thumbnail;
+    TextView title, dist;
+    double Lat, Lng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.BaseTheme);
         setContentView(R.layout.main_page_3);
+
+        thumbnail = findViewById(R.id.main3_thumbnail);
+        title = findViewById(R.id.main3_title);
+        dist = findViewById(R.id.main3_dist);
+
+        try {
+            InputStream is = getBaseContext().getResources().getAssets().open("inform_chiangmai.xls");
+            wb = Workbook.getWorkbook(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (BiffException e) {
+            e.printStackTrace();
+        }
+
+        Intent intent = getIntent();
+        position = intent.getStringExtra("position");
 
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
@@ -134,6 +168,8 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
             }
         });
 
+        init_main3();
+
         // SupportMapFragment을 통해 레이아웃에 만든 fragment의 ID를 참조하고 구글맵을 호출한다.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this); //getMapAsync must be called on the main thread.
@@ -151,14 +187,12 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
     //마커하나찍는 기본 예제
     public void oneMarker() {
         // 서울 여의도에 대한 위치 설정
-        LatLng seoul = new LatLng(18.816383, 98.891942);
+        LatLng seoul = new LatLng(Lat, Lng);
 
         // 구글 맵에 표시할 마커에 대한 옵션 설정  (알파는 좌표의 투명도이다.)
         MarkerOptions makerOptions = new MarkerOptions();
         makerOptions
                 .position(seoul)
-                .title("왓 프라탓 도이수텝 사원")
-                .snippet("치앙마이의 상징이된 황금사원")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                 .alpha(0.8f);
 
@@ -171,7 +205,7 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
             @Override
             public void onInfoWindowClick(Marker marker) {
                 String markerId = marker.getId();
-                Toast.makeText(MainPage_3.this, "정보창 클릭 Marker ID : " + markerId, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainPage_3.this, "정보창 클릭 Marker ID : " + markerId, Toast.LENGTH_SHORT).show();
             }
         };
 
@@ -182,7 +216,7 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
                 String markerId = marker.getId();
                 //선택한 타겟위치
                 LatLng location = marker.getPosition();
-                Toast.makeText(MainPage_3.this, "마커 클릭 Marker ID : " + markerId + "(" + location.latitude + " " + location.longitude + ")", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainPage_3.this, "마커 클릭 Marker ID : " + markerId + "(" + location.latitude + " " + location.longitude + ")", Toast.LENGTH_SHORT).show();
                 return false;
             }
         };
@@ -199,9 +233,40 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                Toast.makeText(MainPage_3.this, "눌렀습니다!!", Toast.LENGTH_LONG);
+                //Toast.makeText(MainPage_3.this, "눌렀습니다!!", Toast.LENGTH_LONG);
                 return false;
             }
         });
+    }
+
+    private void init_main3() {
+        if(wb != null) {
+            Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+            if(sheet != null) {
+                int colTotal = sheet.getColumns();    // 전체 컬럼
+                int row = Integer.parseInt(position);                  // row 인덱스 시작
+
+                String kor_title = "";
+                String kor_dist = "";
+
+                for(int col=0;col<colTotal;col++) {
+                    String contents = sheet.getCell(col, row).getContents();
+
+                    if(col == 1)
+                        kor_title = contents;
+                    else if(col == 3)
+                        kor_dist = contents;
+                    else if(col == 4)
+                        Lat = Double.parseDouble(contents);
+                    else if(col == 5)
+                        Lng = Double.parseDouble(contents);
+                    else if(col == colTotal - 1) {
+                        thumbnail.setBackgroundResource(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName()));
+                        title.setText(kor_title);
+                        dist.setText(kor_dist);
+                    }
+                }
+            }
+        }
     }
 }

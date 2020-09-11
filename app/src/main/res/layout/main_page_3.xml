@@ -25,10 +25,12 @@
                 android:layout_weight="130"/>
 
             <LinearLayout
+                android:id="@+id/main3_thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="360"
-                android:background="@drawable/temp">
+                android:background="@drawable/temp"
+                android:orientation="horizontal">
             </LinearLayout>
 
             <LinearLayout
@@ -44,6 +46,7 @@
                     android:orientation="vertical"
                     android:layout_gravity="center">
                     <TextView
+                        android:id="@+id/main3_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
@@ -52,6 +55,7 @@
                         android:textStyle="bold"
                         android:textColor="#FFF" />
                     <TextView
+                        android:id="@+id/main3_dist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"

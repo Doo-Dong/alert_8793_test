@@ -42,10 +42,9 @@ public class MyAdapter_2 extends RecyclerView.Adapter<MyAdapter_2.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         ListData_2 item = itemList.get(position);
 
-        holder.textview.setText(item.main);
+        holder.textview.setTag(item.position);
 
-        holder.textview.setTag(position);
-        
+        holder.textview.setText(item.main);
         holder.imageview.setBackground(item.image);
         holder.distance.setText(item.sub);
         holder.textview.setOnClickListener(onClickItem);
