@@ -255,7 +255,8 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
                     if(col == 1)
                         kor_title = contents;
                     else if(col == 3)
-                        kor_dist = contents;
+//                        kor_dist = contents.substring(0, 10) + "...";
+                          kor_dist = contents;
                     else if(col == 4)
                         Lat = Double.parseDouble(contents);
                     else if(col == 5)
