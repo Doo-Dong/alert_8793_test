@@ -1,9 +1,11 @@
 package me.doodong.alert_8793_test;
 
-public class Theme_Item_spot {
-    int image;
+import android.graphics.drawable.Drawable;
 
-    public Theme_Item_spot(int image) {
+public class Theme_Item_spot {
+    Drawable image;
+
+    public Theme_Item_spot(Drawable image) {
         this.image = image;
     }
 
@@ -11,11 +13,12 @@ public class Theme_Item_spot {
 
     }
 
-    public int getImage() {
+
+    public Drawable getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(Drawable image) {
         this.image = image;
     }
 

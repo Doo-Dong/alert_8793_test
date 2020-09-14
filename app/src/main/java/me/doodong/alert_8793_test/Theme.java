@@ -1,10 +1,14 @@
 package me.doodong.alert_8793_test;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,7 +16,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
@@ -25,6 +32,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,7 +48,11 @@ public class Theme extends AppCompatActivity {
     ExtendedFloatingActionButton btn_choice;
     CardView btn_place;
     ImageView image_place, image_list1, image_list2, img_morning, img_afternoon;
+    ArrayList<Theme_Item_spot> mList = new ArrayList<Theme_Item_spot>();
 
+    Context context;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +99,6 @@ public class Theme extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        theme_spot();
         getData_spot_morning();
 
 
@@ -211,59 +222,81 @@ public class Theme extends AppCompatActivity {
             }
         });
     }
+//
+//    private void theme_spot() {
+//        recyclerView = findViewById(R.id.rv_theme_spot);
+//
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        //adapter_spot = new RecyclerAdapter_Theme_Spot();
+//        recyclerView.setAdapter(adapter_spot);
+//    }
 
-    private void theme_spot() {
-        recyclerView = findViewById(R.id.rv_theme_spot);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        adapter_spot = new RecyclerAdapter_Theme_Spot();
-        recyclerView.setAdapter(adapter_spot);
-    }
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void getData_spot_morning() {
         // 임의의 데이터입니다.
-        List<Integer> listResId = Arrays.asList(
-                R.drawable.pic_3, R.drawable.pic_4, R.drawable.pic_5, R.drawable.pic_6, R.drawable.pic_7, R.drawable.pic_8,
-                R.drawable.pic_9, R.drawable.pic_10, R.drawable.pic_11, R.drawable.pic_12, R.drawable.pic_13, R.drawable.pic_14,
-                R.drawable.pic_15, R.drawable.pic_16, R.drawable.pic_17, R.drawable.pic_18, R.drawable.pic_19, R.drawable.pic_20,
-                R.drawable.pic_21, R.drawable.pic_22, R.drawable.pic_23, R.drawable.pic_24, R.drawable.pic_25, R.drawable.pic_26,
-                R.drawable.pic_27, R.drawable.pic_28, R.drawable.pic_29, R.drawable.pic_30, R.drawable.pic_31, R.drawable.pic_32,
-                R.drawable.pic_33, R.drawable.pic_34, R.drawable.pic_35, R.drawable.pic_36
-        );
 
-        for (int i = 0; i < listResId.size(); i++) {
-            // 각 List의 값들을 data 객체에 set 해줍니다.
-            Theme_Item_spot data = new Theme_Item_spot();
-            data.setImage(listResId.get(i));
 
-            // 각 값이 들어간 data를 adapter에 추가합니다.
-            adapter_spot.addItem(data);
+        recyclerView = findViewById(R.id.rv_theme_spot);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        adapter_spot = new RecyclerAdapter_Theme_Spot(mList);
+        recyclerView.setAdapter(adapter_spot);
+
+        for(int i = 3; i<36; i++){
+            addItem(getDrawable(getResources().getIdentifier("@drawable/pic_"+(i), "id", this.getPackageName())));
         }
-        // adapter의 값이 변경되었다는 것을 알려줍니다.
+
+//        adapter_spot.setOnItemClickListener(new RecyclerAdapter_Theme_Spot.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View v, int position) {
+//
+//            }
+//        });
+
+//        recyclerView.addOnItemTouchListener(new RecyclerViewItemClickListener_Spot(context, new RecyclerViewItemClickListener_Spot.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                long item = adapter_spot.getItemId(position);
+//                // view is the clicked view (the one you wanted
+//                // position is its position in the adapter
+//                //img_morning.setImageResource(adapter_spot.getItemViewType(position));
+//                //Toast.makeText(Theme.this, " 클릭", Toast.LENGTH_SHORT).show();
+//            }
+//        }));
+
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                View child = rv.findChildViewUnder(e.getX(), e.getY());
+                int position = rv.getChildAdapterPosition(child);
+                Theme_Item_spot item = mList.get(position);
+
+                //Toast.makeText(Theme.this, position+ " 클릭", Toast.LENGTH_SHORT).show();
+                img_morning.setImageDrawable(item.getImage());
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
         adapter_spot.notifyDataSetChanged();
     }
 
-    public void  getData_spot_afternoon(View view)  {
 
-        List<Integer> listResId2 = Arrays.asList(
-                R.drawable.pic_37, R.drawable.pic_38, R.drawable.pic_39, R.drawable.pic_40, R.drawable.pic_41, R.drawable.pic_42,
-                R.drawable.pic_43, R.drawable.pic_44, R.drawable.pic_45, R.drawable.pic_46, R.drawable.pic_47, R.drawable.pic_48,
-                R.drawable.pic_49, R.drawable.pic_50, R.drawable.pic_51, R.drawable.pic_52, R.drawable.pic_53, R.drawable.pic_54,
-                R.drawable.pic_55, R.drawable.pic_56, R.drawable.pic_57, R.drawable.pic_58, R.drawable.pic_59, R.drawable.pic_60,
-                R.drawable.pic_61, R.drawable.pic_62, R.drawable.pic_63, R.drawable.pic_64, R.drawable.pic_65, R.drawable.pic_66,
-                R.drawable.pic_67, R.drawable.pic_68, R.drawable.pic_69
-        );
-        for (int i = 0; i < listResId2.size(); i++) {
-            // 각 List의 값들을 data 객체에 set 해줍니다.
-            Theme_Item_spot data = new Theme_Item_spot();
-            data.setImage(listResId2.get(i));
+    public void addItem(Drawable imageView) {
+        Theme_Item_spot item = new Theme_Item_spot();
 
-            // 각 값이 들어간 data를 adapter에 추가합니다.
-            adapter_spot.addItem(data);
-        }
-        // adapter의 값이 변경되었다는 것을 알려줍니다.
-        adapter_spot.notifyDataSetChanged();
+        item.setImage(imageView);
+
+        mList.add(item);
     }
 
 
