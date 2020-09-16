@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class my_page extends AppCompatActivity {
     private RecyclerView listview1;
@@ -23,12 +25,26 @@ public class my_page extends AppCompatActivity {
     private MyAdapter adapter1;
     private MyAdapter adapter2;
     private MyAdapter adapter3;
+    String result, position, day, time;
+
+    Random rand = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.BaseTheme);
         setContentView(R.layout.my_page);
+
+        //데이터 가져오기
+        Intent intent = getIntent();
+        result = intent.getStringExtra("result");
+
+        //Main3 to my_page
+        if(result.equals("Close Popup")) {
+            position = intent.getStringExtra("position");
+            day = intent.getStringExtra("day");
+            time = intent.getStringExtra("time");
+        }
 
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
@@ -46,7 +62,7 @@ public class my_page extends AppCompatActivity {
         TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
         // 바텀 버튼 객체 참조
-        Button mypg_bottom_btn_1 = findViewById(R.id.mypg_bottom_btn_1);
+        final Button mypg_bottom_btn_1 = findViewById(R.id.mypg_bottom_btn_1);
         Button mypg_bottom_btn_2 = findViewById(R.id.mypg_bottom_btn_2);
         Button mypg_bottom_btn_3 = findViewById(R.id.mypg_bottom_btn_3);
 
@@ -54,6 +70,8 @@ public class my_page extends AppCompatActivity {
         mypg_bottom_btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mypg_bottom_btn_1.setEnabled(false);
+
                 final int speedScroll = 2000;
                 final Handler handler = new Handler();
                 final Runnable runnable = new Runnable() {
@@ -104,6 +122,7 @@ public class my_page extends AppCompatActivity {
                                 adapter1.notifyItemRangeChanged(0,4, "init");
                                 adapter2.notifyItemRangeChanged(0,4, "init");
                                 adapter3.notifyItemRangeChanged(0,4, "init");
+                                mypg_bottom_btn_1.setEnabled(true);
                                 count = adapter.getItemCount() + 1;
                             }
                             handler.postDelayed(this,speedScroll);
@@ -119,6 +138,7 @@ public class my_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","태국");
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
@@ -217,6 +237,37 @@ public class my_page extends AppCompatActivity {
         init3();
     }
 
+    private String randDirect(int flag) {
+        String direct = "@drawable/dehaze";
+
+        if(flag != 0) {
+            int directFlag = (rand.nextInt(2) + 1);
+
+            switch (directFlag) {
+                case 1 :
+                    direct = "@drawable/directions_walk";
+                    break;
+                case 2 :
+                    direct = "@drawable/directions_bus";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return direct;
+    }
+
+    private String randDist(int flag) {
+        String dist = "";
+
+        if(flag != 0) {
+            dist = (rand.nextInt(98) + 1) + "m";
+        }
+
+        return dist;
+    }
+
     private void init1() {
         listview1 = findViewById(R.id.list_view_1);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -224,24 +275,24 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/temp", "id", this.getPackageName())),
-                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
-                "10m");
-        itemList.add(listData);
-        listData = new ListData("점심",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
-                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
-                "5m");
-        itemList.add(listData);
-        listData = new ListData("오후",
                 getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
-                getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
-                "2m");
+                getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
+                randDist(1));
         itemList.add(listData);
-        listData = new ListData("저녁",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
-                getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
-                "");
+        listData = new ListData("오전",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
+                randDist(1));
+        itemList.add(listData);
+        listData = new ListData("오전",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
+                randDist(1));
+        itemList.add(listData);
+        listData = new ListData("오전",
+                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getDrawable(getResources().getIdentifier(randDirect(0), "id", this.getPackageName())),
+                randDist(0));
         itemList.add(listData);
 
         adapter1 = new MyAdapter(this, itemList, onClickItem);
