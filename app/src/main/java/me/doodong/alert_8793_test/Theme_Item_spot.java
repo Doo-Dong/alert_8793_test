@@ -4,9 +4,11 @@ import android.graphics.drawable.Drawable;
 
 public class Theme_Item_spot {
     Drawable image;
+    String tv1;
 
-    public Theme_Item_spot(Drawable image) {
+    public Theme_Item_spot(Drawable image, String tv1) {
         this.image = image;
+        this.tv1= tv1;
     }
 
     public Theme_Item_spot() {
@@ -22,4 +24,11 @@ public class Theme_Item_spot {
         this.image = image;
     }
 
+    public String getTv1() {
+        return tv1;
+    }
+
+    public void setTv1(String tv1) {
+        this.tv1 = tv1;
+    }
 }

@@ -15,7 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <ImageButton
                 android:id="@+id/img"
@@ -62,7 +63,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:textSize="10sp"
-                        android:textColor="#808080"/>
+                        android:textColor="#808080"
+                        android:text="2km to city"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -1,11 +1,12 @@
 package me.doodong.alert_8793_test;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,26 +14,43 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter_Theme_Spot extends RecyclerView.Adapter<RecyclerAdapter_Theme_Spot.ItemViewHolder>{
+public class RecyclerAdapter_Theme_Spot extends RecyclerView.Adapter<RecyclerAdapter_Theme_Spot.ItemViewHolder>
+{
+    private ArrayList<Theme_Item_spot> mData;
+    Context context;
+    onClickInterface_Spot onClickInterface_Spot;
+   ;
 
-    private ArrayList<Theme_Item_spot> mData = null;
 
-    RecyclerAdapter_Theme_Spot(ArrayList<Theme_Item_spot> list){
+
+    public RecyclerAdapter_Theme_Spot(Context con, ArrayList<Theme_Item_spot> list, onClickInterface_Spot onClickItem){
+        context = con;
         mData = list;
+        onClickInterface_Spot = onClickItem;
+
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View v, int position) ;
+
+    // RecyclerView의 핵심인 ViewHolder 입니다.
+    // 여기서 subView를 setting 해줍니다.
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+        public ImageView imageView;
+        private TextView tv1;
+
+        public ItemViewHolder(View itemView) {
+            super(itemView);
+
+            imageView = itemView.findViewById(R.id.img);
+            tv1 = itemView.findViewById(R.id.tv1);
+
+        }
+
+        public void setItem(Theme_Item_spot item) {
+            imageView.setImageDrawable(item.getImage());
+            tv1.setText(item.getTv1());
+        }
+
     }
-
-    // 리스너 객체 참조를 저장하는 변수
-    private OnItemClickListener mListener = null ;
-
-    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.mListener = listener ;
-    }
-
 
     @NonNull
     @Override
@@ -44,17 +62,33 @@ public class RecyclerAdapter_Theme_Spot extends RecyclerView.Adapter<RecyclerAda
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerAdapter_Theme_Spot.ItemViewHolder holder, final int position) {
         Theme_Item_spot item = mData.get(position);
+//
+//        holder.imageView.setImageDrawable(item.getImage());
+        //holder.setItem(item);
+        holder.setItem(item);
 
-        holder.imageView.setImageDrawable(item.getImage());
+        if (onClickInterface_Spot != null){
+            holder.imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickInterface_Spot.setClick(position);
 
-//        holder.imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(view.getContext(), "position: "+position, Toast.LENGTH_SHORT).show();
-//            }
-//        });
+                }
+            });
+            holder.tv1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickInterface_Spot.setClick(position);
+
+                }
+            });
+        }
+
+//        if(onClickInterface_Food == null){
+//            Toast.makeText(activity, "오전과 오후 항목은" + "\n" + "관광지에서 선택해주세요.", Toast.LENGTH_SHORT).show();
+//        }
 
     }
 
@@ -64,19 +98,21 @@ public class RecyclerAdapter_Theme_Spot extends RecyclerView.Adapter<RecyclerAda
         return mData.size();
     }
 
+    public void addItem(Theme_Item_spot item){
+        mData.add(item);
+    }
+    public void setItems(ArrayList<Theme_Item_spot> mData){
+        this.mData = mData;
+    }
+    public Theme_Item_spot getItem(int position){
+        return mData.get(position);
+    }
+    public void setItem(int position, Theme_Item_spot item){
+        mData.set(position,item);
+    }
 
-    // RecyclerView의 핵심인 ViewHolder 입니다.
-    // 여기서 subView를 setting 해줍니다.
-    class ItemViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-
-        Context context;
-        ItemViewHolder(View itemView) {
-            super(itemView);
-
-            imageView = itemView.findViewById(R.id.img);
-
-        }
-
+    public void removeAllItem(){
+        mData.clear();
+        notifyDataSetChanged();
     }
 }
