@@ -5,10 +5,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
@@ -40,10 +42,12 @@ public class my_page extends AppCompatActivity {
         result = intent.getStringExtra("result");
 
         //Main3 to my_page
-        if(result.equals("Close Popup")) {
-            position = intent.getStringExtra("position");
-            day = intent.getStringExtra("day");
-            time = intent.getStringExtra("time");
+        if (result != null) {
+            if (result.equals("Close Popup")) {
+                position = intent.getStringExtra("position");
+                day = intent.getStringExtra("day");
+                time = intent.getStringExtra("time");
+            }
         }
 
         // 전체화면인 DrawerLayout 객체 참조
@@ -61,10 +65,21 @@ public class my_page extends AppCompatActivity {
         TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
         TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
 
+        // 저장 버튼 객체 참조
+        Button schedule_save = findViewById(R.id.schedule_save);
+
         // 바텀 버튼 객체 참조
         final Button mypg_bottom_btn_1 = findViewById(R.id.mypg_bottom_btn_1);
         Button mypg_bottom_btn_2 = findViewById(R.id.mypg_bottom_btn_2);
         Button mypg_bottom_btn_3 = findViewById(R.id.mypg_bottom_btn_3);
+
+        // 일정 저장 버튼
+        schedule_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(my_page.this, "저장되었습니다.", Toast.LENGTH_SHORT);
+            }
+        });
 
         // 일정 시작 -> 일정들 애니메이션 & 하이라이트
         mypg_bottom_btn_1.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +87,7 @@ public class my_page extends AppCompatActivity {
             public void onClick(View v) {
                 mypg_bottom_btn_1.setEnabled(false);
 
+                final Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 final int speedScroll = 2000;
                 final Handler handler = new Handler();
                 final Runnable runnable = new Runnable() {
@@ -99,23 +115,27 @@ public class my_page extends AppCompatActivity {
                             }
 
                             if(phase==1){
+                                vibrator.vibrate(100); // 0.5초간 진동
                                 listview1.smoothScrollToPosition(count);
                                 listview2.smoothScrollToPosition(0);
                                 listview3.smoothScrollToPosition(0);
                             }
                             else if(phase==2){
                                 adapter = adapter2;
+                                vibrator.vibrate(100); // 0.5초간 진동
                                 listview1.smoothScrollToPosition(0);
                                 listview2.smoothScrollToPosition(count);
                                 listview3.smoothScrollToPosition(0);
                             }
                             else if(phase==3){
                                 adapter = adapter3;
+                                vibrator.vibrate(100); // 0.5초간 진동
                                 listview1.smoothScrollToPosition(0);
                                 listview2.smoothScrollToPosition(0);
                                 listview3.smoothScrollToPosition(count);
                             }
                             else if(phase==4){
+                                vibrator.vibrate(100); // 0.5초간 진동
                                 listview1.smoothScrollToPosition(0);
                                 listview2.smoothScrollToPosition(0);
                                 listview3.smoothScrollToPosition(0);

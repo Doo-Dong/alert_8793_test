@@ -84,37 +84,37 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
-                intent.putExtra("shuffle","1");
+                intent.putExtra("shuffle",2);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
-        img_main1.setOnClickListener(new View.OnClickListener() {
+        img_main2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
-                intent.putExtra("shuffle","1");
+                intent.putExtra("shuffle",4);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
-        img_main1.setOnClickListener(new View.OnClickListener() {
+        img_main3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
-                intent.putExtra("shuffle","1");
+                intent.putExtra("shuffle",6);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
-        img_main1.setOnClickListener(new View.OnClickListener() {
+        img_main4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
-                intent.putExtra("shuffle","1");
+                intent.putExtra("shuffle",8);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }

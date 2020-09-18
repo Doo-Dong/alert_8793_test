@@ -30,7 +30,7 @@ public class MainPage_2 extends AppCompatActivity {
     private RecyclerView listview2;
     private MyAdapter_2 adapter;
     Workbook wb;
-    boolean shuffle;
+    int shuffle;
     Random rand = new Random();
 
     @Override
@@ -40,7 +40,7 @@ public class MainPage_2 extends AppCompatActivity {
         setContentView(R.layout.main_page_2);
 
         Intent intent = getIntent();
-        shuffle = intent.getBooleanExtra("shuffle", false);
+        shuffle = intent.getIntExtra("shuffle", 2);
 
         try {
             InputStream is = getBaseContext().getResources().getAssets().open("inform_chiangmai.xls");
@@ -159,12 +159,11 @@ public class MainPage_2 extends AppCompatActivity {
             Sheet sheet = wb.getSheet(0);   // 시트 불러오기
             if(sheet != null) {
                 int colTotal = sheet.getColumns();    // 전체 컬럼
-                int rowIndexStart = 2;                  // row 인덱스 시작
+/*                int rowIndexStart = 2;                  // row 인덱스 시작*/
+                int rowIndexStart = shuffle;
                 int rowTotal = sheet.getColumn(colTotal-1).length;
 
                 int shuffleSeed = 1;
-                if(shuffle)
-                    rowIndexStart = rand.nextInt((rowTotal / 2)) + 2;
 
                 String TYPE = "";
                 String kor_title = "";
@@ -209,12 +208,11 @@ public class MainPage_2 extends AppCompatActivity {
             Sheet sheet = wb.getSheet(0);   // 시트 불러오기
             if(sheet != null) {
                 int colTotal = sheet.getColumns();    // 전체 컬럼
-                int rowIndexStart = 2;                  // row 인덱스 시작
+/*                int rowIndexStart = 2;                  // row 인덱스 시작*/
+                int rowIndexStart = 42 + shuffle;
                 int rowTotal = sheet.getColumn(colTotal-1).length;
 
                 int shuffleSeed = 1;
-                if(shuffle)
-                    shuffleSeed = rand.nextInt(3) + 1;
 
                 String TYPE = "";
                 String kor_title = "";
