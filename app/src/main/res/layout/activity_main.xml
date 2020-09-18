@@ -328,12 +328,11 @@
                                     >
 
                                     <ImageView
-                                        android:id="@+id/btn_main2_go"
+                                        android:id="@+id/img_main1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="530"
                                         android:background="@drawable/main_img1"
-                                        android:onClick="onClick_main2"
                                         />
                                     <ImageView
                                         android:layout_width="0dp"
@@ -345,8 +344,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="530"
-                                        android:background="@drawable/main_img2"
-                                        android:onClick="onClick_main2" />
+                                        android:background="@drawable/main_img2"/>
 
                                     <ImageView
                                         android:layout_width="0dp"
@@ -358,7 +356,6 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="530"
                                         android:background="@drawable/main_img3"
-                                        android:onClick="onClick_main2"
                                         />
                                     <ImageView
                                         android:layout_width="0dp"
@@ -370,7 +367,6 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="530"
                                         android:background="@drawable/main_img4"
-                                        android:onClick="onClick_main2"
                                         />
                                     <ImageView
                                         android:layout_width="0dp"

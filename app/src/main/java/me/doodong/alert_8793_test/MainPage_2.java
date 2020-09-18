@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.cert.CertPathValidatorException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import jxl.Sheet;
 import jxl.Workbook;
@@ -29,12 +30,17 @@ public class MainPage_2 extends AppCompatActivity {
     private RecyclerView listview2;
     private MyAdapter_2 adapter;
     Workbook wb;
+    boolean shuffle;
+    Random rand = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.BaseTheme);
         setContentView(R.layout.main_page_2);
+
+        Intent intent = getIntent();
+        shuffle = intent.getBooleanExtra("shuffle", false);
 
         try {
             InputStream is = getBaseContext().getResources().getAssets().open("inform_chiangmai.xls");
@@ -156,12 +162,16 @@ public class MainPage_2 extends AppCompatActivity {
                 int rowIndexStart = 2;                  // row 인덱스 시작
                 int rowTotal = sheet.getColumn(colTotal-1).length;
 
+                int shuffleSeed = 1;
+                if(shuffle)
+                    rowIndexStart = rand.nextInt((rowTotal / 2)) + 2;
+
                 String TYPE = "";
                 String kor_title = "";
                 String kor_dist = "";
 
                 StringBuilder sb;
-                for(int row=rowIndexStart;row<rowTotal;row++) {
+                for(int row=rowIndexStart;row<rowTotal;row+=shuffleSeed) {
                     sb = new StringBuilder();
                     for(int col=0;col<colTotal;col++) {
                         String contents = sheet.getCell(col, row).getContents();
@@ -202,12 +212,16 @@ public class MainPage_2 extends AppCompatActivity {
                 int rowIndexStart = 2;                  // row 인덱스 시작
                 int rowTotal = sheet.getColumn(colTotal-1).length;
 
+                int shuffleSeed = 1;
+                if(shuffle)
+                    shuffleSeed = rand.nextInt(3) + 1;
+
                 String TYPE = "";
                 String kor_title = "";
                 String kor_dist = "";
 
                 StringBuilder sb;
-                for(int row=rowIndexStart;row<rowTotal;row++) {
+                for(int row=rowIndexStart;row<rowTotal;row+=shuffleSeed) {
                     sb = new StringBuilder();
                     for(int col=0;col<colTotal;col++) {
                         String contents = sheet.getCell(col, row).getContents();
@@ -240,7 +254,6 @@ public class MainPage_2 extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainPage_3.class);
 
             intent.putExtra("position", Integer.toString((Integer) v.getTag()));
-//            Log.i("xls_log", Integer.toString((Integer) v.getTag()));
 
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
