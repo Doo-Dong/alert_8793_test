@@ -1,5 +1,6 @@
 package me.doodong.alert_8793_test;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -30,7 +32,8 @@ public class my_page extends AppCompatActivity {
     String result, position, day, time;
 
     Random rand = new Random();
-
+    int[] list;
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,7 @@ public class my_page extends AppCompatActivity {
         //데이터 가져오기
         Intent intent = getIntent();
         result = intent.getStringExtra("result");
-
+        list = intent.getIntArrayExtra("list_spot");
         //Main3 to my_page
         if (result != null) {
             if (result.equals("Close Popup")) {
@@ -50,6 +53,16 @@ public class my_page extends AppCompatActivity {
             }
         }
 
+        if (list != null) {
+            //Toast.makeText(Theme.this, list[0], Toast.LENGTH_SHORT).show();
+
+        }else {
+            list = new int[]{
+                    R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
+                    ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
+                    ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
+            };
+        }
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
@@ -288,6 +301,7 @@ public class my_page extends AppCompatActivity {
         return dist;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void init1() {
         listview1 = findViewById(R.id.list_view_1);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -295,22 +309,22 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getDrawable(list[0]),
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
         listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getDrawable(list[2]),
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
         listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getDrawable(list[1]),
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
         listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getDrawable(list[3]),
                 getResources().getDrawable(getResources().getIdentifier(randDirect(0), "id", this.getPackageName())),
                 randDist(0));
         itemList.add(listData);
@@ -319,6 +333,8 @@ public class my_page extends AppCompatActivity {
         listview1.setAdapter(adapter1);
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void init2() {
         listview2 = findViewById(R.id.list_view_2);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -326,22 +342,22 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getDrawable(list[4]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getDrawable(list[6]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "3m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getDrawable(list[5]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "5m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getDrawable(list[7]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -350,6 +366,8 @@ public class my_page extends AppCompatActivity {
         listview2.setAdapter(adapter2);
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void init3() {
         listview3 = findViewById(R.id.list_view_3);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -357,22 +375,22 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getDrawable(list[8]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getDrawable(list[10]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getDrawable(list[9]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/temp", "id", this.getPackageName())),
+                getDrawable(list[11]),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
