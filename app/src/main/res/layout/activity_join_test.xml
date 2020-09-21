@@ -557,7 +557,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:onClick="onClick_realJoin"/>
+            />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"

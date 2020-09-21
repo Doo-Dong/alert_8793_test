@@ -2,16 +2,26 @@ package me.doodong.alert_8793_test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
 
 
 public class Join extends AppCompatActivity {
@@ -22,6 +32,14 @@ public class Join extends AppCompatActivity {
     ArrayAdapter<CharSequence> gender, age;
 
     private boolean freetrip, backpacking, pkg, alone, together;
+    Workbook wb;
+
+    String join_id = "";
+    String join_name = "";
+    String join_pw = "";
+    String join_pwck = "";
+    String join_email = "";
+    String join_phone = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +65,21 @@ public class Join extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        join_id = editText_id.getText().toString();
+        join_pw = editText_pw.getText().toString();
+        join_pwck = editText_pwck.getText().toString();
+        join_email = editText_email.getText().toString();
+
+        try {
+            InputStream is = getBaseContext().getResources().getAssets().open("alert_join_us.xls");
+            wb = Workbook.getWorkbook(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (BiffException e) {
+            e.printStackTrace();
+        }
+
+        excel_load();
         spinner_age();
         spinner_gender();
 
@@ -111,7 +144,17 @@ public class Join extends AppCompatActivity {
                 }
             }
         });
+        btn_join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                    Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    finish();
+
+            }
+        });
     }
 
     public void spinner_gender(){
@@ -155,14 +198,55 @@ public class Join extends AppCompatActivity {
         });
     }
 
+    public void excel_load(){
+
+        if(wb != null) {
+            Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+            if(sheet != null) {
+                int colTotal = sheet.getColumns();    // 전체 컬럼
+                int rowIndexStart = 2;                  // row 인덱스 시작
+                int rowTotal = sheet.getColumn(colTotal-1).length;
+
+                String id = "";
+                String name = "";
+                String email = "";
+                String phone = "";
+
+                StringBuilder sb;
+
+                for(int row=rowIndexStart;row<rowTotal;row++) {
+                    sb = new StringBuilder();
+                    for(int col=0;col<colTotal;col++) {
+                        String contents = sheet.getCell(col, row).getContents();
+                        sb.append("col"+col+" : "+contents+" , ");
+                        //col0:id, col1:name, col2:email, col3:phone
+                        if(col == 0) {
+                            id = contents;
+
+                        }
+                        else if(col == 1) {
+                            name = contents;
+                        }
+                        else if(col == 2){
+                            email = contents;
+
+                        }
+
+                        else if(col == 3){
+                            phone = contents;
+
+                        }
+
+                    }
+                    Log.i("xls_log", sb.toString());
+                }
+            }
+        }
 
 
-
-     public void  onClick_realJoin(View view) {
-        Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
-        startActivity(intent);
-         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-         finish();
     }
+
+
+
 }
 

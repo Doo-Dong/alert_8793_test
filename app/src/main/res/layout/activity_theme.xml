@@ -179,270 +179,238 @@
                 android:layout_height="0dp"
                 android:layout_weight="101"
                 android:orientation="horizontal"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="25"></LinearLayout>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="142"
-                    android:background="@drawable/theme_top1"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="34"></LinearLayout>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="142"
-                    android:background="@drawable/theme_top2"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="34"></LinearLayout>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="142"
-                    android:background="@drawable/theme_top3"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="34"></LinearLayout>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="142"
-                    android:background="@drawable/theme_top4"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10"></LinearLayout>
-
-            <!--Theme top text-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="34"
-                android:orientation="horizontal"
                 android:weightSum="720"
+                android:visibility="gone"
                 >
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="75"></LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="42"
-                    android:text="오전"
-                    android:textStyle="bold"
-                    android:textColor="#74e4c4"
-                    android:textSize="10sp"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="135"></LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="42"
-                    android:text="오후"
-                    android:textStyle="bold"
-                    android:textSize="10sp"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="134"></LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="42"
-                    android:text="점심"
-                    android:textStyle="bold"
-                    android:textSize="10sp"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="135"></LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="42"
-                    android:text="저녁"
-                    android:textStyle="bold"
-                    android:textSize="10sp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="38"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="23"
-                android:background="@drawable/theme_shadow"></LinearLayout>
-
-
-            <!--  관광지-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="9"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="34"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="23"></LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="63"
-                    android:text="관광지"
-                    android:textStyle="bold"
-                    android:textSize="10sp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="20"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="142"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="25"></LinearLayout>
-
-                <ImageView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="198"
-                    android:background="@drawable/theme_spot1"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="38"
-                    />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="198"
-                    android:background="@drawable/theme_spot2"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="38"
-                    />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="198"
-                    android:background="@drawable/theme_spot3"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="38"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="48"
-                ></LinearLayout>
-
-            <!--  음식점-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="34"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="23"></LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="63"
-                    android:text="음식점"
-                    android:textStyle="bold"
-                    android:textSize="10sp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="552"
-                android:orientation="horizontal"
-                android:weightSum="720">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="25"></LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="671">
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_morning_A_day1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        ></androidx.recyclerview.widget.RecyclerView>
-                </LinearLayout>
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="24"></LinearLayout>
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_afternoon_A_day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_lunch_A_day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_dinner_A_day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+
             </LinearLayout>
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="38"></LinearLayout>
+                android:layout_weight="101"
+                android:orientation="horizontal"
+                android:weightSum="720"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_morning_A_day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_afternoon_A_day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_lunch_A_day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_dinner_A_day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="101"
+                android:orientation="horizontal"
+                android:weightSum="720"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_morning_A_day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_afternoon_A_day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_lunch_A_day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="142"
+                    app:cardCornerRadius="10dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/img_dinner_A_day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dcdcdc"
+                        />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1061.1"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
 
 
         </LinearLayout>

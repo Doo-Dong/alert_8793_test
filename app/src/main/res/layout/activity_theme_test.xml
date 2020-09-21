@@ -169,11 +169,12 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/below"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="29.5"></LinearLayout>
+                android:layout_weight="29.5"
+                android:orientation="vertical"></LinearLayout>
 
-            <!--Theme top image-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -483,6 +484,7 @@
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
         </RelativeLayout>
+
         <!--드로어-->
         <LinearLayout
             android:id="@+id/drawer"

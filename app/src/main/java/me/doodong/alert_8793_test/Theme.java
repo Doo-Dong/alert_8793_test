@@ -3,6 +3,7 @@ package me.doodong.alert_8793_test;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -28,6 +29,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+
+import org.apache.log4j.lf5.util.Resource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,6 +63,18 @@ public class Theme extends AppCompatActivity {
 
     AppCompatSpinner spinner;
 
+    int day1_img1, day1_img2, day1_img3, day1_img4
+            ,day2_img1, day2_img2, day2_img3, day2_img4
+            ,day3_img1, day3_img2, day3_img3, day3_img4;
+
+    int pos;
+    Intent intent_send;
+
+
+    int[] imgs, imgs2;
+    int[] list;
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +102,7 @@ public class Theme extends AppCompatActivity {
 
         Intent intent = getIntent();
         spinner();
-//
+
         try {
             InputStream is = getBaseContext().getResources().getAssets().open("inform_chiangmai.xls");
             wb = Workbook.getWorkbook(is);
@@ -209,48 +224,48 @@ public class Theme extends AppCompatActivity {
                 ((TextView) adapterView.getChildAt(0)).setTextColor(Color.parseColor("#74e4c4"));
                 ((TextView) adapterView.getChildAt(0)).setTextSize(12);
                 ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);
-
-                if (spinner.getItemAtPosition(i).toString().equals("2일차")){
-                    Toast.makeText(Theme.this, "2일차 클릭", Toast.LENGTH_SHORT).show();
+                pos=i;
+                if (spinner.getItemAtPosition(i).toString().equals("1일차")) {
+                    //Toast.makeText(Theme.this, "1일차 클릭", Toast.LENGTH_SHORT).show();
+                    reset();
+                }else if (spinner.getItemAtPosition(i).toString().equals("2일차")){
+                    //Toast.makeText(Theme.this, "2일차 클릭", Toast.LENGTH_SHORT).show();
+                    reset();
+                }else if (spinner.getItemAtPosition(i).toString().equals("3일차")) {
+                    //Toast.makeText(Theme.this, "3일차 클릭", Toast.LENGTH_SHORT).show();
                     reset();
                 }
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        adapter_spot.notifyDataSetChanged();
-//        recyclerView_spot.setAdapter(adapter_spot);
-//        adapter.notifyDataSetChanged();
-//        recyclerView_food.setAdapter(adapter);
-//    }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void reset(){
+        itemList = new ArrayList<Theme_Item>();
+        itemList_spot = new ArrayList<Theme_Item_spot>();
+        img_morning.setImageResource(R.drawable.background_gray);
+        img_afternoon.setImageResource(R.drawable.background_gray);
+        img_lunch.setImageResource(R.drawable.background_gray);
+        img_dinner.setImageResource(R.drawable.background_gray);
 
+        getData();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void getData() {
-
         init_spot();
         init_food();
-
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void getData_spot_morning(View view) {
         //Toast.makeText(Theme.this, "오전 클릭", Toast.LENGTH_SHORT).show();
-
         textColor();
         tv_morning.setTextColor(Color.parseColor("#74e4c4"));
         //interface 상단에 배치해야 에러없음
@@ -260,12 +275,27 @@ public class Theme extends AppCompatActivity {
                 //Toast.makeText(Theme.this,"Position : "+abc,Toast.LENGTH_LONG).show();
                 Theme_Item_spot item = itemList_spot.get(abc);
                 img_morning.setImageDrawable(item.getImage());
-                adapter_spot.notifyDataSetChanged();
+                if (spinner.getItemAtPosition(pos).toString().equals("1일차")) {
+                    day1_img1 = imgs[abc+2];
+                    Log.d(" day1_img1", String.valueOf(day1_img1));
+
+                    int res =getResources().getIdentifier("pic_3", "drawable", getPackageName());
+                    int res2 =getResources().getIdentifier("pic_4", "drawable", getPackageName());
+                    Log.d(" day1_img1_resId", String.valueOf(res));
+                    Log.d(" day1_img1_resId2", String.valueOf(res2));
+
+                }else if (spinner.getItemAtPosition(pos).toString().equals("2일차")){
+                    day2_img1 =  imgs[abc+2];
+
+                }else if (spinner.getItemAtPosition(pos).toString().equals("3일차")){
+                    day3_img1 =   imgs[abc+2];
+                }
+
+
             }
         };
 
         init_spot();
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -287,7 +317,17 @@ public class Theme extends AppCompatActivity {
                         Toast.makeText(Theme.this, "중복된 선택입니다."+ "\n" + "다른 관광지를 선택해주세요.", Toast.LENGTH_SHORT).show();
                     }else {
                         img_afternoon.setImageDrawable(item.getImage());
-                        adapter_spot.notifyDataSetChanged();
+                        if (spinner.getItemAtPosition(pos).toString().equals("1일차")) {
+                            day1_img2 =    imgs[abc+2];
+                            Log.d("day1_img2", String.valueOf(day1_img2));
+
+                        }else if (spinner.getItemAtPosition(pos).toString().equals("2일차")){
+                            day2_img2 =    imgs[abc+2];
+
+                        }else if (spinner.getItemAtPosition(pos).toString().equals("3일차")){
+                            day3_img2 =    imgs[abc+2];
+
+                        }
 
                     }
                 }
@@ -297,13 +337,11 @@ public class Theme extends AppCompatActivity {
         }catch (Exception e){
             Toast.makeText(Theme.this,"오전 항목이 선택되지 않았습니다." + "\n" + "오전 항목을 선택해주세요.",Toast.LENGTH_LONG).show();
         }
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void getData_food_lunch(View view) {
         //Toast.makeText(Theme.this, "점심 클릭", Toast.LENGTH_SHORT).show();
-
         textColor();
         tv_lunch.setTextColor(Color.parseColor("#74e4c4"));
         onclickInterfaceFood = new onClickInterface_Food() {
@@ -312,18 +350,31 @@ public class Theme extends AppCompatActivity {
                 //Toast.makeText(Theme.this,"Position : "+abc,Toast.LENGTH_LONG).show();
                 Theme_Item item = itemList.get(abc);
                 img_lunch.setImageDrawable(item.getImage());
-                adapter.notifyDataSetChanged();
+                if (spinner.getItemAtPosition(pos).toString().equals("1일차")) {
+                    day1_img3 =   imgs2[abc+44];
+                    Log.d(" day1_img3", String.valueOf(day1_img3));
+
+                    int res =getResources().getIdentifier("pic_45", "drawable", getPackageName());
+                    int res2 =getResources().getIdentifier("pic_46", "drawable", getPackageName());
+                    Log.d(" day1_img1_resId", String.valueOf(res));
+                    Log.d(" day1_img1_resId2", String.valueOf(res2));
+                }else if (spinner.getItemAtPosition(pos).toString().equals("2일차")){
+                    day2_img3 =     imgs2[abc+44];
+
+                }else if (spinner.getItemAtPosition(pos).toString().equals("3일차")){
+                    day3_img3 =     imgs2[abc+44];
+
+                }
+
             }
         };
 
         init_food();
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void getData_food_dinner(View view) {
         //Toast.makeText(Theme.this, "저녁 클릭", Toast.LENGTH_SHORT).show();
-
         textColor();
         tv_dinner.setTextColor(Color.parseColor("#74e4c4"));
 
@@ -338,7 +389,18 @@ public class Theme extends AppCompatActivity {
                         Toast.makeText(Theme.this, "중복된 선택입니다."+ "\n" + "다른 음식점을 선택해주세요.", Toast.LENGTH_SHORT).show();
                     }else {
                         img_dinner.setImageDrawable(item.getImage());
-                        adapter.notifyDataSetChanged();
+                        if (spinner.getItemAtPosition(pos).toString().equals("1일차")) {
+                            day1_img4 = imgs2[abc+44];
+                            Log.d("day1_img4", String.valueOf(day1_img4));
+
+                        }else if (spinner.getItemAtPosition(pos).toString().equals("2일차")){
+                            day2_img4 = imgs2[abc+44];
+
+                        }else if (spinner.getItemAtPosition(pos).toString().equals("3일차")){
+                            day3_img4 =  imgs2[abc+44];
+
+                        }
+
                     }
                 }
             };
@@ -347,7 +409,6 @@ public class Theme extends AppCompatActivity {
         }catch (Exception e){
             Toast.makeText(Theme.this,"점심 항목이 선택되지 않았습니다." + "\n" + "점심 항목을 선택해주세요.",Toast.LENGTH_LONG).show();
         }
-
     }
 
     public void textColor(){
@@ -359,12 +420,9 @@ public class Theme extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void init_spot(){
-
         recyclerView_spot = findViewById(R.id.rv_theme_spot);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView_spot.setLayoutManager(linearLayoutManager);
-
         itemList_spot = new ArrayList<>();
 
         if(wb != null) {
@@ -378,9 +436,10 @@ public class Theme extends AppCompatActivity {
                 String title = "";
 
                 StringBuilder sb;
-
+                imgs = new int[rowTotal];
                 for(int row=rowIndexStart;row<rowTotal;row++) {
                     sb = new StringBuilder();
+
                     for(int col=0;col<colTotal;col++) {
                         String contents = sheet.getCell(col, row).getContents();
 
@@ -390,30 +449,40 @@ public class Theme extends AppCompatActivity {
                             title = contents;
                         else if(col == colTotal - 1 && TYPE.equals("SPOT")) {
                             Theme_Item_spot listData = new Theme_Item_spot(
-                                    getDrawable(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName())), title);
+                                    getDrawable(getResources().getIdentifier("pic_"+(row+1), "drawable", this.getPackageName())), title);
                             itemList_spot.add(listData);
+
+                            imgs[row] = getApplicationContext().getResources().getIdentifier("pic_"+(row+1), "drawable", this.getPackageName());
                         }
                     }
                     Log.i("xls_log", sb.toString());
+
+
                 }
+                Log.d("imgs2", String.valueOf(imgs.length));
+                Log.d("img[0]", String.valueOf(imgs[0]));
+                Log.d("img[1]", String.valueOf(imgs[1]));
+                Log.d("img[2]", String.valueOf(imgs[2]));
+                Log.d("img[3]", String.valueOf(imgs[3]));
+                Log.d("img[44]", String.valueOf(imgs[44]));
+                Log.d("img[45]", String.valueOf(imgs[45]));
+                Log.d("img[47]", String.valueOf(imgs[47]));
             }
         }
 
         adapter_spot = new RecyclerAdapter_Theme_Spot(context, itemList_spot, onclickInterfaceSpot);
         recyclerView_spot.setAdapter(adapter_spot);
 
+
+        adapter_spot.notifyDataSetChanged();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void init_food(){
-
         recyclerView_food = findViewById(R.id.rv);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView_food.setLayoutManager(linearLayoutManager);
-
         itemList = new ArrayList<>();
-
         if(wb != null) {
             Sheet sheet = wb.getSheet(0);   // 시트 불러오기
             if(sheet != null) {
@@ -426,6 +495,8 @@ public class Theme extends AppCompatActivity {
                 String sub = "";
 
                 StringBuilder sb;
+                imgs2 = new int[rowTotal];
+
                 for(int row=rowIndexStart;row<rowTotal;row++) {
                     sb = new StringBuilder();
                     for(int col=0;col<colTotal;col++) {
@@ -439,27 +510,43 @@ public class Theme extends AppCompatActivity {
                             sub = contents;
                         else if(col == colTotal - 1 && TYPE.equals("FOOD")) {
                             Theme_Item listData = new Theme_Item(
-                                    getDrawable(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName())),
+                                    getDrawable(getResources().getIdentifier("pic_"+(row+1), "drawable", this.getPackageName())),
                                     title,sub);
                             itemList.add(listData);
+
+                            imgs2[row] = getApplicationContext().getResources().getIdentifier("pic_"+(row+1), "drawable", this.getPackageName());
+
                         }
                     }
                     Log.i("xls_log", sb.toString());
                 }
+                Log.d("imgs2", String.valueOf(imgs2.length));
+                Log.d("img2[0]", String.valueOf(imgs2[0]));
+                Log.d("img2[1]", String.valueOf(imgs2[1]));
+                Log.d("img2[2]", String.valueOf(imgs2[2]));
+                Log.d("img2[3]", String.valueOf(imgs2[3]));
+                Log.d("img2[44]", String.valueOf(imgs2[44]));
+                Log.d("img2[45]", String.valueOf(imgs2[45]));
+                Log.d("img2[47]", String.valueOf(imgs2[47]));
             }
         }
 
         adapter = new RecyclerAdapter_Theme(context, itemList, onclickInterfaceFood);
         recyclerView_food.setAdapter(adapter);
-
+        adapter.notifyDataSetChanged();
     }
 
     public void  onClick_click(View view) {
         //Toast.makeText(Theme.this, "선택완료 클릭", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), my_page.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        finish();
+        //항목 아무 선택도 하지 않으면 mypage error
+            list = new int[]{ day1_img1, day1_img2, day1_img3, day1_img4
+                    ,day2_img1, day2_img2, day2_img3, day2_img4
+                    ,day3_img1, day3_img2, day3_img3, day3_img4};
+            intent_send = new Intent(getApplicationContext(), my_page.class);
+            intent_send.putExtra("list_spot", list);
+            startActivity(intent_send);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
     }
 
     public void  onClick_place(View view) {
