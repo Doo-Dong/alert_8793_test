@@ -15,7 +15,7 @@
         <fragment
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_weight="1260"
+            android:layout_weight="1015"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:id="@+id/map"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -24,122 +24,207 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_weight="41.1"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="720">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="130"
                 android:orientation="horizontal"
-                android:layout_margin="10dp"
+                android:weightSum="7"
                 >
-                <TextView
-                    android:layout_width="wrap_content"
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="1일차"
-                    android:textColor="#0BB68C"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="center"
-                    android:textSize="12sp"/>
+                    android:layout_weight="5"
+                    android:background="@color/transparent_spinner"
+                    />
+
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
                     android:background="@drawable/keyboard_arrow_right_color"
                     />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:weightSum="2"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/theme_top1"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="오전"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="#0BB68C"
-                        android:textSize="12sp"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:weightSum="2"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/theme_top2"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="오후"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:weightSum="2"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/theme_top3"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="점심"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:weightSum="2"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/theme_top4"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="저녁"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/below"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="29.5"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="101"
+            android:orientation="horizontal"
+            android:weightSum="720">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"></LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="142"
+                app:cardCornerRadius="10dp">
+                <ImageButton
+                    android:id="@+id/img_morning"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#dcdcdc"
+                    android:onClick="getData_spot_morning"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="34"></LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="142"
+                app:cardCornerRadius="10dp">
+                <ImageButton
+                    android:id="@+id/img_afternoon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#dcdcdc"
+                    android:clickable="true"
+                    android:onClick="getData_spot_afternoon"
+                    />
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="34"></LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="142"
+                app:cardCornerRadius="10dp">
+                <ImageButton
+                    android:id="@+id/img_lunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#dcdcdc"
+                    android:clickable="true"
+                    android:onClick="getData_food_lunch"
+                    />
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="34"></LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="142"
+                app:cardCornerRadius="10dp">
+                <ImageButton
+                    android:id="@+id/img_dinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#dcdcdc"
+                    android:clickable="true"
+                    android:onClick="getData_food_dinner"
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"></LinearLayout>
+
+        <!--Theme top text-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="34"
+            android:orientation="horizontal"
+            android:weightSum="720"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="75"></LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_morning"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"
+                android:text="오전"
+                android:textStyle="bold"
+                android:textSize="10sp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="135"></LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_afternoon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"
+                android:text="오후"
+                android:textStyle="bold"
+                android:textSize="10sp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="134"></LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_lunch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"
+                android:text="점심"
+                android:textStyle="bold"
+                android:textSize="10sp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="135"></LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"
+                android:text="저녁"
+                android:textStyle="bold"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="38"></LinearLayout>
 
     </LinearLayout>
 

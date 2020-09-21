@@ -550,8 +550,12 @@ public class Theme extends AppCompatActivity {
     }
 
     public void  onClick_place(View view) {
-        Intent intent = new Intent(getApplicationContext(), Theme_Map.class);
-        startActivity(intent);
+        list = new int[]{ day1_img1, day1_img2, day1_img3, day1_img4
+                ,day2_img1, day2_img2, day2_img3, day2_img4
+                ,day3_img1, day3_img2, day3_img3, day3_img4};
+        intent_send = new Intent(getApplicationContext(), Theme_Map.class);
+        intent_send.putExtra("list_spot", list);
+        startActivity(intent_send);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
     }
