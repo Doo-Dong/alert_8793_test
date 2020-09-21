@@ -27,7 +27,7 @@ public class Main extends AppCompatActivity {
     ExtendedFloatingActionButton btn_choice;
     TextView tv_MainTheme;
 
-    ImageView btn_main2_go, img_main2, img_main3, img_main4;
+    ImageView img_main1, img_main2, img_main3, img_main4;
 
     String country;
 
@@ -40,7 +40,7 @@ public class Main extends AppCompatActivity {
         btn_choice = findViewById(R.id.btn_choice);
         tv_MainTheme= findViewById(R.id.tv_MainTheme);
 
-        btn_main2_go = findViewById(R.id.btn_main2_go);
+        img_main1 = findViewById(R.id.img_main1);
         img_main2 = findViewById(R.id.img_main2);
         img_main3 = findViewById(R.id.img_main3);
         img_main4 = findViewById(R.id.img_main4);
@@ -49,13 +49,13 @@ public class Main extends AppCompatActivity {
         country = intent.getStringExtra("country");
 
         if(country.equals("일본")){
-            btn_main2_go.setBackgroundResource(R.drawable.main_img4);
+            img_main1.setBackgroundResource(R.drawable.main_img4);
             img_main4.setBackgroundResource(R.drawable.main_img1);
             img_main2.setBackgroundResource(R.drawable.main_img3);
             img_main3.setBackgroundResource(R.drawable.main_img2);
             tv_MainTheme.setText("일본");
         }else {
-            btn_main2_go.setBackgroundResource(R.drawable.main_img1);
+            img_main1.setBackgroundResource(R.drawable.main_img1);
             img_main2.setBackgroundResource(R.drawable.main_img2);
             img_main3.setBackgroundResource(R.drawable.main_img3);
             img_main4.setBackgroundResource(R.drawable.main_img4);
@@ -79,6 +79,46 @@ public class Main extends AppCompatActivity {
         TextView btnList_jap = findViewById(R.id.drawerLayout_list_btn_jap);
         TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
         TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
+
+        img_main1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
+                intent.putExtra("shuffle",2);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        img_main2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
+                intent.putExtra("shuffle",4);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        img_main3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
+                intent.putExtra("shuffle",6);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        img_main4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
+                intent.putExtra("shuffle",8);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
 
         // 드로어 여는 버튼 리스너
         btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +144,6 @@ public class Main extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                finish();
             }
         });
 
@@ -113,7 +152,10 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","태국");
                 drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -122,7 +164,10 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("country","일본");
                 drawerLayout.closeDrawer(drawerView);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -134,7 +179,6 @@ public class Main extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                finish();
             }
         });
 
@@ -146,7 +190,6 @@ public class Main extends AppCompatActivity {
                 drawerLayout.closeDrawer(drawerView);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                finish();
             }
         });
 
@@ -166,13 +209,13 @@ public class Main extends AppCompatActivity {
 
                 tv_MainTheme.setText(items[pos]);
                 if(items[pos].equals("일본")){
-                    btn_main2_go.setBackgroundResource(R.drawable.main_img4);
+                    img_main1.setBackgroundResource(R.drawable.main_img4);
                     img_main4.setBackgroundResource(R.drawable.main_img1);
                     img_main2.setBackgroundResource(R.drawable.main_img3);
                     img_main3.setBackgroundResource(R.drawable.main_img2);
                     tv_MainTheme.setText("일본");
                 }else {
-                    btn_main2_go.setBackgroundResource(R.drawable.main_img1);
+                    img_main1.setBackgroundResource(R.drawable.main_img1);
                     img_main2.setBackgroundResource(R.drawable.main_img2);
                     img_main3.setBackgroundResource(R.drawable.main_img3);
                     img_main4.setBackgroundResource(R.drawable.main_img4);
@@ -201,7 +244,6 @@ public class Main extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            finish();
         }
     };
 
@@ -243,13 +285,5 @@ public class Main extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Theme.class);
         startActivity(intent);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        finish();
-    }
-
-    public void  onClick_main2(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        finish();
     }
 }

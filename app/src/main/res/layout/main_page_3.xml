@@ -38,12 +38,15 @@
                 android:layout_height="0dp"
                 android:layout_weight="140"
                 android:background="#292929"
+                android:weightSum="720"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="490"
                     android:orientation="vertical"
+                    android:gravity="center_vertical"
                     android:layout_gravity="center">
                     <TextView
                         android:id="@+id/main3_title"
@@ -53,6 +56,8 @@
                         android:text="왓 프라탓 도이수텝 사원"
                         android:textSize="18dp"
                         android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:textColor="#FFF" />
                     <TextView
                         android:id="@+id/main3_dist"
@@ -62,24 +67,27 @@
                         android:layout_marginVertical="3dp"
                         android:text="치앙마이의 상징이된 황금사원"
                         android:textSize="11dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:textColor="#FFF" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="right">
+                    android:layout_weight="230">
                     <LinearLayout
                         android:layout_width="1px"
                         android:layout_height="match_parent"
                         android:layout_marginVertical="15dp"
+                        android:layout_marginLeft="10dp"
                         android:background="#FFF"/>
 
                     <Button
                         android:id="@+id/include_schedule"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@drawable/include_schedule"
                         android:clickable="true"
                         android:foreground="?selectableItemBackground" />

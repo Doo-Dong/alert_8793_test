@@ -1,8 +1,10 @@
 package me.doodong.alert_8793_test;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -10,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
@@ -19,6 +22,7 @@ public class Click extends AppCompatActivity {
     //TextView txtText;
     LinearLayout layout;
     ArrayAdapter<CharSequence> click1, click2;
+    String position, day, time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class Click extends AppCompatActivity {
 
         //데이터 가져오기
         Intent intent = getIntent();
+        position = intent.getStringExtra("position");
        /* String data = intent.getStringExtra("data");
         txtText.setText(data);*/
 
@@ -42,7 +47,7 @@ public class Click extends AppCompatActivity {
     }
 
     public void spinner_click1(){
-        AppCompatSpinner spinner = findViewById(R.id.click_spinner1);
+        final AppCompatSpinner spinner = findViewById(R.id.click_spinner1);
         click1 = ArrayAdapter.createFromResource(this, R.array.click_spinner1, android.R.layout.simple_spinner_dropdown_item);
         click1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(click1);
@@ -55,6 +60,7 @@ public class Click extends AppCompatActivity {
                 ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);
                 ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
+                day = (String) adapterView.getItemAtPosition(i);
             }
 
             @Override
@@ -77,6 +83,8 @@ public class Click extends AppCompatActivity {
                 ((TextView) adapterView.getChildAt(0)).setTextSize(10);
                 ((TextView) adapterView.getChildAt(0)).setTypeface(Typeface.DEFAULT_BOLD);
                 ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+                time = (String) adapterView.getItemAtPosition(i);
             }
 
             @Override
@@ -91,6 +99,9 @@ public class Click extends AppCompatActivity {
         //데이터 전달하기
         Intent intent = new Intent(getApplicationContext(), my_page.class);
         intent.putExtra("result", "Close Popup");
+        intent.putExtra("position", position);
+        intent.putExtra("day", day);
+        intent.putExtra("time", time);
         setResult(RESULT_OK, intent);
 
         //액티비티(팝업) 닫기
