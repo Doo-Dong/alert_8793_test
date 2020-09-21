@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class my_page extends AppCompatActivity {
 
     Random rand = new Random();
     int[] list;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class my_page extends AppCompatActivity {
         Intent intent = getIntent();
         result = intent.getStringExtra("result");
         list = intent.getIntArrayExtra("list_spot");
+
         //Main3 to my_page
         if (result != null) {
             if (result.equals("Close Popup")) {
@@ -54,14 +57,16 @@ public class my_page extends AppCompatActivity {
         }
 
         if (list != null) {
-
-        } else {
+            //Toast.makeText(my_page.this, list[0], Toast.LENGTH_SHORT).show();
+        }else {
             list = new int[]{
                     R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
                     ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
                     ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
             };
         }
+
+
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
@@ -171,7 +176,6 @@ public class my_page extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 intent.putExtra("country","태국");
-                intent.putExtra("list_spot", list);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
@@ -309,22 +313,24 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(list[0]),
+                list[0],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("점심",
-                getDrawable(list[2]),
+        listData = new ListData("오전",
+                list[2],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("오후",
-                getDrawable(list[1]),
+        listData = new ListData("오전",
+
+                list[1],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("저녁",
-                getDrawable(list[3]),
+        listData = new ListData("오전",
+
+                list[3],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(0), "id", this.getPackageName())),
                 randDist(0));
         itemList.add(listData);
@@ -342,22 +348,26 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(list[4]),
+
+                list[4],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getDrawable(list[6]),
+
+                list[6],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "3m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getDrawable(list[5]),
+
+                list[5],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "5m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getDrawable(list[7]),
+
+                list[7],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -375,22 +385,26 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(list[8]),
+
+             list[8],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getDrawable(list[10]),
+
+                list[10],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getDrawable(list[9]),
+
+              list[9],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getDrawable(list[11]),
+
+                 list[11],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -408,15 +422,17 @@ public class my_page extends AppCompatActivity {
             finish();
         }
     };
+
+
 }
 
 class ListData {
     String text;
-    Drawable image;
+    int image;
     Drawable direct;
     String dist;
 
-    ListData(String text, Drawable image, Drawable direct, String dist) {
+    ListData(String text, int image, Drawable direct, String dist) {
         this.text = text;
         this.image = image;
         this.direct = direct;

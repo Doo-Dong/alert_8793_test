@@ -42,6 +42,9 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
     TextView title, dist;
     double Lat, Lng;
 
+    String resourceName, realName;
+
+    int resID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +66,14 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
 
         Intent intent = getIntent();
         position = intent.getStringExtra("position");
+        resourceName = intent.getStringExtra("resourceName");
+        if (resourceName != null){
+            realName = resourceName.substring(40);
+            //Toast.makeText(MainPage_3.this, "resourceName : " + resourceName, Toast.LENGTH_SHORT).show();
+            Log.d("resourceName : ",resourceName);
+            Log.d("realName : ",realName);
+
+        }
 
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
@@ -158,18 +169,21 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
             }
         });
 
+
+        init_main3();
+
         // 일정포함 버튼 리스너
         btnList_include_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Click.class);
-                intent.putExtra("position", position);
+                intent.putExtra("resID", resID);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
-        init_main3();
+
 
         // SupportMapFragment을 통해 레이아웃에 만든 fragment의 ID를 참조하고 구글맵을 호출한다.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -245,7 +259,12 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
             Sheet sheet = wb.getSheet(0);   // 시트 불러오기
             if(sheet != null) {
                 int colTotal = sheet.getColumns();    // 전체 컬럼
-                int row = Integer.parseInt(position);                  // row 인덱스 시작
+                int row  = 0;
+                if (position != null){
+                    row = Integer.parseInt(position);                  // row 인덱스 시작
+                }else if (realName != null){
+                    row = Integer.parseInt(realName)-1;                  // row 인덱스 시작
+                }
 
                 String kor_title = "";
                 String kor_dist = "";
@@ -266,6 +285,8 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
                         thumbnail.setBackgroundResource(getResources().getIdentifier("@drawable/pic_"+(row+1), "id", this.getPackageName()));
                         title.setText(kor_title);
                         dist.setText(kor_dist);
+                        resID = getResources().getIdentifier("pic_"+(row+1), "drawable", this.getPackageName());
+                        Log.d("resID", String.valueOf(resID));
                     }
                 }
             }

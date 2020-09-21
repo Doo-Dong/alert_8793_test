@@ -266,6 +266,7 @@ public class Theme extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void getData_spot_morning(View view) {
         //Toast.makeText(Theme.this, "오전 클릭", Toast.LENGTH_SHORT).show();
+
         textColor();
         tv_morning.setTextColor(Color.parseColor("#74e4c4"));
         //interface 상단에 배치해야 에러없음
@@ -334,6 +335,7 @@ public class Theme extends AppCompatActivity {
             };
 
             init_spot();
+
         }catch (Exception e){
             Toast.makeText(Theme.this,"오전 항목이 선택되지 않았습니다." + "\n" + "오전 항목을 선택해주세요.",Toast.LENGTH_LONG).show();
         }

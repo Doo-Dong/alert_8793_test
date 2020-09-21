@@ -1,5 +1,6 @@
 package me.doodong.alert_8793_test;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +32,7 @@ public class Main extends AppCompatActivity {
     ImageView img_main1, img_main2, img_main3, img_main4, friend_theme1, friend_theme2, friend_theme3;
 
     String country;
+    private onClickInterface_Main onclickInterfaceMain;
 
     int[] list;
 
@@ -256,18 +259,27 @@ public class Main extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new RecyclerAdapter_Main(onClickItem);
+        onclickInterfaceMain = new onClickInterface_Main() {
+            @Override
+            public void setClick(int abc) {
+                //Toast.makeText(Main.this,"Position : "+abc,Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(), RecommendationResult.class);
+
+                intent.putExtra("main_list"+abc, String.valueOf(abc));
+//                intent.putExtra("main_list2", "1");
+//                intent.putExtra("main_list3", "2");
+//                intent.putExtra("main_list4", "3");
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        };
+
+        adapter = new RecyclerAdapter_Main(getApplicationContext(), onclickInterfaceMain);
         recyclerView.setAdapter(adapter);
     }
 
-    private View.OnClickListener onClickItem = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(getApplicationContext(), MainPage_2.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        }
-    };
+
 
 
     private void getData() {
