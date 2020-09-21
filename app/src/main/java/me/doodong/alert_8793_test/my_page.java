@@ -317,18 +317,18 @@ public class my_page extends AppCompatActivity {
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("오전",
+        listData = new ListData("점심",
                 list[2],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("오전",
+        listData = new ListData("오후",
 
                 list[1],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("오전",
+        listData = new ListData("저녁",
 
                 list[3],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(0), "id", this.getPackageName())),

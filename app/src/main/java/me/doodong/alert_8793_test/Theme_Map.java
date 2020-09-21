@@ -243,14 +243,14 @@ public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void init1() {
         img_morning.setImageResource(list[0]);
-        img_afternoon.setImageResource(list[2]);
-        img_lunch.setImageResource(list[1]);
+        img_afternoon.setImageResource(list[1]);
+        img_lunch.setImageResource(list[2]);
         img_dinner.setImageResource(list[3]);
 
         initList = new int[]{
                 convertResID(list[0]),
-                convertResID(list[2]),
                 convertResID(list[1]),
+                convertResID(list[2]),
                 convertResID(list[3])
         };
 
@@ -260,14 +260,14 @@ public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void init2() {
         img_morning.setImageResource(list[4]);
-        img_afternoon.setImageResource(list[6]);
-        img_lunch.setImageResource(list[5]);
+        img_afternoon.setImageResource(list[5]);
+        img_lunch.setImageResource(list[6]);
         img_dinner.setImageResource(list[7]);
 
         initList = new int[]{
                 convertResID(list[4]),
-                convertResID(list[6]),
                 convertResID(list[5]),
+                convertResID(list[6]),
                 convertResID(list[7])
         };
 
@@ -277,14 +277,14 @@ public class Theme_Map extends FragmentActivity implements OnMapReadyCallback {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void init3() {
         img_morning.setImageResource(list[8]);
-        img_afternoon.setImageResource(list[10]);
-        img_lunch.setImageResource(list[9]);
+        img_afternoon.setImageResource(list[9]);
+        img_lunch.setImageResource(list[10]);
         img_dinner.setImageResource(list[11]);
 
         initList = new int[]{
                 convertResID(list[8]),
-                convertResID(list[10]),
                 convertResID(list[9]),
+                convertResID(list[10]),
                 convertResID(list[11])
         };
 
