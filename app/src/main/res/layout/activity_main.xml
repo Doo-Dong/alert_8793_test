@@ -520,45 +520,62 @@
                                     android:layout_height="match_parent"
                                     android:orientation="horizontal">
 
-                                    <ImageView
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="213"
-                                        android:background="@drawable/friend_theme1"
-                                        />
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="130dp"
+                                        android:layout_height="70dp"
+                                        app:cardCornerRadius="8dp"
+                                        app:cardElevation="0dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+                                        <ImageView
+                                            android:id="@+id/friend_theme1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/friend_theme1"
+                                            />
+                                    </androidx.cardview.widget.CardView>
 
-                                    <ImageView
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="35"
-                                        />
+                                    <LinearLayout
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"/>
 
-                                    <ImageView
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="213"
-                                        android:background="@drawable/friend_theme2"
-                                        />
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="130dp"
+                                        android:layout_height="70dp"
+                                        app:cardCornerRadius="8dp"
+                                        app:cardElevation="0dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+                                        <ImageView
+                                            android:id="@+id/friend_theme2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/friend_theme2"
+                                            />
+                                    </androidx.cardview.widget.CardView>
 
+                                    <LinearLayout
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"/>
 
-                                    <ImageView
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="35"
-                                        />
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="130dp"
+                                        android:layout_height="70dp"
+                                        app:cardCornerRadius="8dp"
+                                        app:cardElevation="0dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+                                        <ImageView
+                                            android:id="@+id/friend_theme3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/friend_theme3"
+                                            />
+                                    </androidx.cardview.widget.CardView>
 
-                                    <ImageView
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="213"
-                                        android:background="@drawable/friend_theme2"
-                                        />
-
-                                    <ImageView
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="35"
-                                        />
+                                    <LinearLayout
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"/>
 
                                 </LinearLayout>
 

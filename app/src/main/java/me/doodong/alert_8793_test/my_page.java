@@ -54,9 +54,8 @@ public class my_page extends AppCompatActivity {
         }
 
         if (list != null) {
-            //Toast.makeText(Theme.this, list[0], Toast.LENGTH_SHORT).show();
 
-        }else {
+        } else {
             list = new int[]{
                     R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
                     ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
@@ -172,6 +171,7 @@ public class my_page extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 intent.putExtra("country","태국");
+                intent.putExtra("list_spot", list);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
