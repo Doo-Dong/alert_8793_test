@@ -199,7 +199,7 @@ public class Join extends AppCompatActivity {
     }
 
     public void excel_load(){
-
+        Boolean validate;
         if(wb != null) {
             Sheet sheet = wb.getSheet(0);   // 시트 불러오기
             if(sheet != null) {
@@ -212,7 +212,7 @@ public class Join extends AppCompatActivity {
                 String email = "";
                 String phone = "";
 
-                StringBuilder sb;
+                StringBuilder sb, test;
 
                 for(int row=rowIndexStart;row<rowTotal;row++) {
                     sb = new StringBuilder();
@@ -222,23 +222,19 @@ public class Join extends AppCompatActivity {
                         //col0:id, col1:name, col2:email, col3:phone
                         if(col == 0) {
                             id = contents;
-
                         }
                         else if(col == 1) {
                             name = contents;
                         }
                         else if(col == 2){
                             email = contents;
-
                         }
-
                         else if(col == 3){
                             phone = contents;
-
                         }
 
                     }
-                    Log.i("xls_log", sb.toString());
+                    Log.i("xls_log_join", sb.toString());
                 }
             }
         }

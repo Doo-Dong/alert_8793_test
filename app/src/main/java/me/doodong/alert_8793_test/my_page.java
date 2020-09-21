@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class my_page extends AppCompatActivity {
 
     Random rand = new Random();
     int[] list;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class my_page extends AppCompatActivity {
         Intent intent = getIntent();
         result = intent.getStringExtra("result");
         list = intent.getIntArrayExtra("list_spot");
+
         //Main3 to my_page
         if (result != null) {
             if (result.equals("Close Popup")) {
@@ -54,8 +57,7 @@ public class my_page extends AppCompatActivity {
         }
 
         if (list != null) {
-            //Toast.makeText(Theme.this, list[0], Toast.LENGTH_SHORT).show();
-
+            //Toast.makeText(my_page.this, list[0], Toast.LENGTH_SHORT).show();
         }else {
             list = new int[]{
                     R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
@@ -63,6 +65,8 @@ public class my_page extends AppCompatActivity {
                     ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
             };
         }
+
+
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
@@ -408,6 +412,8 @@ public class my_page extends AppCompatActivity {
             finish();
         }
     };
+
+
 }
 
 class ListData {

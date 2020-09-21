@@ -1,6 +1,8 @@
 package me.doodong.alert_8793_test;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +18,12 @@ public class RecyclerAdapter_Main extends RecyclerView.Adapter<RecyclerAdapter_M
 
     // adapter에 들어갈 list 입니다.
     private ArrayList<Main_Item> listData = new ArrayList<>();
-    private View.OnClickListener onClickItem;
+    onClickInterface_Main onClickInterface_Main;
+    private Context con;
 
-    public RecyclerAdapter_Main(View.OnClickListener onClickItem) {
-        this.onClickItem = onClickItem;
+    public RecyclerAdapter_Main(Context context, onClickInterface_Main onClickItem) {
+        this.con = context;
+        this.onClickInterface_Main = onClickItem;
     }
 
     @NonNull
@@ -32,12 +36,27 @@ public class RecyclerAdapter_Main extends RecyclerView.Adapter<RecyclerAdapter_M
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
         // Item을 하나, 하나 보여주는(bind 되는) 함수입니다.
         holder.onBind(listData.get(position));
-        holder.imageView.setOnClickListener(onClickItem);
-        holder.textView1.setOnClickListener(onClickItem);
-        holder.textView2.setOnClickListener(onClickItem);
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickInterface_Main.setClick(position);
+            }
+        });
+        holder.textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickInterface_Main.setClick(position);
+            }
+        });
+        holder.textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickInterface_Main.setClick(position);
+            }
+        });
     }
 
     @Override
