@@ -74,8 +74,8 @@ public class Main extends AppCompatActivity {
 
         if (list != null) {
             friend_theme1.setBackgroundResource(list[0]);
-            friend_theme2.setBackgroundResource(list[1]);
-            friend_theme3.setBackgroundResource(list[2]);
+            friend_theme2.setBackgroundResource(list[2]);
+            friend_theme3.setBackgroundResource(list[1]);
         } else {
             list = new int[]{
                     R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
@@ -83,8 +83,8 @@ public class Main extends AppCompatActivity {
                     ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
             };
             friend_theme1.setBackgroundResource(list[0]);
-            friend_theme2.setBackgroundResource(list[1]);
-            friend_theme3.setBackgroundResource(list[2]);
+            friend_theme2.setBackgroundResource(list[2]);
+            friend_theme3.setBackgroundResource(list[1]);
         }
 
         init();
