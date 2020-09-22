@@ -29,10 +29,12 @@ public class Main extends AppCompatActivity {
     ExtendedFloatingActionButton btn_choice;
     TextView tv_MainTheme;
 
-    ImageView img_main1, img_main2, img_main3, img_main4;
+    ImageView img_main1, img_main2, img_main3, img_main4, friend_theme1, friend_theme2, friend_theme3;
 
     String country;
     private onClickInterface_Main onclickInterfaceMain;
+
+    int[] list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +50,13 @@ public class Main extends AppCompatActivity {
         img_main3 = findViewById(R.id.img_main3);
         img_main4 = findViewById(R.id.img_main4);
 
+        friend_theme1 = findViewById(R.id.friend_theme1);
+        friend_theme2 = findViewById(R.id.friend_theme2);
+        friend_theme3 = findViewById(R.id.friend_theme3);
+
         Intent intent = getIntent();
         country = intent.getStringExtra("country");
+        list = intent.getIntArrayExtra("list_spot");
 
         if(country.equals("일본")){
             img_main1.setBackgroundResource(R.drawable.main_img4);
@@ -63,6 +70,21 @@ public class Main extends AppCompatActivity {
             img_main3.setBackgroundResource(R.drawable.main_img3);
             img_main4.setBackgroundResource(R.drawable.main_img4);
             tv_MainTheme.setText("태국");
+        }
+
+        if (list != null) {
+            friend_theme1.setBackgroundResource(list[0]);
+            friend_theme2.setBackgroundResource(list[1]);
+            friend_theme3.setBackgroundResource(list[2]);
+        } else {
+            list = new int[]{
+                    R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
+                    ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
+                    ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
+            };
+            friend_theme1.setBackgroundResource(list[0]);
+            friend_theme2.setBackgroundResource(list[1]);
+            friend_theme3.setBackgroundResource(list[2]);
         }
 
         init();
