@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -30,7 +31,7 @@ public class my_page extends AppCompatActivity {
     private MyAdapter adapter1;
     private MyAdapter adapter2;
     private MyAdapter adapter3;
-    String result, position, day, time;
+    String result, resID, day, time;
 
     Random rand = new Random();
     int[] list;
@@ -50,9 +51,10 @@ public class my_page extends AppCompatActivity {
         //Main3 to my_page
         if (result != null) {
             if (result.equals("Close Popup")) {
-                position = intent.getStringExtra("position");
+                resID = intent.getStringExtra("resID");
                 day = intent.getStringExtra("day");
                 time = intent.getStringExtra("time");
+                Log.d("click to my_page", resID + day + time );
             }
         }
 
@@ -313,24 +315,22 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                list[0],
+                (day+time).equals("1일차오전") ? Integer.parseInt(resID) : list[0],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("오전",
-                list[2],
+        listData = new ListData("점심",
+                (day+time).equals("1일차점심") ? Integer.parseInt(resID) : list[2],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("오전",
-
-                list[1],
+        listData = new ListData("오후",
+                (day+time).equals("1일차오후") ? Integer.parseInt(resID) : list[1],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
-        listData = new ListData("오전",
-
-                list[3],
+        listData = new ListData("저녁",
+                (day+time).equals("1일차저녁") ? Integer.parseInt(resID) : list[3],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(0), "id", this.getPackageName())),
                 randDist(0));
         itemList.add(listData);
@@ -348,26 +348,22 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-
-                list[4],
+                (day+time).equals("2일차오전") ? Integer.parseInt(resID) : list[4],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-
-                list[6],
+                (day+time).equals("2일차점심") ? Integer.parseInt(resID) :list[6],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "3m");
         itemList.add(listData);
         listData = new ListData("오후",
-
-                list[5],
+                (day+time).equals("2일차오후") ? Integer.parseInt(resID) : list[5],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "5m");
         itemList.add(listData);
         listData = new ListData("저녁",
-
-                list[7],
+                (day+time).equals("2일차저녁") ? Integer.parseInt(resID) : list[7],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -385,26 +381,22 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-
-             list[8],
+                (day+time).equals("3일차오전") ? Integer.parseInt(resID) : list[8],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-
-                list[10],
+                (day+time).equals("3일차점심") ? Integer.parseInt(resID) : list[10],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-
-              list[9],
+                (day+time).equals("3일차오후") ? Integer.parseInt(resID) : list[9],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-
-                 list[11],
+                (day+time).equals("3일차저녁") ? Integer.parseInt(resID) : list[11],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -422,7 +414,6 @@ public class my_page extends AppCompatActivity {
             finish();
         }
     };
-
 
 }
 

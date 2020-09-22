@@ -177,7 +177,7 @@ public class MainPage_3 extends FragmentActivity implements OnMapReadyCallback {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Click.class);
-                intent.putExtra("resID", resID);
+                intent.putExtra("resID", String.valueOf(resID));
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
