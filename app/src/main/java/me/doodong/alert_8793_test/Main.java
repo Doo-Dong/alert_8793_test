@@ -240,7 +240,7 @@ public class Main extends AppCompatActivity {
         onclickInterfaceMain = new onClickInterface_Main() {
             @Override
             public void setClick(int abc) {
-                Toast.makeText(Main.this,"Position : "+abc,Toast.LENGTH_LONG).show();
+                //Toast.makeText(Main.this,"Position : "+abc,Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), RecommendationResult.class);
 
                 intent.putExtra("main_list"+abc, String.valueOf(abc));
@@ -249,6 +249,7 @@ public class Main extends AppCompatActivity {
 //                intent.putExtra("main_list4", "3");
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         };
 

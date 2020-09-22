@@ -23,9 +23,9 @@ public class RecommendationResult extends AppCompatActivity {
     private RecyclerView listview1;
     private RecyclerView listview2;
     private RecyclerView listview3;
-    private MyAdapter adapter1;
-    private MyAdapter adapter2;
-    private MyAdapter adapter3;
+    private MyAdapter_reco adapter1;
+    private MyAdapter_reco adapter2;
+    private MyAdapter_reco adapter3;
     String main_list0, main_list1, main_list2, main_list3;
     TextView tv_themeName;
 
@@ -45,27 +45,27 @@ public class RecommendationResult extends AppCompatActivity {
         main_list3 = intent.getStringExtra("main_list3");
 
         if (main_list0 != null){
-            Toast.makeText(RecommendationResult.this, main_list0, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(RecommendationResult.this, main_list0, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 카페로드");
             setMain_list0();
             setMain_list1();
             setMain_list2();
         }else  if (main_list1 != null){
-            Toast.makeText(RecommendationResult.this, main_list1, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(RecommendationResult.this, main_list1, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 풍경로드");
             setMain_list0();
             setMain_list1();
             setMain_list2();
 
         } else if (main_list2 != null){
-            Toast.makeText(RecommendationResult.this, main_list2, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(RecommendationResult.this, main_list2, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 마켓로드");
             setMain_list0();
             setMain_list1();
             setMain_list2();
 
         } else if (main_list3 != null){
-            Toast.makeText(RecommendationResult.this, main_list3, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(RecommendationResult.this, main_list3, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 먹방로드");
             setMain_list0();
             setMain_list1();
@@ -176,27 +176,27 @@ public class RecommendationResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전", tv_themeName.getText().equals("2박 3일 카페로드") ?
-                getDrawable(R.drawable.pic_7) : getDrawable(R.drawable.pic_11),
+                R.drawable.pic_7 : R.drawable.pic_11,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getDrawable(R.drawable.pic_47),
+                R.drawable.pic_47,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getDrawable(R.drawable.pic_10),
+                R.drawable.pic_10,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getDrawable(R.drawable.pic_49),
+                R.drawable.pic_49,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
 
-        adapter1 = new MyAdapter(this, itemList, onClickItem);
+        adapter1 = new MyAdapter_reco(this, itemList, onClickItem);
         listview1.setAdapter(adapter1);
     }
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -207,27 +207,27 @@ public class RecommendationResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(R.drawable.pic_5),
+                R.drawable.pic_5,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getDrawable(R.drawable.pic_50),
+                R.drawable.pic_50,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getDrawable(R.drawable.pic_14),
+                R.drawable.pic_14,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getDrawable(R.drawable.pic_64),
+                R.drawable.pic_64,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
 
-        adapter2 = new MyAdapter(this, itemList, onClickItem);
+        adapter2 = new MyAdapter_reco(this, itemList, onClickItem);
         listview2.setAdapter(adapter2);
     }
 
@@ -239,27 +239,27 @@ public class RecommendationResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(R.drawable.pic_23),
+                R.drawable.pic_23,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getDrawable(R.drawable.pic_66),
+                R.drawable.pic_66,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getDrawable(R.drawable.pic_38),
+                R.drawable.pic_38,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getDrawable(R.drawable.pic_69),
+                R.drawable.pic_69,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
 
-        adapter3 = new MyAdapter(this, itemList, onClickItem);
+        adapter3 = new MyAdapter_reco(this, itemList, onClickItem);
         listview3.setAdapter(adapter3);
     }
 

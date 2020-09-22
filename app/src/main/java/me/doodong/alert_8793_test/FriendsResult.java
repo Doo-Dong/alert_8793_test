@@ -224,22 +224,22 @@ public class FriendsResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/temp", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/temp", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "5m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "2m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -255,22 +255,22 @@ public class FriendsResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "3m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "5m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -286,22 +286,22 @@ public class FriendsResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_3", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_2", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/view_page_1", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getResources().getDrawable(getResources().getIdentifier("@drawable/temp", "id", this.getPackageName())),
+                getResources().getIdentifier("@drawable/temp", "id", this.getPackageName()),
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);

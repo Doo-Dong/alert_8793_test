@@ -1,11 +1,10 @@
 package me.doodong.alert_8793_test;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,13 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapter_reco extends RecyclerView.Adapter<MyAdapter_reco.ViewHolder> {
 
     private ArrayList<ListData> itemList;
     private Context context;
     private View.OnClickListener onClickItem;
 
-    public MyAdapter(Context context, ArrayList<ListData> itemList, View.OnClickListener onClickItem) {
+    public MyAdapter_reco(Context context, ArrayList<ListData> itemList, View.OnClickListener onClickItem) {
         this.context = context;
         this.itemList = itemList;
         this.onClickItem = onClickItem;
@@ -43,8 +42,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        ListData item = itemList.get(position);
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        final ListData item = itemList.get(position);
 
         holder.textview.setText(item.text);
 
@@ -54,6 +53,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.imageview.setBackgroundResource(item.image);
         holder.direction.setBackground(item.direct);
         holder.distance.setText(item.dist);
+
+        holder.imageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+                int test = item.image;  //resourceID
+                String nametest = context.getResources().getResourceName(test);
+
+                Log.d("test", String.valueOf(test));
+                Log.d("testname", nametest);
+                Intent intent = new Intent(context, MainPage_3.class);
+                intent.putExtra("resourceName", nametest);
+                context.startActivity(intent);
+
+                //Toast.makeText(view.getContext(),"click", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

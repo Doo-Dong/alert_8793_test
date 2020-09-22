@@ -313,22 +313,24 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(list[0]),
+                list[0],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
         listData = new ListData("오전",
-                getDrawable(list[2]),
+                list[2],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
         listData = new ListData("오전",
-                getDrawable(list[1]),
+
+                list[1],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(1), "id", this.getPackageName())),
                 randDist(1));
         itemList.add(listData);
         listData = new ListData("오전",
-                getDrawable(list[3]),
+
+                list[3],
                 getResources().getDrawable(getResources().getIdentifier(randDirect(0), "id", this.getPackageName())),
                 randDist(0));
         itemList.add(listData);
@@ -346,22 +348,26 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(list[4]),
+
+                list[4],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getDrawable(list[6]),
+
+                list[6],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "3m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getDrawable(list[5]),
+
+                list[5],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "5m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getDrawable(list[7]),
+
+                list[7],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -379,22 +385,26 @@ public class my_page extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                getDrawable(list[8]),
+
+             list[8],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                getDrawable(list[10]),
+
+                list[10],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
         listData = new ListData("오후",
-                getDrawable(list[9]),
+
+              list[9],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "10m");
         itemList.add(listData);
         listData = new ListData("저녁",
-                getDrawable(list[11]),
+
+                 list[11],
                 getResources().getDrawable(getResources().getIdentifier("@drawable/dehaze", "id", this.getPackageName())),
                 "");
         itemList.add(listData);
@@ -418,11 +428,11 @@ public class my_page extends AppCompatActivity {
 
 class ListData {
     String text;
-    Drawable image;
+    int image;
     Drawable direct;
     String dist;
 
-    ListData(String text, Drawable image, Drawable direct, String dist) {
+    ListData(String text, int image, Drawable direct, String dist) {
         this.text = text;
         this.image = image;
         this.direct = direct;
