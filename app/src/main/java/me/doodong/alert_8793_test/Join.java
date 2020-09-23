@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import jxl.Sheet;
 import jxl.Workbook;
@@ -204,8 +205,6 @@ public class Join extends AppCompatActivity {
                         String contents = sheet.getCell(col, row).getContents();
                         if (editText_id.getText().toString().equals(contents)) {
                             validate = true;
-                        }else {
-                           
                         }
                     }
                 }
@@ -241,6 +240,7 @@ public class Join extends AppCompatActivity {
             validate = false;
 
         }else {
+
 
             Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
             startActivity(intent);
