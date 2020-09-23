@@ -3,6 +3,7 @@ package me.doodong.alert_8793_test;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -74,6 +75,7 @@ public class Theme extends AppCompatActivity {
     int[] imgs, imgs2;
     int[] list;
 
+    SharedPreferences localData;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -101,6 +103,8 @@ public class Theme extends AppCompatActivity {
         tv_dinner = findViewById(R.id.tv_dinner);
 
         Intent intent = getIntent();
+
+        loadData();
         spinner();
 
         try {
@@ -113,7 +117,6 @@ public class Theme extends AppCompatActivity {
         }
 
         getData();
-
 
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
@@ -227,13 +230,13 @@ public class Theme extends AppCompatActivity {
                 pos=i;
                 if (spinner.getItemAtPosition(i).toString().equals("1일차")) {
                     //Toast.makeText(Theme.this, "1일차 클릭", Toast.LENGTH_SHORT).show();
-                    reset();
+                    reset(1);
                 }else if (spinner.getItemAtPosition(i).toString().equals("2일차")){
                     //Toast.makeText(Theme.this, "2일차 클릭", Toast.LENGTH_SHORT).show();
-                    reset();
+                    reset(2);
                 }else if (spinner.getItemAtPosition(i).toString().equals("3일차")) {
                     //Toast.makeText(Theme.this, "3일차 클릭", Toast.LENGTH_SHORT).show();
-                    reset();
+                    reset(3);
                 }
             }
             @Override
@@ -245,13 +248,39 @@ public class Theme extends AppCompatActivity {
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void reset(){
+    public void reset(int flag){
         itemList = new ArrayList<Theme_Item>();
         itemList_spot = new ArrayList<Theme_Item_spot>();
         img_morning.setImageResource(R.drawable.background_gray);
         img_afternoon.setImageResource(R.drawable.background_gray);
         img_lunch.setImageResource(R.drawable.background_gray);
         img_dinner.setImageResource(R.drawable.background_gray);
+
+        localData = getSharedPreferences("localData", 0);
+
+        //세이브 체크
+        if (localData.getBoolean("is_Save", false)) {
+            switch (flag) {
+                case 1:
+                    img_morning.setImageResource(day1_img1);
+                    img_afternoon.setImageResource(day1_img3);
+                    img_lunch.setImageResource(day1_img2);
+                    img_dinner.setImageResource(day1_img4);
+                    break;
+                case 2:
+                    img_morning.setImageResource(day2_img1);
+                    img_afternoon.setImageResource(day2_img3);
+                    img_lunch.setImageResource(day2_img2);
+                    img_dinner.setImageResource(day2_img4);
+                    break;
+                case 3:
+                    img_morning.setImageResource(day3_img1);
+                    img_afternoon.setImageResource(day3_img3);
+                    img_lunch.setImageResource(day3_img2);
+                    img_dinner.setImageResource(day3_img4);
+                    break;
+            }
+        }
 
         getData();
     }
@@ -260,6 +289,7 @@ public class Theme extends AppCompatActivity {
     public void getData() {
         init_spot();
         init_food();
+        loadData();
     }
 
 
@@ -536,6 +566,28 @@ public class Theme extends AppCompatActivity {
         adapter = new RecyclerAdapter_Theme(context, itemList, onclickInterfaceFood);
         recyclerView_food.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+    }
+
+    public void loadData() {
+        localData = getSharedPreferences("localData", 0);
+
+        //세이브 체크
+        if (localData.getBoolean("is_Save", false)) {
+            list = new int[]{
+                    day1_img1 = localData.getInt("0", R.drawable.background_gray),
+                    day1_img2 = localData.getInt("1", R.drawable.background_gray),
+                    day1_img3 = localData.getInt("2", R.drawable.background_gray),
+                    day1_img4 = localData.getInt("3", R.drawable.background_gray),
+                    day2_img1 = localData.getInt("4", R.drawable.background_gray),
+                    day2_img2 = localData.getInt("5", R.drawable.background_gray),
+                    day2_img3 = localData.getInt("6", R.drawable.background_gray),
+                    day2_img4 = localData.getInt("7", R.drawable.background_gray),
+                    day3_img1 = localData.getInt("8", R.drawable.background_gray),
+                    day3_img2 = localData.getInt("9", R.drawable.background_gray),
+                    day3_img3 = localData.getInt("10", R.drawable.background_gray),
+                    day3_img4 = localData.getInt("11", R.drawable.background_gray)
+            };
+        }
     }
 
     public void  onClick_click(View view) {
