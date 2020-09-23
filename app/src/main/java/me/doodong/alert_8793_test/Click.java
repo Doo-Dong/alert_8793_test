@@ -23,6 +23,7 @@ public class Click extends AppCompatActivity {
     LinearLayout layout;
     ArrayAdapter<CharSequence> click1, click2;
     String position, day, time;
+    String resID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class Click extends AppCompatActivity {
         //데이터 가져오기
         Intent intent = getIntent();
         position = intent.getStringExtra("position");
+        resID = intent.getStringExtra("resID");
+        Log.d("resID_click",resID);
        /* String data = intent.getStringExtra("data");
         txtText.setText(data);*/
 
@@ -61,6 +64,7 @@ public class Click extends AppCompatActivity {
                 ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
                 day = (String) adapterView.getItemAtPosition(i);
+                Log.d("day", day);
             }
 
             @Override
@@ -85,6 +89,7 @@ public class Click extends AppCompatActivity {
                 ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
                 time = (String) adapterView.getItemAtPosition(i);
+                Log.d("time", time);
             }
 
             @Override
@@ -99,7 +104,7 @@ public class Click extends AppCompatActivity {
         //데이터 전달하기
         Intent intent = new Intent(getApplicationContext(), my_page.class);
         intent.putExtra("result", "Close Popup");
-        intent.putExtra("position", position);
+        intent.putExtra("resID", resID);
         intent.putExtra("day", day);
         intent.putExtra("time", time);
         setResult(RESULT_OK, intent);

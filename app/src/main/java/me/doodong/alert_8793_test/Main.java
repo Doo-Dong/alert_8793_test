@@ -271,7 +271,7 @@ public class Main extends AppCompatActivity {
 //                intent.putExtra("main_list4", "3");
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                finish();
+
             }
         };
 

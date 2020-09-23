@@ -176,12 +176,13 @@ public class RecommendationResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전", tv_themeName.getText().equals("2박 3일 카페로드") ?
-                R.drawable.pic_7 : R.drawable.pic_11,
+                R.drawable.pic_7 : tv_themeName.getText().equals("2박 3일 마켓로드") ? R.drawable.pic_21:  R.drawable.pic_17,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                R.drawable.pic_47,
+                tv_themeName.getText().equals("2박 3일 카페로드") ? R.drawable.pic_47 :
+                        tv_themeName.getText().equals("2박 3일 마켓로드") ?  R.drawable.pic_58 : R.drawable.pic_53,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
@@ -207,12 +208,14 @@ public class RecommendationResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                R.drawable.pic_5,
+                tv_themeName.getText().equals("2박 3일 카페로드") ? R.drawable.pic_5 :
+                        tv_themeName.getText().equals("2박 3일 마켓로드") ?  R.drawable.pic_15 : R.drawable.pic_11,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                R.drawable.pic_50,
+                tv_themeName.getText().equals("2박 3일 카페로드") ? R.drawable.pic_62 :
+                        tv_themeName.getText().equals("2박 3일 마켓로드") ?  R.drawable.pic_25 : R.drawable.pic_50,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
@@ -239,12 +242,14 @@ public class RecommendationResult extends AppCompatActivity {
 
         ArrayList<ListData> itemList = new ArrayList<>();
         ListData listData = new ListData("오전",
-                R.drawable.pic_23,
+                tv_themeName.getText().equals("2박 3일 카페로드") ? R.drawable.pic_36 :
+                        tv_themeName.getText().equals("2박 3일 마켓로드") ? R.drawable.pic_23 : R.drawable.pic_24,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_walk", "id", this.getPackageName())),
                 "1m");
         itemList.add(listData);
         listData = new ListData("점심",
-                R.drawable.pic_66,
+                tv_themeName.getText().equals("2박 3일 카페로드") ? R.drawable.pic_54 :
+                        tv_themeName.getText().equals("2박 3일 마켓로드") ?  R.drawable.pic_66 :  R.drawable.pic_48,
                 getResources().getDrawable(getResources().getIdentifier("@drawable/directions_bus", "id", this.getPackageName())),
                 "25m");
         itemList.add(listData);
