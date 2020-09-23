@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -23,9 +24,15 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
+import jxl.write.Label;
+import jxl.write.WritableCell;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
+
 
 public class Join extends AppCompatActivity {
-    EditText editText_id, editText_pw, editText_pwck, editText_email;
+
     TextView tv_gender, tv_age;
     Button btn_free, btn_backpacking, btn_pkg, btn_alone, btn_together;
     Button btn_join;
@@ -33,28 +40,15 @@ public class Join extends AppCompatActivity {
 
     private boolean freetrip, backpacking, pkg, alone, together;
     Workbook wb;
-
-    String join_id = "";
-    String join_name = "";
-    String join_pw = "";
-    String join_pwck = "";
-    String join_email = "";
-    String join_phone = "";
-
+    EditText editText_id, editText_pw, editText_pwck, editText_email;
+    private boolean validate = false;
+    File file;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_test);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-
-        editText_id = findViewById(R.id.editText_id);
-        editText_pw = findViewById(R.id.editText_pw);
-        editText_pwck = findViewById(R.id.editText_pwck);
-        editText_email = findViewById(R.id.editText_email);
-        tv_gender = findViewById(R.id.tv_gender);
-        tv_age = findViewById(R.id.tv_age);
-
 
         btn_free= findViewById(R.id.btn_free);
         btn_backpacking= findViewById(R.id.btn_backpacking);
@@ -65,21 +59,6 @@ public class Join extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        join_id = editText_id.getText().toString();
-        join_pw = editText_pw.getText().toString();
-        join_pwck = editText_pwck.getText().toString();
-        join_email = editText_email.getText().toString();
-
-        try {
-            InputStream is = getBaseContext().getResources().getAssets().open("alert_join_us.xls");
-            wb = Workbook.getWorkbook(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (BiffException e) {
-            e.printStackTrace();
-        }
-
-        excel_load();
         spinner_age();
         spinner_gender();
 
@@ -144,17 +123,9 @@ public class Join extends AppCompatActivity {
                 }
             }
         });
-        btn_join.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                    Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                    finish();
 
-            }
-        });
+
     }
 
     public void spinner_gender(){
@@ -198,51 +169,87 @@ public class Join extends AppCompatActivity {
         });
     }
 
-    public void excel_load(){
-        Boolean validate;
-        if(wb != null) {
-            Sheet sheet = wb.getSheet(0);   // 시트 불러오기
-            if(sheet != null) {
-                int colTotal = sheet.getColumns();    // 전체 컬럼
-                int rowIndexStart = 2;                  // row 인덱스 시작
-                int rowTotal = sheet.getColumn(colTotal-1).length;
+    public void join(View view){
+        editText_id = (EditText)findViewById(R.id.editText_id);
+        editText_pw = (EditText)findViewById(R.id.editText_pw);
+        editText_pwck = (EditText)findViewById(R.id.editText_pwck);
+        editText_email = (EditText)findViewById(R.id.editText_email);
+        tv_gender = findViewById(R.id.tv_gender);
+        tv_age = findViewById(R.id.tv_age);
 
-                String id = "";
-                String name = "";
-                String email = "";
-                String phone = "";
 
-                StringBuilder sb, test;
+        try {
+            InputStream is = getBaseContext().getResources().getAssets().open("alert_join_us.xls");
+            Workbook wb = Workbook.getWorkbook(is);
 
-                for(int row=rowIndexStart;row<rowTotal;row++) {
-                    sb = new StringBuilder();
-                    for(int col=0;col<colTotal;col++) {
+            if(wb != null) {
+                Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+                if(sheet != null) {
+                    int colTotal = sheet.getColumns();    // 전체 컬럼
+                    int rowIndexStart = 1;                  // row 인덱스 시작
+                    int rowTotal = sheet.getColumn(colTotal-1).length;
+
+                    StringBuilder sb;
+
+                    for(int row=rowIndexStart;row<rowTotal;row++) {
+                        sb = new StringBuilder();
+                        for(int col=0;col<colTotal;col++) {
+                            String contents = sheet.getCell(col, row).getContents();
+                            sb.append("col"+col+" : "+contents+" , ");
+                        }
+                        Log.i("xls_join", sb.toString());
+
+                        //for login
+                        int col = 0;
                         String contents = sheet.getCell(col, row).getContents();
-                        sb.append("col"+col+" : "+contents+" , ");
-                        //col0:id, col1:name, col2:email, col3:phone
-                        if(col == 0) {
-                            id = contents;
+                        if (editText_id.getText().toString().equals(contents)) {
+                            validate = true;
+                        }else {
+                           
                         }
-                        else if(col == 1) {
-                            name = contents;
-                        }
-                        else if(col == 2){
-                            email = contents;
-                        }
-                        else if(col == 3){
-                            phone = contents;
-                        }
-
                     }
-                    Log.i("xls_log_join", sb.toString());
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (BiffException e) {
+            e.printStackTrace();
         }
 
+        if (editText_id.getText().toString().length()==0){
+            Toast.makeText(Join.this, "아이디를 입력하세요.", Toast.LENGTH_SHORT).show();
+            editText_id.requestFocus();
+            return;
+        }else if (editText_pw.getText().toString().length()==0){
+            Toast.makeText(Join.this, "비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show();
+            editText_pw.requestFocus();
+            return;
+        }else if (editText_pwck.getText().toString().length()==0){
+            Toast.makeText(Join.this, "비밀번호 확인을 입력하세요.", Toast.LENGTH_SHORT).show();
+            editText_pwck.requestFocus();
+            return;
+        }else if (editText_email.getText().toString().length()==0){
+            Toast.makeText(Join.this, "이메일을 입력하세요.", Toast.LENGTH_SHORT).show();
+            editText_email.requestFocus();
+            return;
+        }else if(!editText_pw.getText().toString().equals(editText_pwck.getText().toString())){
+            Toast.makeText(Join.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+            editText_pw.requestFocus();
+            return;
+        }else if(validate){
+            Toast.makeText(Join.this, "중복된 아이디입니다.", Toast.LENGTH_SHORT).show();
+            validate = false;
+
+        }else {
+
+            Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
+
+        }
 
     }
-
-
 
 }
 
