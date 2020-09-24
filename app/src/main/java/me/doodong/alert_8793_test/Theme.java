@@ -104,7 +104,7 @@ public class Theme extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        loadData();
+        //loadData();
         spinner();
 
         try {
@@ -256,7 +256,7 @@ public class Theme extends AppCompatActivity {
         img_lunch.setImageResource(R.drawable.background_gray);
         img_dinner.setImageResource(R.drawable.background_gray);
 
-        localData = getSharedPreferences("localData", 0);
+        /*localData = getSharedPreferences("localData", 0);
 
         //세이브 체크
         if (localData.getBoolean("is_Save", false)) {
@@ -280,7 +280,7 @@ public class Theme extends AppCompatActivity {
                     img_dinner.setImageResource(day3_img4);
                     break;
             }
-        }
+        }*/
 
         getData();
     }
@@ -289,7 +289,7 @@ public class Theme extends AppCompatActivity {
     public void getData() {
         init_spot();
         init_food();
-        loadData();
+        //loadData();
     }
 
 
