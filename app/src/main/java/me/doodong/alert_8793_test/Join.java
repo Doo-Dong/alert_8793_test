@@ -1,8 +1,9 @@
 package me.doodong.alert_8793_test;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,19 +18,14 @@ import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-
-import jxl.write.Label;
-import jxl.write.WritableCell;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
+import jxl.write.*;
 
 
 public class Join extends AppCompatActivity {
@@ -239,14 +235,64 @@ public class Join extends AppCompatActivity {
             Toast.makeText(Join.this, "중복된 아이디입니다.", Toast.LENGTH_SHORT).show();
             validate = false;
 
-        }else {
+        } else {
+            // 로그인이 성공했을때
+            try {
+                FileInputStream fis = new FileInputStream("/data/data/me.doodong.alert_8793_test/cache/copied_alert_join_us.xls");
+                Workbook wb = Workbook.getWorkbook(fis);
 
+                // 외장메모리에 엑셀파일을 저장하기 위한 디렉토리
+                String strDir = "/data/data/me.doodong.alert_8793_test/cache";
+                // 새로 생성하는 엑셀파일명
+                String strFileName = "copied_alert_join_us.xls";
 
-            Intent intent = new Intent(getApplicationContext(), AfterLoginActivity.class);
+                File file = new File(strDir, strFileName);
+                if(!file.exists()) {
+                    file.createNewFile();
+                }
+
+                WritableWorkbook wwb = Workbook.createWorkbook(file, wb);
+
+                String[] list;
+
+                list = new String[] {
+                        editText_id.getText().toString(),
+                        editText_id.getText().toString(),
+                        editText_email.getText().toString(),
+                        ""
+                };
+
+                if(wb != null) {
+                    WritableSheet sheet = wwb.getSheet(0);   // 시트 불러오기
+                    if(sheet != null) {
+                        int colTotal = sheet.getColumns();    // 전체 컬럼
+                        //int rowIndexStart = 1;                  // row 인덱스 시작
+                        int rowTotal = sheet.getColumn(colTotal-1).length;
+
+                        for(int col=0;col<colTotal;col++) {
+                            jxl.write.Label label = new Label(col, rowTotal,
+                                    list[col]
+                                    );
+                            sheet.addCell(label);
+                            Log.i("XLS SAVE : " + rowTotal + " / " + col + "||", list[col]);
+                        }
+                        wwb.write();
+                        wwb.close();
+                        wb.close();
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (BiffException e) {
+                e.printStackTrace();
+            } catch (WriteException e) {
+                e.printStackTrace();
+            }
+
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             finish();
-
         }
 
     }
