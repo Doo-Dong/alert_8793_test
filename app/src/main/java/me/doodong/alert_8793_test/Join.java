@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ import jxl.write.WriteException;
 public class Join extends AppCompatActivity {
 
     TextView tv_gender, tv_age;
-    Button btn_free, btn_backpacking, btn_pkg, btn_alone, btn_together;
+    ImageButton btn_free, btn_backpacking, btn_pkg, btn_alone, btn_together;
     Button btn_join;
     ArrayAdapter<CharSequence> gender, age;
 
@@ -67,7 +68,7 @@ public class Join extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                if(freetrip){//true 일 때
-                   btn_free.setBackgroundResource(R.drawable.freetrip);
+                   btn_free.setBackgroundResource(R.drawable.freetrip_color);
                    freetrip = false;
                }else {//false 일 때
                    btn_free.setBackgroundResource(R.drawable.freetrip_click);
@@ -83,7 +84,7 @@ public class Join extends AppCompatActivity {
                     btn_backpacking.setBackgroundResource(R.drawable.backpacking);
                     backpacking = false;
                 }else {//false 일 때
-                    btn_backpacking.setBackgroundResource(R.drawable.backpacking_click);
+                    btn_backpacking.setBackgroundResource(R.drawable.backpacking_color);
                     backpacking = true;
                 }
             }
@@ -95,7 +96,7 @@ public class Join extends AppCompatActivity {
                     btn_pkg.setBackgroundResource(R.drawable.pkg_icon);
                     pkg = false;
                 }else {//false 일 때
-                    btn_pkg.setBackgroundResource(R.drawable.pkg_click);
+                    btn_pkg.setBackgroundResource(R.drawable.pkg_icon_color);
                     pkg = true;
                 }
             }
@@ -107,7 +108,7 @@ public class Join extends AppCompatActivity {
                     btn_alone.setBackgroundResource(R.drawable.alone);
                     alone = false;
                 }else {//false 일 때
-                    btn_alone.setBackgroundResource(R.drawable.alone_click);
+                    btn_alone.setBackgroundResource(R.drawable.alone_color);
                     alone = true;
                 }
             }
@@ -119,7 +120,7 @@ public class Join extends AppCompatActivity {
                     btn_together.setBackgroundResource(R.drawable.together);
                     together = false;
                 }else {//false 일 때
-                    btn_together.setBackgroundResource(R.drawable.together_click);
+                    btn_together.setBackgroundResource(R.drawable.together_color);
                     together = true;
                 }
             }
@@ -138,7 +139,7 @@ public class Join extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ((TextView) adapterView.getChildAt(0)).setTextSize(15);
+                ((TextView) adapterView.getChildAt(0)).setTextSize(12);
                 ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
             }
@@ -159,7 +160,7 @@ public class Join extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ((TextView) adapterView.getChildAt(0)).setTextSize(15);
+                ((TextView) adapterView.getChildAt(0)).setTextSize(12);
                 ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             }
 

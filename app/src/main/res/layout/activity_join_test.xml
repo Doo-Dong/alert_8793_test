@@ -11,18 +11,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="125"
+        android:layout_weight="155"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="78"></LinearLayout>
+            android:layout_weight="95"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="70"
+            android:layout_weight="60"
             android:orientation="horizontal"
             android:weightSum="720">
 
@@ -51,7 +51,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="99"
+        android:layout_weight="82"
         android:orientation="horizontal"
         android:weightSum="720">
 
@@ -63,41 +63,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="70"
         android:orientation="horizontal"
         android:weightSum="720"
-        android:gravity="center"
         >
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="640"
+            android:layout_weight="516"
             android:orientation="horizontal"
             android:gravity="center"
+            android:background="@drawable/login_round"
             >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"></LinearLayout>
+
             <EditText
                 android:theme="@style/EditTheme"
                 android:id="@+id/editText_id"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="580"
+                android:layout_weight="474"
                 android:hint="아이디"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:drawableLeft="@drawable/id_icon_size"
                 android:drawablePadding="15dp"
                 android:inputType="textNoSuggestions"
+                android:background="@null"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
 
@@ -113,7 +119,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="70"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -122,34 +128,39 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="640"
+            android:layout_weight="516"
             android:orientation="horizontal"
             android:gravity="center"
+            android:background="@drawable/login_round"
             >
-
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"></LinearLayout>
             <EditText
                 android:theme="@style/EditTheme"
                 android:id="@+id/editText_pw"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="640"
+                android:layout_weight="474"
                 android:hint="비밀번호"
                 android:drawableLeft="@drawable/pw_icon_size"
-                android:drawablePadding="10dp"
-                android:textSize="15sp"
+                android:drawablePadding="15dp"
+                android:textSize="12sp"
                 android:inputType="textPassword"
+                android:background="@null"
                 />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
 
@@ -165,7 +176,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="70"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -174,34 +185,39 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="640"
+            android:layout_weight="516"
             android:orientation="horizontal"
             android:gravity="center"
+            android:background="@drawable/login_round"
             >
-
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"></LinearLayout>
             <EditText
                 android:theme="@style/EditTheme"
                 android:id="@+id/editText_pwck"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="640"
+                android:layout_weight="474"
                 android:drawableLeft="@drawable/pw_icon_size"
-                android:drawablePadding="10dp"
+                android:drawablePadding="15dp"
                 android:hint="비밀번호확인"
                 android:inputType="textPassword"
-                android:textSize="15sp"
+                android:textSize="12sp"
+                android:background="@null"
                 />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
 
@@ -217,7 +233,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="70"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -226,34 +242,39 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="640"
+            android:layout_weight="516"
             android:orientation="horizontal"
             android:gravity="center"
+            android:background="@drawable/login_round"
             >
-
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="42"></LinearLayout>
             <EditText
                 android:theme="@style/EditTheme"
                 android:id="@+id/editText_email"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="640"
+                android:layout_weight="474"
                 android:hint="이메일"
                 android:drawableLeft="@drawable/email_icon_size"
-                android:drawablePadding="10dp"
-                android:textSize="15sp"
+                android:drawablePadding="15dp"
+                android:textSize="12sp"
                 android:inputType="textWebEmailAddress"
+                android:background="@null"
                 />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
 
@@ -269,7 +290,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="70"
         android:orientation="horizontal"
         android:weightSum="720"
         android:gravity="center"
@@ -278,63 +299,90 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="640"
+            android:layout_weight="516"
             android:orientation="horizontal"
             android:gravity="center"
             >
-
-            <TextView
-                android:id="@+id/tv_gender"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="70"
-                android:hint="성별"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:gravity="center"
-                />
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinner_gender"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="200"
-                android:textAlignment="center"
-                android:gravity="center"
-                />
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="80"
+                android:layout_weight="223"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="270"
+                android:background="@drawable/login_round"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="36"></LinearLayout>
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="65"
+                    android:hint="성별"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    />
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="190"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="13"
                 ></LinearLayout>
             <!-- 연령대 시작-->
-            <TextView
-                android:id="@+id/tv_age"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="90"
-                android:hint="연령대"
-                android:textStyle="bold"
-                android:textSize="15sp"
+                android:layout_weight="280"
+                android:orientation="horizontal"
                 android:gravity="center"
-                />
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinner_age"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="200"
-                android:textAlignment="center"
-                android:gravity="center"
-                />
+                android:weightSum="357"
+                android:background="@drawable/login_round"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="34"></LinearLayout>
+                <TextView
+                    android:id="@+id/tv_age"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="90"
+                    android:hint="연령대"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    />
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_age"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="231"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
 
@@ -369,41 +417,37 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="120"
+            android:layout_weight="88"
             android:text="여행타입"
             android:textStyle="bold"
             android:gravity="center"
-            android:textSize="15sp"
+            android:textSize="12sp"
             />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="560"></LinearLayout>
+            android:layout_weight="530"></LinearLayout>
 
     </LinearLayout>
 
-    <!-- 여행타입 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="45"
+        android:layout_weight="28"
         android:orientation="horizontal"
-        android:weightSum="720"
-        android:layout_gravity="center"
-        >
-    </LinearLayout>
+        android:weightSum="720"></LinearLayout>
 
 
     <!-- 아이콘 버튼 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="135"
+        android:layout_weight="134"
         android:weightSum="720"
         android:orientation="horizontal"
         >
@@ -411,67 +455,51 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="640"
+            android:layout_weight="516"
             android:orientation="horizontal"
             >
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="43"
-                ></LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
+
+            <ImageButton
                 android:id="@+id/btn_free"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="156"
-                android:background="@drawable/freetrip"
+                android:layout_weight="172"
+                android:background="@drawable/freetrip_color"
                 />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="43"
-                ></LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
+
+            <ImageButton
                 android:id="@+id/btn_backpacking"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="156"
+                android:layout_weight="172"
                 android:background="@drawable/backpacking"
                 />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="43"
-                ></LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
+
+            <ImageButton
                 android:id="@+id/btn_pkg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="156"
+                android:layout_weight="172"
                 android:background="@drawable/pkg_icon"
                 />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="43"
-                ></LinearLayout>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
     <!-- 아이콘 버튼 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="135"
+        android:layout_weight="134"
         android:weightSum="720"
         android:orientation="horizontal"
         >
@@ -479,48 +507,44 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="640"
+            android:layout_weight="516"
             android:orientation="horizontal"
             >
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="144"
+                android:layout_weight="86"
                 ></LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
+            <ImageButton
                 android:id="@+id/btn_alone"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="156"
+                android:layout_weight="172"
                 android:background="@drawable/alone"
                 />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-                ></LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
+
+            <ImageButton
                 android:id="@+id/btn_together"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="156"
+                android:layout_weight="172"
                 android:background="@drawable/together"
                 />
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="144"
+                android:layout_weight="86"
                 ></LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="40"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
 
@@ -545,24 +569,24 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="53"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_join"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="614"
+            android:layout_weight="516"
             android:background="@drawable/btn"
             android:text="회원가입"
             android:textColor="#ffffff"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:onClick="join"
             />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="53"></LinearLayout>
+            android:layout_weight="102"></LinearLayout>
 
     </LinearLayout>
 

@@ -22,53 +22,94 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="90"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="110"
-                android:gravity="center_vertical"
+                android:layout_weight="65"
                 android:weightSum="720"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="20dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    />
-
-                <EditText
-                    android:id="@+id/schedule_name"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:hint="여행명"
-                    android:textColorHint="#5a5a5a"
-                    android:background="@null"
-                    android:gravity="bottom"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    android:ellipsize="end"/>
-
+                    android:layout_weight="95"></LinearLayout>
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:paddingRight="30dp">
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="525"
+                    android:orientation="horizontal"
+                    android:weightSum="525"
+                    android:background="@drawable/card_round">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="38"></LinearLayout>
 
-                    <Button
-                        android:id="@+id/save"
-                        android:layout_width="80dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/save"
-                        android:clickable="true"
-                        android:foreground="?selectableItemBackground"/>
+                    <EditText
+                        android:id="@+id/schedule_name"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="355"
+                        android:hint="여행명"
+                        android:textColorHint="#5a5a5a"
+                        android:background="@null"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="92"
+                        android:orientation="vertical"
+                        android:weightSum="65">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="9"></LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/save"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="47"
+                            android:text="저장"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:background="@drawable/round2"
+                            android:clickable="true" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="9"></LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="40"></LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="100"></LinearLayout>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="30"
+                android:layout_weight="17" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="82"
                 android:background="@drawable/main_header_selector"/>
 
             <LinearLayout
@@ -76,20 +117,21 @@
                 android:layout_height="0dp"
                 android:orientation="vertical"
                 android:padding="10dp"
-                android:layout_weight="920">
+                android:layout_weight="770">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="1일차"
-                    android:textSize="20dp"/>
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/list_view_1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="50"
+                    android:layout_weight="40"
                     android:scrollbars="none" />
 
                 <TextView
@@ -97,13 +139,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="2일차"
-                    android:textSize="20dp"/>
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/list_view_2"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="50"
+                    android:layout_weight="40"
                     android:scrollbars="none" />
 
                 <TextView
@@ -111,16 +154,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="3일차"
-                    android:textSize="20dp"/>
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/list_view_3"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="50"
+                    android:layout_weight="40"
                     android:scrollbars="none" />
             </LinearLayout>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="63"
+            android:orientation="horizontal"></LinearLayout>
             <LinearLayout
                 android:id="@+id/bottom_bar"
                 android:layout_width="match_parent"
@@ -165,6 +213,11 @@
                     android:textColor="#5a5a5a"/>
 
             </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="80"
+            android:orientation="horizontal"></LinearLayout>
 
         </LinearLayout>
 
