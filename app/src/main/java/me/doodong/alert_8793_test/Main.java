@@ -3,8 +3,12 @@ package me.doodong.alert_8793_test;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -54,6 +58,17 @@ public class Main extends AppCompatActivity {
         friend_theme2 = findViewById(R.id.friend_theme2);
         friend_theme3 = findViewById(R.id.friend_theme3);
 
+        // 드로어 버튼 객체 참조
+        ImageButton btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
+        Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
+        TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
+        TextView btnList_thai = findViewById(R.id.drawerLayout_list_btn_thai);
+        TextView btnList_jap = findViewById(R.id.drawerLayout_list_btn_jap);
+        TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
+        TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
+        ImageButton btnList_thai_img = findViewById(R.id.drawerLayout_list_btn_thai_img);
+        ImageButton btnList_jap_img = findViewById(R.id.drawerLayout_list_btn_jap_img);
+
         Intent intent = getIntent();
         country = intent.getStringExtra("country");
         list = intent.getIntArrayExtra("list_spot");
@@ -64,12 +79,45 @@ public class Main extends AppCompatActivity {
             img_main2.setBackgroundResource(R.drawable.main_img3);
             img_main3.setBackgroundResource(R.drawable.main_img2);
             tv_MainTheme.setText("일본");
+            btnList_jap.setBackgroundColor(Color.parseColor("#74e4c4"));
+            btnList_jap.setTextColor(Color.parseColor("#ffffff"));
+            btnList_jap.setPadding((int) dpToPx(getApplicationContext(),15),0,0,0);
+            LinearLayout.LayoutParams lp2 = (LinearLayout.LayoutParams) btnList_jap.getLayoutParams();
+            lp2.leftMargin = (int) dpToPx(getApplicationContext(),0);
+            btnList_jap.setLayoutParams(lp2);
+
+            ViewGroup.LayoutParams params = btnList_jap_img.getLayoutParams();
+            params.width = (int) dpToPx(getApplicationContext(),40);
+            btnList_jap_img.setLayoutParams(params);
+            LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) btnList_jap_img.getLayoutParams();
+            lp.leftMargin = (int) dpToPx(getApplicationContext(),10);
+            lp.rightMargin = (int) dpToPx(getApplicationContext(),10);
+            btnList_jap_img.setLayoutParams(lp);
+            btnList_jap_img.setBackgroundResource(R.drawable.drawer);
+
         }else {
             img_main1.setBackgroundResource(R.drawable.main_img1);
             img_main2.setBackgroundResource(R.drawable.main_img2);
             img_main3.setBackgroundResource(R.drawable.main_img3);
             img_main4.setBackgroundResource(R.drawable.main_img4);
             tv_MainTheme.setText("태국");
+            btnList_thai.setBackgroundColor(Color.parseColor("#74e4c4"));
+            btnList_thai.setTextColor(Color.parseColor("#ffffff"));
+            btnList_thai.setPadding((int) dpToPx(getApplicationContext(),15),0,0,0);
+            LinearLayout.LayoutParams lp2 = (LinearLayout.LayoutParams) btnList_thai.getLayoutParams();
+            lp2.leftMargin = (int) dpToPx(getApplicationContext(),0);
+            btnList_thai.setLayoutParams(lp2);
+
+            ViewGroup.LayoutParams params = btnList_thai_img.getLayoutParams();
+            params.width = (int) dpToPx(getApplicationContext(),40);
+            btnList_thai_img.setLayoutParams(params);
+            LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) btnList_thai_img.getLayoutParams();
+            lp.leftMargin = (int) dpToPx(getApplicationContext(),10);
+            lp.rightMargin = (int) dpToPx(getApplicationContext(),10);
+            btnList_thai_img.setLayoutParams(lp);
+            btnList_thai_img.setBackgroundResource(R.drawable.drawer);
+
+
         }
 
         if (list != null) {
@@ -96,14 +144,7 @@ public class Main extends AppCompatActivity {
         // Drawer 화면(뷰) 객체 참조
         final View drawerView = findViewById(R.id.drawer);
 
-        // 드로어 버튼 객체 참조
-        ImageButton btnOpenDrawer = findViewById(R.id.drawerLayout_Btn);
-        Button btnCloseDrawer = findViewById(R.id.drawerLayout_Btn_close);
-        TextView btnList_main = findViewById(R.id.drawerLayout_list_btn_1);
-        TextView btnList_thai = findViewById(R.id.drawerLayout_list_btn_thai);
-        TextView btnList_jap = findViewById(R.id.drawerLayout_list_btn_jap);
-        TextView btnList_airInfo = findViewById(R.id.drawerLayout_list_btn_2);
-        TextView btnList_myPage = findViewById(R.id.drawerLayout_list_btn_3);
+
 
         img_main1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -220,6 +261,12 @@ public class Main extends AppCompatActivity {
 
 
     }
+
+    private float dpToPx(Context context, float dp){
+        DisplayMetrics dm = context.getResources().getDisplayMetrics();
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dp,dm);
+    }
+
     public void main_Theme(View view){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
