@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +67,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                     String type = (String) payload;
                     if (TextUtils.equals(type, "click")) {
                         ListData item = itemList.get(position);
-                        Toast.makeText(context, item.text, Toast.LENGTH_SHORT).show();
+
+                        if (item.image == 0) {
+                            Toast.makeText(context, "일정을 고르지 않았습니다.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(context, item.text, Toast.LENGTH_SHORT).show();
+                        }
+
                         holder.textview.setTextColor(Color.rgb(71, 214, 176));
                     }
                     if (TextUtils.equals(type, "init")) {
