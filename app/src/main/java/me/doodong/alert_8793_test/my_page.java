@@ -70,7 +70,7 @@ public class my_page extends AppCompatActivity {
             editor.clear();
             editor.commit();
 
-            Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();;
         } else {
             list = new int[]{
                     R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
@@ -122,7 +122,7 @@ public class my_page extends AppCompatActivity {
                     localData.getInt("11", R.drawable.background_gray)
             };
 
-            Toast.makeText(this, "데이터를 불러왔습니다", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "데이터를 불러왔습니다", Toast.LENGTH_SHORT).show();;
         }
 
         // 일정 저장 버튼
@@ -141,7 +141,7 @@ public class my_page extends AppCompatActivity {
                 editor.putBoolean("is_Save", true);
                 editor.commit();
 
-                Toast.makeText(my_page.this, "저장되었습니다", Toast.LENGTH_SHORT);
+                Toast.makeText(my_page.this, "저장되었습니다", Toast.LENGTH_SHORT).show();
                 Log.i("저장", "SAVE : onClick and Saved! => " + localData.getBoolean("is_Save", false));
             }
         });
