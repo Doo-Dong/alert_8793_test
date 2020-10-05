@@ -61,7 +61,9 @@
                         android:textSize="13sp"
                         android:textStyle="bold"
                         android:maxLines="1"
-                        android:ellipsize="end"/>
+                        android:ellipsize="end"
+                        android:cursorVisible="false"
+                        />
 
                     <LinearLayout
                         android:layout_width="0dp"
