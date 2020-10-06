@@ -23,7 +23,7 @@ public class Click extends AppCompatActivity {
     LinearLayout layout;
     ArrayAdapter<CharSequence> click1, click2;
     String position, day, time;
-    String resID;
+    String resID, type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,7 @@ public class Click extends AppCompatActivity {
         Intent intent = getIntent();
         position = intent.getStringExtra("position");
         resID = intent.getStringExtra("resID");
+        type = intent.getStringExtra("type");
         Log.d("resID_click",resID);
        /* String data = intent.getStringExtra("data");
         txtText.setText(data);*/
@@ -76,7 +77,14 @@ public class Click extends AppCompatActivity {
 
     public void spinner_click2(){
         AppCompatSpinner spinner = findViewById(R.id.click_spinner2);
-        click2 = ArrayAdapter.createFromResource(this, R.array.click_spinner2, android.R.layout.simple_spinner_dropdown_item);
+        if (type.equals("SPOT")) {
+            // 관광지
+            click2 = ArrayAdapter.createFromResource(this, R.array.click_spinner2, android.R.layout.simple_spinner_dropdown_item);
+        } else {
+            // 음식점
+            click2 = ArrayAdapter.createFromResource(this, R.array.click_spinner3, android.R.layout.simple_spinner_dropdown_item);
+        }
+
         click2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(click2);
 
