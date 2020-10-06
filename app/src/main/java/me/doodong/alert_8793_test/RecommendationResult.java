@@ -287,21 +287,21 @@ public class RecommendationResult extends AppCompatActivity {
     public void  onClick_my_theme(View view) {
         if (tv_themeName.getText().equals("2박 3일 카페로드")) {
             list = new int[]{
-                    R.drawable.pic_7, R.drawable.pic_47, R.drawable.pic_10, R.drawable.pic_49,
-                    R.drawable.pic_5, R.drawable.pic_62, R.drawable.pic_14, R.drawable.pic_64,
-                    R.drawable.pic_36, R.drawable.pic_54, R.drawable.pic_38, R.drawable.pic_69
+                    R.drawable.pic_7, R.drawable.pic_10, R.drawable.pic_47, R.drawable.pic_49,
+                    R.drawable.pic_5, R.drawable.pic_14, R.drawable.pic_62, R.drawable.pic_64,
+                    R.drawable.pic_36, R.drawable.pic_38, R.drawable.pic_54, R.drawable.pic_69
             };
         } else if (tv_themeName.getText().equals("2박 3일 마켓로드")) {
             list = new int[]{
-                    R.drawable.pic_21, R.drawable.pic_58, R.drawable.pic_10, R.drawable.pic_49,
-                    R.drawable.pic_15, R.drawable.pic_25, R.drawable.pic_14, R.drawable.pic_64,
-                    R.drawable.pic_23, R.drawable.pic_66, R.drawable.pic_38, R.drawable.pic_69
+                    R.drawable.pic_21, R.drawable.pic_10, R.drawable.pic_58, R.drawable.pic_49,
+                    R.drawable.pic_15, R.drawable.pic_14, R.drawable.pic_25, R.drawable.pic_64,
+                    R.drawable.pic_23, R.drawable.pic_38, R.drawable.pic_66, R.drawable.pic_69
             };
         } else {
             list = new int[]{
-                    R.drawable.pic_17, R.drawable.pic_53, R.drawable.pic_10, R.drawable.pic_49,
-                    R.drawable.pic_11, R.drawable.pic_50, R.drawable.pic_14, R.drawable.pic_64,
-                    R.drawable.pic_24, R.drawable.pic_48, R.drawable.pic_38, R.drawable.pic_69
+                    R.drawable.pic_17, R.drawable.pic_10, R.drawable.pic_53, R.drawable.pic_49,
+                    R.drawable.pic_11, R.drawable.pic_14, R.drawable.pic_50, R.drawable.pic_64,
+                    R.drawable.pic_24, R.drawable.pic_38, R.drawable.pic_48, R.drawable.pic_69
             };
         }
 
