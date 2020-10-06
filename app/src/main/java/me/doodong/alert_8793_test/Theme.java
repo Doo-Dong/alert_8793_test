@@ -251,10 +251,33 @@ public class Theme extends AppCompatActivity {
     public void reset(int flag){
         itemList = new ArrayList<Theme_Item>();
         itemList_spot = new ArrayList<Theme_Item_spot>();
-        img_morning.setImageResource(R.drawable.background_gray);
+
+        switch (flag) {
+            case 1:
+                img_morning.setImageResource(day1_img1);
+                img_afternoon.setImageResource(day1_img3);
+                img_lunch.setImageResource(day1_img2);
+                img_dinner.setImageResource(day1_img4);
+                break;
+            case 2:
+                img_morning.setImageResource(day2_img1);
+                img_afternoon.setImageResource(day2_img3);
+                img_lunch.setImageResource(day2_img2);
+                img_dinner.setImageResource(day2_img4);
+                break;
+            case 3:
+                img_morning.setImageResource(day3_img1);
+                img_afternoon.setImageResource(day3_img3);
+                img_lunch.setImageResource(day3_img2);
+                img_dinner.setImageResource(day3_img4);
+                break;
+        }
+
+        // 초기화 코드
+/*        img_morning.setImageResource(R.drawable.background_gray);
         img_afternoon.setImageResource(R.drawable.background_gray);
         img_lunch.setImageResource(R.drawable.background_gray);
-        img_dinner.setImageResource(R.drawable.background_gray);
+        img_dinner.setImageResource(R.drawable.background_gray);*/
 
         /*localData = getSharedPreferences("localData", 0);
 
