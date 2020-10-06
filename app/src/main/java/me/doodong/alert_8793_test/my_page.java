@@ -35,7 +35,7 @@ public class my_page extends AppCompatActivity {
     private MyAdapter adapter1;
     private MyAdapter adapter2;
     private MyAdapter adapter3;
-    String result, resID, day, time;
+    String result, resID, day, time, name;
 
     Random rand = new Random();
     int[] list;
@@ -53,6 +53,7 @@ public class my_page extends AppCompatActivity {
         Intent intent = getIntent();
         result = intent.getStringExtra("result");
         list = intent.getIntArrayExtra("list_spot");
+        name = intent.getStringExtra("schedule_name");
         localData = getSharedPreferences("localData", 0);
 
         //Main3 to my_page
@@ -71,11 +72,16 @@ public class my_page extends AppCompatActivity {
             editor.commit();
 
             Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();;
-        } else {
+        } else {/*
             list = new int[]{
                     R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
                     ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
                     ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
+            };*/
+            list = new int[]{
+                    0,0,0,0,
+                    0,0,0,0,
+                    0,0,0,0,
             };
         }
 
@@ -97,6 +103,10 @@ public class my_page extends AppCompatActivity {
         // 저장 버튼 객체 참조
         Button schedule_save = findViewById(R.id.save);
         schedule_name = findViewById(R.id.schedule_name);
+
+        if (name != null) {
+            schedule_name.setText(name);
+        }
 
         // 바텀 버튼 객체 참조
         final Button mypg_bottom_btn_1 = findViewById(R.id.mypg_bottom_btn_1);

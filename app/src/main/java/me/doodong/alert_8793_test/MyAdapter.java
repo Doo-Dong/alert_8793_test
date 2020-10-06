@@ -69,7 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                         ListData item = itemList.get(position);
 
                         if (item.image == 0) {
-                            Toast.makeText(context, "일정을 고르지 않았습니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "일정을 고르지 않았습니다", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(context, item.text, Toast.LENGTH_SHORT).show();
                         }

@@ -26,8 +26,11 @@ public class RecommendationResult extends AppCompatActivity {
     private MyAdapter_reco adapter1;
     private MyAdapter_reco adapter2;
     private MyAdapter_reco adapter3;
-    String main_list0, main_list1, main_list2, main_list3;
+    String main_list0, main_list1, main_list2, main_list3, name;
     TextView tv_themeName;
+
+    int[] list;
+    Intent intent_send;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -47,12 +50,14 @@ public class RecommendationResult extends AppCompatActivity {
         if (main_list0 != null){
            // Toast.makeText(RecommendationResult.this, main_list0, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 카페로드");
+            name = "2박 3일 카페로드";
             setMain_list0();
             setMain_list1();
             setMain_list2();
         }else  if (main_list1 != null){
             //Toast.makeText(RecommendationResult.this, main_list1, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 풍경로드");
+            name = "2박 3일 풍경로드";
             setMain_list0();
             setMain_list1();
             setMain_list2();
@@ -60,6 +65,7 @@ public class RecommendationResult extends AppCompatActivity {
         } else if (main_list2 != null){
             //Toast.makeText(RecommendationResult.this, main_list2, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 마켓로드");
+            name = "2박 3일 마켓로드";
             setMain_list0();
             setMain_list1();
             setMain_list2();
@@ -67,6 +73,7 @@ public class RecommendationResult extends AppCompatActivity {
         } else if (main_list3 != null){
             //Toast.makeText(RecommendationResult.this, main_list3, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 먹방로드");
+            name = "2박 3일 먹방로드";
             setMain_list0();
             setMain_list1();
             setMain_list2();
@@ -276,4 +283,33 @@ public class RecommendationResult extends AppCompatActivity {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     };
+
+    public void  onClick_my_theme(View view) {
+        if (tv_themeName.getText().equals("2박 3일 카페로드")) {
+            list = new int[]{
+                    R.drawable.pic_7, R.drawable.pic_47, R.drawable.pic_10, R.drawable.pic_49,
+                    R.drawable.pic_5, R.drawable.pic_62, R.drawable.pic_14, R.drawable.pic_64,
+                    R.drawable.pic_36, R.drawable.pic_54, R.drawable.pic_38, R.drawable.pic_69
+            };
+        } else if (tv_themeName.getText().equals("2박 3일 마켓로드")) {
+            list = new int[]{
+                    R.drawable.pic_21, R.drawable.pic_58, R.drawable.pic_10, R.drawable.pic_49,
+                    R.drawable.pic_15, R.drawable.pic_25, R.drawable.pic_14, R.drawable.pic_64,
+                    R.drawable.pic_23, R.drawable.pic_66, R.drawable.pic_38, R.drawable.pic_69
+            };
+        } else {
+            list = new int[]{
+                    R.drawable.pic_17, R.drawable.pic_53, R.drawable.pic_10, R.drawable.pic_49,
+                    R.drawable.pic_11, R.drawable.pic_50, R.drawable.pic_14, R.drawable.pic_64,
+                    R.drawable.pic_24, R.drawable.pic_48, R.drawable.pic_38, R.drawable.pic_69
+            };
+        }
+
+        intent_send = new Intent(getApplicationContext(), my_page.class);
+        intent_send.putExtra("list_spot", list);
+        intent_send.putExtra("schedule_name", name);
+        startActivity(intent_send);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        finish();
+    }
 }

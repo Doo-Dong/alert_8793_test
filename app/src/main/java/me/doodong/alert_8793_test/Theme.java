@@ -604,14 +604,35 @@ public class Theme extends AppCompatActivity {
     }
 
     public void  onClick_place(View view) {
+        boolean flag = false;
+        int checkSum = 0;
+
         list = new int[]{ day1_img1, day1_img2, day1_img3, day1_img4
                 ,day2_img1, day2_img2, day2_img3, day2_img4
                 ,day3_img1, day3_img2, day3_img3, day3_img4};
-        intent_send = new Intent(getApplicationContext(), Theme_Map.class);
-        intent_send.putExtra("list_spot", list);
-        startActivity(intent_send);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        finish();
-    }
 
+        for (int check : list) {
+            if (check == 0) {
+                flag = true;
+            }
+
+            if (check > 0) {
+                checkSum += 1;
+            }
+        }
+
+        if (flag) {
+            if (checkSum > 0) {
+                Toast.makeText(this, "선택되지 않은 일정이 있습니다", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "모든 일정이 선택되어야 합니다", Toast.LENGTH_SHORT).show();
+            }
+        } else  {
+            intent_send = new Intent(getApplicationContext(), Theme_Map.class);
+            intent_send.putExtra("list_spot", list);
+            startActivity(intent_send);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
+        }
+    }
 }
