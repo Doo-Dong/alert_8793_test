@@ -531,7 +531,7 @@
                                             android:id="@+id/friend_theme1"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:background="@drawable/friend_theme1"
+                                            android:background="@drawable/background_gray"
                                             />
                                     </androidx.cardview.widget.CardView>
 
@@ -550,7 +550,7 @@
                                             android:id="@+id/friend_theme2"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:background="@drawable/friend_theme2"
+                                            android:background="@drawable/background_gray"
                                             />
                                     </androidx.cardview.widget.CardView>
 
@@ -569,7 +569,7 @@
                                             android:id="@+id/friend_theme3"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:background="@drawable/friend_theme3"
+                                            android:background="@drawable/background_gray"
                                             />
                                     </androidx.cardview.widget.CardView>
 

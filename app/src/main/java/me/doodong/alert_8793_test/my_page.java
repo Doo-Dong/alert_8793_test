@@ -39,6 +39,7 @@ public class my_page extends AppCompatActivity {
 
     Random rand = new Random();
     int[] list;
+    boolean reset;
 
     SharedPreferences localData;
 
@@ -54,6 +55,7 @@ public class my_page extends AppCompatActivity {
         result = intent.getStringExtra("result");
         list = intent.getIntArrayExtra("list_spot");
         name = intent.getStringExtra("schedule_name");
+        reset = intent.getBooleanExtra("reset", true);
         localData = getSharedPreferences("localData", 0);
 
         //Main3 to my_page
@@ -66,12 +68,15 @@ public class my_page extends AppCompatActivity {
             }
         }
 
-        if (list != null) {
+        if (list != null && !reset) {
             SharedPreferences.Editor editor = localData.edit();
-            editor.clear();
+            //editor.clear();
+            for (int i = 0; i < 12; i++) {
+                editor.remove(""+i);
+            }
             editor.commit();
 
-            Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();;
+            Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();
         } else {/*
             list = new int[]{
                     R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
@@ -235,8 +240,10 @@ public class my_page extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 intent.putExtra("country","태국");
                 intent.putExtra("list_spot", list);
+                intent.putExtra("schedule_name", schedule_name.getText().toString());
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                Toast.makeText(my_page.this, "친구테마로 일정이 공유되었습니다", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

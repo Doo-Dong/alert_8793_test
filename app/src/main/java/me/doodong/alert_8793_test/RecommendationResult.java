@@ -18,6 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class RecommendationResult extends AppCompatActivity {
     private RecyclerView listview1;
@@ -31,6 +34,7 @@ public class RecommendationResult extends AppCompatActivity {
 
     int[] list;
     Intent intent_send;
+    boolean reverse;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -47,14 +51,27 @@ public class RecommendationResult extends AppCompatActivity {
         main_list2 = intent.getStringExtra("main_list2");
         main_list3 = intent.getStringExtra("main_list3");
 
-        if (main_list0 != null){
+        List<String> rl = Arrays.asList(
+                main_list0,
+                main_list1,
+                main_list2,
+                main_list3
+        );
+
+        reverse = intent.getBooleanExtra("reverse", false);
+
+        if(reverse) {
+            Collections.reverse(rl);
+        }
+
+        if (rl.get(0) != null){
            // Toast.makeText(RecommendationResult.this, main_list0, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 카페로드");
             name = "2박 3일 카페로드";
             setMain_list0();
             setMain_list1();
             setMain_list2();
-        }else  if (main_list1 != null){
+        }else  if (rl.get(1) != null){
             //Toast.makeText(RecommendationResult.this, main_list1, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 풍경로드");
             name = "2박 3일 풍경로드";
@@ -62,7 +79,7 @@ public class RecommendationResult extends AppCompatActivity {
             setMain_list1();
             setMain_list2();
 
-        } else if (main_list2 != null){
+        } else if (rl.get(2) != null){
             //Toast.makeText(RecommendationResult.this, main_list2, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 마켓로드");
             name = "2박 3일 마켓로드";
@@ -70,7 +87,7 @@ public class RecommendationResult extends AppCompatActivity {
             setMain_list1();
             setMain_list2();
 
-        } else if (main_list3 != null){
+        } else if (rl.get(3) != null){
             //Toast.makeText(RecommendationResult.this, main_list3, Toast.LENGTH_SHORT).show();
             tv_themeName.setText("2박 3일 먹방로드");
             name = "2박 3일 먹방로드";
@@ -308,6 +325,7 @@ public class RecommendationResult extends AppCompatActivity {
         intent_send = new Intent(getApplicationContext(), my_page.class);
         intent_send.putExtra("list_spot", list);
         intent_send.putExtra("schedule_name", name);
+        intent_send.putExtra("reset", false);
         startActivity(intent_send);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
