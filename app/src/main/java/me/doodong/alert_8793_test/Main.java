@@ -134,7 +134,7 @@ public class Main extends AppCompatActivity {
                 //Log.i("저장 내용 1 ", "" + local_list[i]);
                 for (int j = 0; j < 12; j++) {
                     ftl_data_list[i][j] = localData.getInt("ftl" + i + j, R.drawable.background_gray);
-                    Log.i("저장 내용 2 ", "" + ftl_data_list[i][j]);
+                    //Log.i("저장 내용 2 ", "" + ftl_data_list[i][j]);
                 }
             }
 
@@ -211,14 +211,14 @@ public class Main extends AppCompatActivity {
                     ftl_data_list[1] = ftl_data_list[0];
                     ftl_data_list[2] = temp_arr;
 
-                    Log.i("동작 세션", "로컬 리스트 쉬프트");
+                    //Log.i("동작 세션", "로컬 리스트 쉬프트");
 
                     local_list[0] = list[0];
                     name_list[0] = schedule_name;
-                    int index = 0;
-                    for (int i : list) {
-                        editor.putInt("ftl" + ftl_save_index + index, i);
-                        index++;
+                    for (int j = 0; j < 12; j++) {
+                        ftl_data_list[0][j] = list[j];
+/*                        editor.putInt("ftl" + ftl_save_index + j, list[j]);
+                        Log.i("저장 내용 2 ", "" + list[j]);*/
                     }
 
                     Log.i("동작 세션", "로컬 리스트 신규값 인서트");
@@ -231,7 +231,7 @@ public class Main extends AppCompatActivity {
                 //디스플레이
                 ftl.setBackgroundResource(local_list[Arrays.asList(friend_theme_list).indexOf(ftl)]);
 
-                Log.i("동작 세션", "로컬 리스트 디스플레이 " + Arrays.asList(friend_theme_list).indexOf(ftl) + "번째");
+                //Log.i("동작 세션", "로컬 리스트 디스플레이 " + Arrays.asList(friend_theme_list).indexOf(ftl) + "번째");
 
                 // 로컬 리스트 저장
                 editor.putInt("ftl_localList" + Arrays.asList(friend_theme_list).indexOf(ftl), local_list[Arrays.asList(friend_theme_list).indexOf(ftl)]);
@@ -241,7 +241,7 @@ public class Main extends AppCompatActivity {
                 }
                 editor.commit();
 
-                Log.i("동작 세션", "로컬 리스트 저장 " + Arrays.asList(friend_theme_list).indexOf(ftl) + "번째");
+                //Log.i("동작 세션", "로컬 리스트 저장 " + Arrays.asList(friend_theme_list).indexOf(ftl) + "번째");
             }
 
             editor.putBoolean("is_Save_ftl", true);

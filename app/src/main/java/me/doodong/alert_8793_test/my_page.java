@@ -71,9 +71,9 @@ public class my_page extends AppCompatActivity {
         if (list != null && !reset) {
             SharedPreferences.Editor editor = localData.edit();
             //editor.clear();
-            for (int i = 0; i < 12; i++) {
+/*            for (int i = 0; i < 12; i++) {
                 editor.remove(""+i);
-            }
+            }*/
             editor.commit();
 
             Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();
