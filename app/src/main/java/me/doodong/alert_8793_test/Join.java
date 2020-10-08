@@ -36,7 +36,10 @@ public class Join extends AppCompatActivity {
     Button btn_join;
     ArrayAdapter<CharSequence> gender, age;
 
-    private boolean freetrip, backpacking, pkg, alone, together;
+    //private boolean freetrip, backpacking, pkg, alone, together;
+    boolean[] bl = new boolean[]{
+      true, true, true, true, true
+    };
     Workbook wb;
     EditText editText_id, editText_pw, editText_pwck, editText_email;
     private boolean validate = false;
@@ -63,12 +66,12 @@ public class Join extends AppCompatActivity {
         btn_free.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               if(freetrip){//true 일 때
-                   btn_free.setBackgroundResource(R.drawable.freetrip_color);
-                   freetrip = false;
-               }else {//false 일 때
+               if(bl[0]){//true 일 때
                    btn_free.setBackgroundResource(R.drawable.freetrip_click);
-                   freetrip = true;
+                   bl[0] = false;
+               } else if (!double_btn()) {//false 일 때
+                   btn_free.setBackgroundResource(R.drawable.freetrip_color);
+                   bl[0] = true;
                }
             }
         });
@@ -76,48 +79,48 @@ public class Join extends AppCompatActivity {
         btn_backpacking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(backpacking){//true 일 때
+                if(bl[1]){//true 일 때
                     btn_backpacking.setBackgroundResource(R.drawable.backpacking);
-                    backpacking = false;
-                }else {//false 일 때
+                    bl[1] = false;
+                }else if (!double_btn()) {//false 일 때
                     btn_backpacking.setBackgroundResource(R.drawable.backpacking_color);
-                    backpacking = true;
+                    bl[1] = true;
                 }
             }
         });
         btn_pkg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(pkg){//true 일 때
+                if(bl[2]){//true 일 때
                     btn_pkg.setBackgroundResource(R.drawable.pkg_icon);
-                    pkg = false;
-                }else {//false 일 때
+                    bl[2] = false;
+                }else if (!double_btn()) {//false 일 때
                     btn_pkg.setBackgroundResource(R.drawable.pkg_icon_color);
-                    pkg = true;
+                    bl[2] = true;
                 }
             }
         });
         btn_alone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(alone){//true 일 때
+                if(bl[3]){//true 일 때
                     btn_alone.setBackgroundResource(R.drawable.alone);
-                    alone = false;
-                }else {//false 일 때
+                    bl[3] = false;
+                }else if (!double_btn()) {//false 일 때
                     btn_alone.setBackgroundResource(R.drawable.alone_color);
-                    alone = true;
+                    bl[3] = true;
                 }
             }
         });
         btn_together.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(together){//true 일 때
+                if(bl[4]){//true 일 때
                     btn_together.setBackgroundResource(R.drawable.together);
-                    together = false;
-                }else {//false 일 때
+                    bl[4] = false;
+                }else if (!double_btn()) {//false 일 때
                     btn_together.setBackgroundResource(R.drawable.together_color);
-                    together = true;
+                    bl[4] = true;
                 }
             }
         });
@@ -165,6 +168,18 @@ public class Join extends AppCompatActivity {
 
             }
         });
+    }
+
+    public boolean double_btn() {
+        int bool_cnt = 0;
+
+        for (boolean b : bl) {
+            if (!b) {
+                bool_cnt++;
+            }
+        }
+
+        return (bool_cnt < 4) ? true : false;
     }
 
     public void join(View view){
