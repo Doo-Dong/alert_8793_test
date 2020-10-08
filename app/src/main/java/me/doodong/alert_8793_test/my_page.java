@@ -68,21 +68,16 @@ public class my_page extends AppCompatActivity {
             }
         }
 
-        if (list != null && !reset) {
+        if (list != null) {
             SharedPreferences.Editor editor = localData.edit();
             //editor.clear();
-/*            for (int i = 0; i < 12; i++) {
+            for (int i = 0; i < 12; i++) {
                 editor.remove(""+i);
-            }*/
+            }
             editor.commit();
 
             Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();
-        } else {/*
-            list = new int[]{
-                    R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
-                    ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
-                    ,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray,R.drawable.background_gray
-            };*/
+        } else {
             list = new int[]{
                     0,0,0,0,
                     0,0,0,0,
