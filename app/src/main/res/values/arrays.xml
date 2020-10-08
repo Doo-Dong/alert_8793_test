@@ -32,6 +32,16 @@
         <item>"60대"</item>
     </string-array>
 
+    <string-array name = "email_spinner">
+        <item>"@gmail.com"</item>
+        <item>"@hanmail.net"</item>
+        <item>"@naver.com"</item>
+        <item>"@yahoo.com"</item>
+        <item>"@paran.com"</item>
+        <item>"@nate.com"</item>
+        <item>"@hotmail.com"</item>
+    </string-array>
+
     <string-array name = "click_spinner1">
         <item>"1일차"</item>
         <item>"2일차"</item>

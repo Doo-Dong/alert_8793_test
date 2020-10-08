@@ -31,14 +31,15 @@ import jxl.write.*;
 
 public class Join extends AppCompatActivity {
 
-    TextView tv_gender, tv_age;
+    TextView tv_gender, tv_age, tv_email;
     ImageButton btn_free, btn_backpacking, btn_pkg, btn_alone, btn_together;
     Button btn_join;
-    ArrayAdapter<CharSequence> gender, age;
+    ArrayAdapter<CharSequence> gender, age, email;
+    String sp_email = "";
 
     //private boolean freetrip, backpacking, pkg, alone, together;
     boolean[] bl = new boolean[]{
-      true, true, true, true, true
+      true, false, false, false, false
     };
     Workbook wb;
     EditText editText_id, editText_pw, editText_pwck, editText_email;
@@ -62,6 +63,7 @@ public class Join extends AppCompatActivity {
 
         spinner_age();
         spinner_gender();
+        spinner_email();
 
         btn_free.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,6 +172,27 @@ public class Join extends AppCompatActivity {
         });
     }
 
+    public void spinner_email(){
+        final AppCompatSpinner spinner = findViewById(R.id.spinner_email);
+        email = ArrayAdapter.createFromResource(this, R.array.email_spinner, android.R.layout.simple_spinner_dropdown_item);
+        email.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(email);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ((TextView) adapterView.getChildAt(0)).setTextSize(12);
+                ((TextView) adapterView.getChildAt(0)).setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                sp_email = spinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                sp_email = "@gmail.com";
+            }
+        });
+    }
+
     public boolean double_btn() {
         int bool_cnt = 0;
 
@@ -274,7 +297,7 @@ public class Join extends AppCompatActivity {
                 list = new String[] {
                         editText_id.getText().toString(),
                         editText_id.getText().toString(),
-                        editText_email.getText().toString(),
+                        editText_email.getText().toString() + sp_email,
                         ""
                 };
 

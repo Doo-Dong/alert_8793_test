@@ -261,13 +261,23 @@
                 android:id="@+id/editText_email"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="474"
+                android:layout_weight="170"
                 android:hint="이메일"
                 android:drawableLeft="@drawable/email_icon_size"
                 android:drawablePadding="15dp"
                 android:textSize="12sp"
-                android:inputType="textWebEmailAddress"
+                android:inputType="text"
                 android:background="@null"
+                android:maxLength="11"
+                android:singleLine="true"
+                />
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_email"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="304"
+                android:textAlignment="center"
+                android:gravity="center"
                 />
 
         </LinearLayout>
