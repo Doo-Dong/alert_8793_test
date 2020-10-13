@@ -50,6 +50,8 @@ public class my_page extends AppCompatActivity {
         setTheme(R.style.BaseTheme);
         setContentView(R.layout.my_page);
 
+        schedule_name = findViewById(R.id.schedule_name);
+
         //데이터 가져오기
         Intent intent = getIntent();
         result = intent.getStringExtra("result");
@@ -71,18 +73,40 @@ public class my_page extends AppCompatActivity {
         if (list != null) {
             SharedPreferences.Editor editor = localData.edit();
             //editor.clear();
-            for (int i = 0; i < 12; i++) {
+/*            for (int i = 0; i < 12; i++) {
                 editor.remove(""+i);
             }
-            editor.commit();
+            editor.commit();*/
 
-            Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "새 여행정보를 만듭니다", Toast.LENGTH_SHORT).show();
         } else {
-            list = new int[]{
-                    0,0,0,0,
-                    0,0,0,0,
-                    0,0,0,0,
-            };
+            //세이브 체크
+            if (localData.getBoolean("is_Save", false)) {
+                schedule_name.setText(localData.getString("schedule_name", ""));
+
+                list = new int[]{
+                        localData.getInt("0", R.drawable.background_gray),
+                        localData.getInt("1", R.drawable.background_gray),
+                        localData.getInt("2", R.drawable.background_gray),
+                        localData.getInt("3", R.drawable.background_gray),
+                        localData.getInt("4", R.drawable.background_gray),
+                        localData.getInt("5", R.drawable.background_gray),
+                        localData.getInt("6", R.drawable.background_gray),
+                        localData.getInt("7", R.drawable.background_gray),
+                        localData.getInt("8", R.drawable.background_gray),
+                        localData.getInt("9", R.drawable.background_gray),
+                        localData.getInt("10", R.drawable.background_gray),
+                        localData.getInt("11", R.drawable.background_gray)
+                };
+
+                Toast.makeText(this, "데이터를 불러왔습니다", Toast.LENGTH_SHORT).show();;
+            } else {
+                list = new int[]{
+                        0,0,0,0,
+                        0,0,0,0,
+                        0,0,0,0,
+                };
+            }
         }
 
         // 전체화면인 DrawerLayout 객체 참조
@@ -102,7 +126,6 @@ public class my_page extends AppCompatActivity {
 
         // 저장 버튼 객체 참조
         Button schedule_save = findViewById(R.id.save);
-        schedule_name = findViewById(R.id.schedule_name);
 
         if (name != null) {
             schedule_name.setText(name);
@@ -112,28 +135,6 @@ public class my_page extends AppCompatActivity {
         final Button mypg_bottom_btn_1 = findViewById(R.id.mypg_bottom_btn_1);
         Button mypg_bottom_btn_2 = findViewById(R.id.mypg_bottom_btn_2);
         Button mypg_bottom_btn_3 = findViewById(R.id.mypg_bottom_btn_3);
-
-        //세이브 체크
-        if (localData.getBoolean("is_Save", false)) {
-            schedule_name.setText(localData.getString("schedule_name", ""));
-
-            list = new int[]{
-                    localData.getInt("0", R.drawable.background_gray),
-                    localData.getInt("1", R.drawable.background_gray),
-                    localData.getInt("2", R.drawable.background_gray),
-                    localData.getInt("3", R.drawable.background_gray),
-                    localData.getInt("4", R.drawable.background_gray),
-                    localData.getInt("5", R.drawable.background_gray),
-                    localData.getInt("6", R.drawable.background_gray),
-                    localData.getInt("7", R.drawable.background_gray),
-                    localData.getInt("8", R.drawable.background_gray),
-                    localData.getInt("9", R.drawable.background_gray),
-                    localData.getInt("10", R.drawable.background_gray),
-                    localData.getInt("11", R.drawable.background_gray)
-            };
-
-            Toast.makeText(this, "데이터를 불러왔습니다", Toast.LENGTH_SHORT).show();;
-        }
 
         // 일정 저장 버튼
         schedule_save.setOnClickListener(new View.OnClickListener() {
@@ -236,6 +237,7 @@ public class my_page extends AppCompatActivity {
                 intent.putExtra("country","태국");
                 intent.putExtra("list_spot", list);
                 intent.putExtra("schedule_name", schedule_name.getText().toString());
+                intent.putExtra("is_shift", true);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 Toast.makeText(my_page.this, "친구테마로 일정이 공유되었습니다", Toast.LENGTH_SHORT).show();

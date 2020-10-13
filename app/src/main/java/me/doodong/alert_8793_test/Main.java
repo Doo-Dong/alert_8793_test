@@ -47,6 +47,7 @@ public class Main extends AppCompatActivity {
     int[] ftl1;
     int[] ftl2;
     int[][] ftl_data_list;
+    boolean is_shift, is_save;
     ImageView[] friend_theme_list;
     SharedPreferences localData;
 
@@ -112,12 +113,13 @@ public class Main extends AppCompatActivity {
         list = intent.getIntArrayExtra("list_spot");
         schedule_name = intent.getStringExtra("schedule_name");
         localData = getSharedPreferences("localData", 0);
-
+        is_shift = intent.getBooleanExtra("is_shift", false);
 
         // 세이브 데이터 체크
         if (localData.getBoolean("is_Save_ftl", false)) {
             // 있으면 로드
             Log.i("동작 세션", "있으면 로드");
+            is_save = true;
             local_list = new int[]{
                     localData.getInt("ftl_localList0", R.drawable.background_gray),
                     localData.getInt("ftl_localList1", R.drawable.background_gray),
@@ -131,15 +133,18 @@ public class Main extends AppCompatActivity {
             };
 
             for (int i = 0; i < local_list.length; i++) {
-                //Log.i("저장 내용 1 ", "" + local_list[i]);
                 for (int j = 0; j < 12; j++) {
                     ftl_data_list[i][j] = localData.getInt("ftl" + i + j, R.drawable.background_gray);
-                    //Log.i("저장 내용 2 ", "" + ftl_data_list[i][j]);
                 }
             }
 
         } else {
             Log.i("동작 세션", "저장이 안되어있네?");
+            is_save = false;
+        }
+
+        for (int i = 0; i < local_list.length; i++) {
+            Log.i("동작 세션", " - 저장 내용 : " + ftl_data_list[i][0]);
         }
 
         if(country.equals("일본")){
@@ -190,10 +195,16 @@ public class Main extends AppCompatActivity {
             boolean flag = true;
             int temp = 0;
             int[] temp_arr;
+            int shift_flag = 0;
             String temp_string = "";
-            int ftl_save_index = 0;
 
             SharedPreferences.Editor editor = localData.edit();
+
+            for (int ll : local_list) {
+                if (ll == 0) {
+                    shift_flag++;
+                }
+            }
 
             //로컬 리스트에 푸쉬
             for (ImageView ftl : friend_theme_list) {
@@ -207,23 +218,24 @@ public class Main extends AppCompatActivity {
                     name_list[1] = name_list[0];
                     name_list[2] = temp_string;
 
+/*                    if (is_save) {
+                        switch (shift_flag) {
+                            case 3:
+
+                        }
+                    }*/
+
                     temp_arr = ftl_data_list[1];
                     ftl_data_list[1] = ftl_data_list[0];
                     ftl_data_list[2] = temp_arr;
 
-                    //Log.i("동작 세션", "로컬 리스트 쉬프트");
+                    Log.i("동작 세션", "로컬 리스트 쉬프트");
+                    Log.i("동작 세션", " / 플래그 값 : " + shift_flag);
 
                     local_list[0] = list[0];
                     name_list[0] = schedule_name;
-                    for (int j = 0; j < 12; j++) {
-                        ftl_data_list[0][j] = list[j];
-/*                        editor.putInt("ftl" + ftl_save_index + j, list[j]);
-                        Log.i("저장 내용 2 ", "" + list[j]);*/
-                    }
-
+                    ftl_data_list[0] = list;
                     Log.i("동작 세션", "로컬 리스트 신규값 인서트");
-
-                    ftl_save_index = 0;
 
                     flag = false;
                 }
@@ -249,9 +261,22 @@ public class Main extends AppCompatActivity {
 
             Log.i("저장", "SAVE : FTL Saved! => " + localData.getBoolean("is_Save_ftl", false));
         } else {
+            SharedPreferences.Editor editor = localData.edit();
+
             for (ImageView ftl : friend_theme_list) {
                 ftl.setBackgroundResource(local_list[Arrays.asList(friend_theme_list).indexOf(ftl)]);
+
+                // 로컬 리스트 저장
+                editor.putInt("ftl_localList" + Arrays.asList(friend_theme_list).indexOf(ftl), local_list[Arrays.asList(friend_theme_list).indexOf(ftl)]);
+                editor.putString("ftl" + Arrays.asList(friend_theme_list).indexOf(ftl) + "_name", name_list[Arrays.asList(friend_theme_list).indexOf(ftl)]);
+                for (int j = 0; j < 12; j++) {
+                    editor.putInt("ftl" + Arrays.asList(friend_theme_list).indexOf(ftl) + j, ftl_data_list[Arrays.asList(friend_theme_list).indexOf(ftl)][j]);
+                }
+                editor.commit();
             }
+
+            editor.putBoolean("is_Save_ftl", true);
+            editor.commit();
         }
 
         init();
